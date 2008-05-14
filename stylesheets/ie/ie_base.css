@@ -1,0 +1,10 @@
+div#body {
+	height: 450px;
+}
+
+p.linkout {
+	margin-left: 15px;
+}
+p.linkout a.icon {
+	padding-right: 140px;	
+}
