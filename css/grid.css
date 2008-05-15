@@ -1,0 +1,34 @@
+body {
+	background: white url('../images/body_background.png') repeat-x;
+}
+	#root {
+		width: 870px;
+		min-height: 500px;
+		margin: 0 auto;
+		background: url('../images/header_background.png') no-repeat top left;
+	}
+		
+		#content {
+			width: 655px;
+			float: left;
+			padding-top: 90px;
+		}
+			
+			.block {
+				clear: right;
+				width: 430px;
+				margin-left: 170px;
+				padding-right: 55px;
+				margin-bottom: 30px;
+			}
+		
+			.marker {
+				margin-left: 46px;
+				float: left;
+			}
+			
+		#bloginfo {
+			width: 210px;
+			padding-top: 235px;
+			float:  right;
+		}

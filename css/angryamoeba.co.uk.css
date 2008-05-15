@@ -1,0 +1,49 @@
+/* 	Angryamoeba.co.uk SITE-SPECIFIC CSS
+	
+	This stylesheet overrides base, grid and elements.css
+	and provides specific styling information for
+	angryamoeba.co.uk.
+	
+	-----------------------------------
+	ANGRYAMOEBA Colour defs (copy and paste is fun)	
+	CYAN: 						#1793C2;
+	MAGENTA: 					#EC008C;
+	GREEN: 						#5AC000;
+	BROWN:						#BAAF86;
+	-----------------------------------	
+*/
+
+/* Adjust logo position to compensate for size */
+h1 {
+	margin-top: 10px;
+}
+
+/* Add H2 style for body blocks */
+h2 {
+	font-weight: lighter;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #BAAF86;
+	color: #EC008C;
+}
+
+/* Reduce margin between blocks */
+.boxed {
+	margin-bottom: 10px;
+}
+.hidden_box {
+	margin-bottom: 10px;
+}
+
+ul.project_icons {
+	height: 16px;
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+	ul.project_icons li {
+		width: 16px;
+		height: 16px;
+		overflow: hidden;
+		float: left;
+		margin-right: 5px;
+	}
