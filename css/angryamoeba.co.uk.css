@@ -21,14 +21,14 @@ h1 {
 
 /* Add H2 style for body blocks */
 h2 {
+	font-size: 16px;
 	font-weight: lighter;
 	padding-bottom: 5px;
-	margin-bottom: 5px;
-	border-bottom: 1px solid #BAAF86;
-	color: #EC008C;
+	color: #1793C2;
 }
 #amoeba_header {
 	border: none;
+	margin-bottom: 50px;
 }
 
 /* Markers need moving slightly too */
@@ -40,19 +40,32 @@ h2 {
 .boxed {
 	margin-bottom: 10px;
 }
+	.boxed p {
+		font-weight: bold;
+	}
 .hidden_box {
 	margin-bottom: 10px;
 }
 
+/* Specify sidebar */
+#about_blog {
+	padding-top: 8px;
+	background: url('../images/singlecell_logo_small.png') no-repeat top left;
+}
+#about_blog a {
+	color: #5AC000;
+	font-size: 20px;
+}
+
+/* Add project type icons */
 ul.project_icons {
-	height: 16px;
+	height: 24px;
 	list-style-type: none;
 	margin-bottom: 10px;
 }
 	ul.project_icons li {
-		width: 16px;
-		height: 16px;
+		height: 24px;
 		overflow: hidden;
-		float: left;
-		margin-right: 5px;
+		float: right;
+		margin-left: 15px;
 	}
