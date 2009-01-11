@@ -1,9 +1,0 @@
-.marker {
-	/* 	Fix for IE6's mysterious "double the margin you told me to add, just for shits
-		and fucking giggles" bug. */
-	margin-left: 23px;
-}
-.block {
-	/* Fix for IE6's ridiculous not-quite amateur box model. */
-	padding-right: 0;
-}
