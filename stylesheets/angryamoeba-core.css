@@ -1,0 +1,65 @@
+/*
+	Angry amoeba 2009 "Planetary" - Core CSS
+	Copyright (c) Dan Glegg, Angry amoeba 2009
+	
+	Expects matching images to be at ../images/path/to/image.ext
+*/
+
+body {
+	padding: 0; margin: 0;
+	
+	font-face: "Trebuchet MS", "Helvetica", "sans-serif";
+	font-size: 1em;
+	line-height: 1.3em;
+	
+	color: white;
+	background: black url('../images/background/starfield.jpg') no-repeat center top;
+}
+a {
+	color: blue;
+	text-decoration: underline;
+}
+a:visited {
+	color: #333;
+}
+
+	/* Content sections */
+	.section {
+		clear: both;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	.contents {
+		width: 960px;
+		padding: 0;
+		margin: 0 auto;
+		border: 1px solid green;
+	}
+
+	/* Navigation list */
+	.navigation {
+		margin: 5px auto;
+		list-style-type: none;
+	}
+		.navigation li {
+		}
+			.navigation a {
+				
+			}
+
+	/* Network bar up top */
+	#network {
+		
+	}
+		#network a {
+			color: white;
+		}
+
+	#focus {		
+		background: #79D4F7 url('../images/background/atmosphere.gif') no-repeat center top;
+	}
+		#focus .contents {
+			min-height: 170px;
+		}
+			
