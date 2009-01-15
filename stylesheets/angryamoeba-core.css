@@ -13,7 +13,7 @@ body {
 	line-height: 1.3em;
 	
 	color: white;
-	background: black url('../images/background/starfield.jpg') no-repeat center top;
+	background: #291c16 url('../images/background/starfield.jpg') no-repeat center top;
 }
 a {
 	color: blue;
@@ -34,7 +34,6 @@ a:visited {
 		width: 960px;
 		padding: 0;
 		margin: 0 auto;
-		border: 1px solid green;
 	}
 
 	/* Navigation list */
@@ -60,6 +59,12 @@ a:visited {
 		background: #79D4F7 url('../images/background/atmosphere.gif') no-repeat center top;
 	}
 		#focus .contents {
+			background: url('../images/background/hillside.png') no-repeat center bottom;
+			width: 100%;
 			min-height: 170px;
+			padding-bottom: 130px;
 		}
-			
+	#content {
+		min-height: 170px;
+		background: #291c16 url('../images/background/topsoil.gif') no-repeat center top;
+	}
