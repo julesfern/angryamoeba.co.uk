@@ -31,8 +31,8 @@ a:visited {
 		margin: 0;
 	}
 	.contents {
-		width: 960px;
-		padding: 0;
+		width: 920px;
+		padding: 0 20px;
 		margin: 0 auto;
 	}
 
@@ -46,8 +46,65 @@ a:visited {
 			.navigation a {
 				
 			}
+	
+	/* Fifty-fifty straight-up column distribution 440-40-440 */
+	
+	.fifty-fifty {
+	}
+	.fifty-fifty .left {
+		display: block;
+		width: 440px;
+		float: left;
+	}
+	.fifty-fifty .right {
+		display: block;
+		width: 440px;
+		float: right;
+		background: red;
+	}
+	
+	/* Narrow/wide block pairing column distribution: 280-20-620 */
+	
+	.thirty-seventy {
+		
+	}
+	.thirty-seventy .left {
+		display: block;
+		width: 280px;
+	}
+	.thirty-seventy .right {
+		display: block;
+		width: 620px;
+	}
 
-	/* Network bar up top */
+	/* Striped content boxes */
+	
+	.box {
+		display: block;
+		background: white url('../images/containers/stripes-dark.png');
+		border: 1px solid #000;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		padding: 10px;
+	}
+	.box .inner {
+		display: block;
+		background: #3d322d;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		padding: 10px;
+		color: white;
+	}
+	#focus .box {
+		border-color: #6dbfde;
+		background-image: url('../images/containers/stripes-light.png');
+	}
+	#focus .box .inner {
+		background-color: white;
+		color: #224959;
+	}
+
+	/* Network bar up top  */
 	#network {
 		
 	}
@@ -58,11 +115,14 @@ a:visited {
 	#focus {		
 		background: #79D4F7 url('../images/background/atmosphere.gif') no-repeat center top;
 	}
-		#focus .contents {
+		#focus .frame {
 			background: url('../images/background/hillside.png') no-repeat center bottom;
-			width: 100%;
+			padding-top: 30px;
+		}
+		#focus .contents {
 			min-height: 170px;
-			padding-bottom: 130px;
+			padding-top: 30px;
+			padding-bottom: 110px;
 		}
 	#content {
 		min-height: 170px;
