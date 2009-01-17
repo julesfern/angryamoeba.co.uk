@@ -1,4 +1,14 @@
+/* @override http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-home.css */
+
+/*
+	Angry amoeba 2009 "Planetary" - Home CSS
+	Copyright (c) Dan Glegg, Angry amoeba 2009
+	
+	Adds a layer to angryamoeba-core.css which correctly formats the home page.
+	
+	Expects matching images to be at ../images/path/to/image.ext
+*/
+
 h1 {
-	padding-top: 40px;
-	background: green;
+	margin-top: 20px;
 }

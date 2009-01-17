@@ -1,3 +1,5 @@
+/* @override http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-core.css */
+
 /*
 	Angry amoeba 2009 "Planetary" - Core CSS
 	Copyright (c) Dan Glegg, Angry amoeba 2009
@@ -5,15 +7,19 @@
 	Expects matching images to be at ../images/path/to/image.ext
 */
 
+/* Override default browser CSS for plain elements */
 body {
 	padding: 0; margin: 0;
 	
-	font-face: "Trebuchet MS", "Helvetica", "sans-serif";
-	font-size: 1em;
+	font-family: "Trebuchet MS", "Helvetica", "sans-serif";
+	font-size: 0.9em;
 	line-height: 1.3em;
 	
 	color: white;
 	background: #291c16 url('../images/background/starfield.jpg') no-repeat center top;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 10px 0;
 }
 a {
 	color: blue;
@@ -22,6 +28,9 @@ a {
 a:visited {
 	color: #333;
 }
+	a img {
+		border: none;
+	}
 
 	/* Content sections */
 	.section {
@@ -38,13 +47,19 @@ a:visited {
 
 	/* Navigation list */
 	.navigation {
-		margin: 5px auto;
+		height: 1.5em;
+		margin: 10px auto;
 		list-style-type: none;
+		text-align: center;
 	}
 		.navigation li {
+			display: inline;
 		}
 			.navigation a {
-				
+				margin-right: 20px;				
+			}
+			.navigation a.about {
+				margin-right: 0;
 			}
 	
 	/* Fifty-fifty straight-up column distribution 440-40-440 */
@@ -55,12 +70,13 @@ a:visited {
 		display: block;
 		width: 440px;
 		float: left;
+		clear: left;
 	}
 	.fifty-fifty .right {
 		display: block;
 		width: 440px;
 		float: right;
-		background: red;
+		clear: right;
 	}
 	
 	/* Narrow/wide block pairing column distribution: 280-20-620 */
@@ -95,11 +111,11 @@ a:visited {
 		padding: 10px;
 		color: white;
 	}
-	#focus .box {
+	#focus .box, .box.bright {
 		border-color: #6dbfde;
 		background-image: url('../images/containers/stripes-light.png');
 	}
-	#focus .box .inner {
+	#focus .box .inner, .box.bright .inner {
 		background-color: white;
 		color: #224959;
 	}
@@ -126,5 +142,6 @@ a:visited {
 		}
 	#content {
 		min-height: 170px;
+		padding-top: 20px;
 		background: #291c16 url('../images/background/topsoil.gif') no-repeat center top;
 	}
