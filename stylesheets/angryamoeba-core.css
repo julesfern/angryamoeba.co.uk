@@ -81,16 +81,20 @@ a:visited {
 	
 	/* Narrow/wide block pairing column distribution: 280-20-620 */
 	
-	.thirty-seventy {
+	.forty-sixty {
 		
 	}
-	.thirty-seventy .left {
+	.forty-sixty .left {
 		display: block;
+		float: left;
+		clear: left;
 		width: 280px;
 	}
-	.thirty-seventy .right {
+	.forty-sixty .right {
 		display: block;
-		width: 620px;
+		float: right;
+		clear: right;
+		width: 600px;
 	}
 
 	/* Striped content boxes */
@@ -142,6 +146,9 @@ a:visited {
 		}
 	#content {
 		min-height: 170px;
-		padding-top: 20px;
+		padding-top: 0px;
 		background: #291c16 url('../images/background/topsoil.gif') no-repeat center top;
 	}
+		#content .left {
+			margin-top: 40px;
+		}

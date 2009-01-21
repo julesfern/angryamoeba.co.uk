@@ -12,3 +12,50 @@
 h1 {
 	margin-top: 20px;
 }
+
+ul.projects {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+	ul.projects li {
+		
+	}
+		ul.projects li h4 {
+			height: 75px;
+			background: green;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+
+			/* 	Throw the header into relative positioning to allow 
+				relative absolute positioning of the icon */
+			position: relative;
+		}
+			ul.projects li h4 a {
+				display: block;
+				padding-left: 100px;
+				text-decoration: none;
+			}
+			ul.projects li h4 a img {
+				float: left;
+				position: absolute;
+				left: 10px;
+				bottom: 0;
+			}
+			ul.projects li .title {
+				display: block;
+				font-size: 1.8em;
+				padding-top: 16px;
+				margin-bottom: 8px;
+				text-decoration: underline;
+			}
+			ul.projects li .subtitle {
+				display: block;
+				font-size: 0.8em;
+			}
+			ul.projects li .badge {
+				float: right;
+				display: block;
+				background: blue;
+				height: 100%;
+			}
