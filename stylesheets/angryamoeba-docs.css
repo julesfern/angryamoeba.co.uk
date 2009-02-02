@@ -1,0 +1,50 @@
+/* @override http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-docs.css */
+
+/*
+	Angry amoeba 2009 "Planetary" - Documents CSS
+	Copyright (c) Dan Glegg, Angry amoeba 2009
+	
+	Adds a layer to angryamoeba-core.css which correctly formats paragraphs, lists and
+	other inline copy.
+	
+	Expects matching images to be at ../images/path/to/image.ext
+*/
+
+p {
+	margin: 10px 0;
+	font-size: 0.9em;
+	line-height: 1.8em;
+}
+
+h3, h4, h5 {
+	color: black;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #E1F5FD;
+}
+
+code {
+	display: block;
+	background: #291C16;
+	padding: 10px;
+	margin-bottom: 15px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.box img {
+	display: block;
+	padding: 10px;
+	border: 5px solid #333;
+}
+
+pre {
+	display: block;
+	margin: 0;
+	color: white;
+}
+
+blockquote {
+}
+	blockquote .inner {
+	
+	}

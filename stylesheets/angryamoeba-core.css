@@ -32,6 +32,11 @@ a:visited {
 		border: none;
 	}
 
+.break {
+	display: block;
+	clear: both;
+}
+
 	/* Content sections */
 	.section {
 		clear: both;
@@ -142,7 +147,7 @@ a:visited {
 		#focus .contents {
 			min-height: 170px;
 			padding-top: 30px;
-			padding-bottom: 110px;
+			padding-bottom: 145px;
 		}
 	#content {
 		min-height: 170px;

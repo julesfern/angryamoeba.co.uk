@@ -1,0 +1,11 @@
+/* @override http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-blog.css */
+
+/*
+	Angry amoeba 2009 "Planetary" - Blog CSS
+	Copyright (c) Dan Glegg, Angry amoeba 2009
+	
+	Adds a layer to angryamoeba-core.css which correctly formats the blog post listing page
+	and the post show page.
+	
+	Expects matching images to be at ../images/path/to/image.ext
+*/
