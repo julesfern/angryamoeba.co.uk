@@ -9,3 +9,65 @@
 	
 	Expects matching images to be at ../images/path/to/image.ext
 */
+
+a.fold {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius: 10px;
+	background: black;
+	color: white;
+	margin-bottom: 10px;
+}
+.bright a.fold {
+	background: #79D4F7;
+	color: white;
+}
+
+.vcard {
+	background: #E1F5FD;
+	padding: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius: 10px;
+}
+	.vcard img {
+		display: block;
+		float: left;
+		padding: 0 !important;
+		-moz-border-radius:6px;
+		-webkit-border-radius: 6px;
+
+	}
+	.vcard p {
+		margin: 0 0 0 100px;
+		font-size: 0.8em;
+	}
+	.vcard .tags {
+		display: block;
+		float: none;
+		clear: both;
+		height: 0;
+		overflow: hidden;
+	}
+	.vcard ul {
+		list-style-type: none;
+		padding-left: 100px;
+		margin: 0;
+	}
+		.vcard ul li {
+			height: 16px;
+			float: left;
+			font-size: 0.8em;
+			margin-right: 5px;
+			padding-top: 10px;
+		}
+		
+		.vcard a {
+		}
+		.vcard a.delicious {
+			display: block;
+			height: 18px;
+			padding-left: 20px;
+			background: url('../images/icons/delicious-small.gif') no-repeat 1px left;			
+		}

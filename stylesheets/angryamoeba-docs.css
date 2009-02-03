@@ -15,12 +15,37 @@ p {
 	font-size: 0.9em;
 	line-height: 1.8em;
 }
-
-h3, h4, h5 {
-	color: black;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #E1F5FD;
+h2 {
+	color: white;
+	font-weight: normal;
+	font-size: 2em;
+	line-height: 1.3em;
 }
+
+	#focus h2 {
+		color: #291c16;
+	}
+	h2 a {
+		color: white;
+	}
+	#focus h2 a {
+		color: #291c16;
+	}
+	
+	h2 .date {
+		display: block;
+		font-size: 0.9em;
+		font-weight: bold;
+	}
+
+.box h3, .box h4, .box h5 {	
+	padding-bottom: 10px;
+	border-bottom: 1px solid #62534c;
+}
+	.box.bright h3, .box.bright h4, .box.bright h5 {
+		color: black;
+		border-color: #E1F5FD;
+	}
 
 code {
 	display: block;
@@ -34,7 +59,8 @@ code {
 .box img {
 	display: block;
 	padding: 10px;
-	border: 5px solid #333;
+	border: 5px solid black;
+	background: white;
 }
 
 pre {
