@@ -10,6 +10,21 @@
 	Expects matching images to be at ../images/path/to/image.ext
 */
 
+.navigation {
+	padding: 0;
+}
+	.navigation li {
+		display: block;
+		float: left;
+	}
+		.navigation li a {
+			display: block;
+			padding-top: 5px;
+		}
+		.navigation li a.home {
+			padding: 0;
+		}
+
 a.fold {
 	display: block;
 	text-align: center;
@@ -21,7 +36,7 @@ a.fold {
 	margin-bottom: 10px;
 }
 .bright a.fold {
-	background: #79D4F7;
+	background: #72BC22;
 	color: white;
 }
 
@@ -63,11 +78,26 @@ a.fold {
 			padding-top: 10px;
 		}
 		
-		.vcard a {
-		}
-		.vcard a.delicious {
+		.vcard a.social {
 			display: block;
 			height: 18px;
-			padding-left: 20px;
-			background: url('../images/icons/delicious-small.gif') no-repeat 1px left;			
+			padding-left: 23px;
+			padding-right: 15px;
+			background: no-repeat 1px left;			
+
+		}
+		.vcard a.delicious {
+			background-image: url('../images/icons/delicious-small.gif');
+		}
+		.vcard a.github {
+			background-image: url('../images/icons/github-small.gif');
+		}
+		.vcard a.flickr {
+			background-image: url('../images/icons/flickr-small.gif');
+		}
+		.vcard a.linkedin {
+			background-image: url('../images/icons/linkedin-small.gif');
+		}
+		.vcard a.twitter {
+			background-image: url('../images/icons/twitter-small.gif');
 		}
