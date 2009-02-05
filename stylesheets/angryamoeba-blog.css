@@ -40,6 +40,54 @@ a.fold {
 	color: white;
 }
 
+#archive-heading {
+	margin-left: 300px;
+	height: 50px;
+	margin-bottom: 20px;
+	display: block;
+	clear: both;
+}
+	#archive-heading h3 {
+		float: left;
+	}
+	#archive-heading form {
+		float: right;
+		width: 233px;
+	}	
+		#archive-heading fieldset {
+			border: none;
+			padding: 0;
+			margin: 0;
+		}
+		#archive-heading .search-field {
+			display: block;
+			background: white url('../images/icons/search-field.gif') no-repeat 5px 4px;
+			padding-left: 25px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+		}
+			#archive-heading .search-field input.text {
+				font-size: 1.1em;
+				width: 200px;
+				padding: 3px;
+				margin: 0;
+				border: none;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+			}
+			#archive-heading .search-field input.button {
+				display: none;	
+			}
+		#archive-heading .branding {
+			display: block;
+			text-align: right;
+			padding-top: 5px;
+			font-size: 0.7em;
+		}
+			#archive-heading .branding img {
+				float: right;	
+			}
+
 .vcard {
 	background: #E1F5FD;
 	padding: 10px;
