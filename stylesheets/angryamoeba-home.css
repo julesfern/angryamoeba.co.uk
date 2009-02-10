@@ -10,7 +10,7 @@
 */
 
 h1 {
-	margin-top: 20px;
+	margin-top: 25px;
 }
 
 #content .left {
@@ -63,17 +63,22 @@ ul.projects {
 				font-size: 0.8em;
 			}
 			ul.projects li .badge {
-				width: 100px;
-				height: 75px;
+				width: 80px;
+				height: 46px;
 				display: block;
 				float: right;
-				background: white;
 				border-left: 1px solid black;
 				-webkit-border-top-right-radius: 9px;
 				-webkit-border-bottom-right-radius: 9px;
 				-moz-border-radius-topright: 9px;
 				-moz-border-radius-bottomright: 9px;
+				background: #eefaff url('../images/icons/star-yellow.png') no-repeat 5px 28px;
+				padding: 29px 0 0 29px;
+				font-size: 0.8em;
 			}
+				ul.projects li .badge.opensource {
+					
+				}
 			
 			ul.projects li .description {
 				-moz-border-radius: 10px;

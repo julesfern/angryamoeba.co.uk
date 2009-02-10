@@ -76,6 +76,12 @@ pre {
 
 blockquote {
 }
-	blockquote .inner {
-	
+	.box .inner blockquote .inner {
+		padding: 5px 10px;	
+		background: #4e4039;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+	.box.bright blockquote .inner {
+		background-color: #fcf7d5 !important;
 	}
