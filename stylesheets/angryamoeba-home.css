@@ -17,6 +17,21 @@ h1 {
 	margin-top: 50px;
 }
 
+.profile {
+	font-size: 1.3em;
+	line-height: 1em;
+}
+	.profile p {
+		line-height: 1.3em;
+		color: #291C16;
+	}
+	.profile h4 {
+		color: #333;
+	}
+	.profile a {
+		color: #333;
+	}
+
 ul.projects {
 	list-style-type: none;
 	padding: 0;
