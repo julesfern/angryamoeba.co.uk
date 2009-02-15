@@ -51,6 +51,22 @@ h2 {
 		color: black;
 		border-color: #E1F5FD;
 	}
+	
+a.fold {
+	display: block;
+	text-align: center;
+	line-height: 1.3em;
+	padding: 10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius: 10px;
+	background: black;
+	color: white;
+	margin-bottom: 10px;
+}
+.bright a.fold {
+	background: #72BC22;
+	color: white;
+}
 
 code {
 	display: block;

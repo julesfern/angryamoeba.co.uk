@@ -12,9 +12,11 @@
 h1 {
 	margin-top: 25px;
 }
-
+.navigation a.home {
+	text-decoration: none;
+}
 #content .left {
-	margin-top: 50px;
+	margin-top: 49px;
 }
 
 .profile {
@@ -43,7 +45,7 @@ ul.projects {
 		ul.projects li h4 {
 			height: 75px;
 			padding: 0;
-			background: #73bd23 url('../images/containers/project-green.png') repeat-x top left;
+			background: #73bd23 url('../images/containers/project-green.png') repeat-x center left;
 			-webkit-border-radius: 10px;
 			-moz-border-radius: 10px;
 			/* 	Throw the header into relative positioning to allow 

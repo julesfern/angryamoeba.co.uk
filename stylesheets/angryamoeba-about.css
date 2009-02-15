@@ -1,0 +1,14 @@
+/* @override http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-about.css */
+
+/*
+	Angry amoeba 2009 "Planetary" - About/Bio CSS
+	Copyright (c) Dan Glegg, Angry amoeba 2009
+	
+	Adds a layer to angryamoeba-core.css which correctly formats bio/profile page.
+	
+	Expects matching images to be at ../images/path/to/image.ext
+*/
+
+.navigation a.about {
+	text-decoration: none;
+}

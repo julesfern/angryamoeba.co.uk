@@ -11,7 +11,7 @@
 body {
 	padding: 0; margin: 0;
 	
-	font-family: "Trebuchet MS", "Helvetica", "sans-serif";
+	font-family: "Trebuchet MS", "Helvetica", sans-serif;
 	font-size: 0.9em;
 	line-height: 1.3em;
 	
@@ -63,7 +63,7 @@ a {
 			.navigation a {
 				margin-right: 20px;				
 			}
-			.navigation a.about {
+			#network .navigation a.about {
 				margin-right: 0;
 			}
 	
@@ -152,4 +152,17 @@ a {
 		min-height: 170px;
 		padding-top: 0px;
 		background: #291c16 url('../images/background/topsoil.gif') no-repeat center top;
+	}
+	
+#footer .contents {
+	padding-top: 50px;
+	background: #291c16;
+	font-size: 0.8em;
+	color: #63514a;
+}
+	#footer a{
+		color: #63514a;
+	}
+	#footer .navigation li a {
+		margin-right: 10px;
 	}

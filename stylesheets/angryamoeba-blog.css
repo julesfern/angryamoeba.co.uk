@@ -24,21 +24,9 @@
 		.navigation li a.home {
 			padding: 0;
 		}
-
-a.fold {
-	display: block;
-	text-align: center;
-	padding: 10px;
-	-moz-border-radius:10px;
-	-webkit-border-radius: 10px;
-	background: black;
-	color: white;
-	margin-bottom: 10px;
-}
-.bright a.fold {
-	background: #72BC22;
-	color: white;
-}
+		.navigation a.blog {
+			text-decoration: none;
+		}
 
 #archive-heading {
 	margin-left: 300px;
@@ -131,7 +119,8 @@ a.fold {
 			height: 18px;
 			padding-left: 23px;
 			padding-right: 15px;
-			background: no-repeat 1px left;			
+			background-repeat: no-repeat;
+			background-position: 1px left;			
 
 		}
 		.vcard a.delicious {
