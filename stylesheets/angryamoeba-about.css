@@ -12,3 +12,18 @@
 .navigation a.about {
 	text-decoration: none;
 }
+.left.box {
+	width: 265px;
+}
+#focus h1 {
+	color: #291C16;
+	line-height: 1.3em;
+}
+.profile {
+	font-size: 1.2em;
+}
+	.profile em {
+		color: #291C16;
+		font-style: normal;
+		font-weight: bold;
+	}

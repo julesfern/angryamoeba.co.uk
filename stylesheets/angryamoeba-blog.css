@@ -10,23 +10,9 @@
 	Expects matching images to be at ../images/path/to/image.ext
 */
 
-.navigation {
-	padding: 0;
+.navigation a.blog {
+	text-decoration: none;
 }
-	.navigation li {
-		display: block;
-		float: left;
-	}
-		.navigation li a {
-			display: block;
-			padding-top: 5px;
-		}
-		.navigation li a.home {
-			padding: 0;
-		}
-		.navigation a.blog {
-			text-decoration: none;
-		}
 
 #archive-heading {
 	margin-left: 300px;

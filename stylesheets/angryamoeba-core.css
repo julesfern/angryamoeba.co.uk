@@ -67,6 +67,21 @@ a {
 				margin-right: 0;
 			}
 	
+	.navigation.sub {
+		padding: 0;
+	}
+	.navigation.sub li {
+		display: block;
+		float: left;
+	}
+		.navigation.sub li a {
+			display: block;
+			padding-top: 5px;
+		}
+		.navigation.sub li a.home {
+			padding: 0;
+		}
+	
 	/* Fifty-fifty straight-up column distribution 440-40-440 */
 	
 	.fifty-fifty {
