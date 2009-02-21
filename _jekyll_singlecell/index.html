@@ -1,0 +1,26 @@
+---
+title: Singlecell, the Angry amoeba weblog
+layout: default
+---
+
+{% for post in site.posts %}
+	{% case forloop.index0 %}
+	{% when 0 %}
+		<div id="focus" class="section forty-sixty">
+	{% when 1 %}
+		<div id="content" class="section forty-sixty">
+	{% else %}
+		<div class="section forty-sixty">
+	{% endcase %}
+
+			<h2 class="left">
+				<a href="/singlecell{{post.url}}">{{post.title}}</a>
+				<span class="date">{{post.date | date: "%d %b, %Y"}}</span>
+			</h2>
+			
+			<div class="right box">
+				{{post.content}}
+			</div>
+	
+		</div>
+{% endfor %}

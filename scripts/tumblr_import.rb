@@ -28,7 +28,7 @@ open(tumblr_domain+"/api/read") do |xml|
     when post_tag.attributes["type"].content == "regular"    
       title = post_tag.css("regular-title").first.content
       body = post_tag.css("regular-body").first.content
-      filename = "#{date.strftime("%Y-%m-%d")}-#{title.gsub(/(\s|[^a-zA-Z0-9])/,"-").gsub(/-+/,'-').gsub(/-$/,'')}.markdown"
+      filename = "#{date.strftime("%Y-%m-%d")}-#{title.gsub(/(\s|[^a-zA-Z0-9])/,"-").gsub(/-+/,'-').gsub(/-$/,'')}.html"
       jekyll_post = <<-EOPOST
 ---
 title: #{title}
