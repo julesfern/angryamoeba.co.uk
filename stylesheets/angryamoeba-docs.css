@@ -40,7 +40,7 @@ h2 {
 .box a {
 	color: white;
 }
-.bright a {
+#focus .box a , .bright a {
 	color: blue;
 }
 .box h3, .box h4, .box h5 {	
@@ -93,8 +93,9 @@ pre {
 blockquote {
 }
 	.box .inner blockquote .inner {
-		padding: 5px 10px;	
-		background: #4e4039;
+		padding: 0 10px;	
+		font-style: italic;
+		border: 2px dashed #CCC;
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 	}

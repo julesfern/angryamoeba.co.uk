@@ -58,8 +58,12 @@
 			padding-top: 5px;
 			font-size: 0.7em;
 		}
+			#archive-heading .branding {
+				padding: 0;
+			}
 			#archive-heading .branding img {
-				float: right;	
+				position: relative;
+				top: 8px;
 			}
 
 .vcard {

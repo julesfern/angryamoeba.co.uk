@@ -4,7 +4,7 @@
  <title>Singlecell, the Angry amoeba weblog</title>
  <link href="http://www.angryamoeba.co.uk/singlecell/atom.xml" rel="self"/>
  <link href="http://www.angryamoeba.co.uk/singlecell/"/>
- <updated>2009-02-21T13:25:25+00:00</updated>
+ <updated>2009-02-21T17:16:39+00:00</updated>
  <id>http://www.angryamoeba.co.uk/singlecell</id>
  <author>
    <name>Dan Glegg</name>
@@ -21,7 +21,7 @@
 
 &lt;a href="http://slashdot.org/~Artraze"&gt;Artraze&lt;/a&gt;, a commenter on Slashdot, discussing &lt;a href="http://tech.slashdot.org/article.pl?sid=09/02/16/2259257"&gt;the possibility of sinister DRM in Windows 7&lt;/a&gt;
 
-&lt;blockquote&gt;Congress shall pass no law limiting the rights of persons to manipulate, operate, or otherwise utilize as they see fit any of their possessions or effects, nor the sale or trade of tools to be used for such purposes.&lt;/blockquote&gt;
+&lt;blockquote&gt;&lt;p&gt;Congress shall pass no law limiting the rights of persons to manipulate, operate, or otherwise utilize as they see fit any of their possessions or effects, nor the sale or trade of tools to be used for such purposes.&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;p&gt;What can I say, apart from a strong, resounding &lt;strong&gt;yes&lt;/strong&gt;?&lt;/p&gt;
 </content>
@@ -313,7 +313,7 @@ Merb::Slices::config[:merb_auth_slice_password][:layout] = :application&lt;/code
 
 &lt;p&gt;Unfortunately for Barclays, it doesn&amp;#8217;t matter, and their money was wasted. Because if you want to compromise the computers of Barclays account holders, there&amp;#8217;s no need to circumvent the giant, thoroughly-audited security schemes that are almost certainly in place. Nope, you just need to compromise their analytics provider.&lt;/p&gt;
 
-&lt;img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg"/&gt;&lt;p&gt;That&amp;#8217;s right, every page load from your &amp;#8220;private&amp;#8221;, &amp;#8220;secure&amp;#8221; banking pages is also communicating directly with Webtrends&amp;#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &amp;#8220;&lt;a href="http://www.google.co.uk/search?q=webtrendslive"&gt;webtrendslive&lt;/a&gt;&amp;#8221;, by the way, you&amp;#8217;ll notice that malware reports actually outrank the actual product site. It&amp;#8217;s a nice touch.&lt;/p&gt;
+&lt;img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg" alt="code fail"/&gt;&lt;p&gt;That&amp;#8217;s right, every page load from your &amp;#8220;private&amp;#8221;, &amp;#8220;secure&amp;#8221; banking pages is also communicating directly with Webtrends&amp;#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &amp;#8220;&lt;a href="http://www.google.co.uk/search?q=webtrendslive"&gt;webtrendslive&lt;/a&gt;&amp;#8221;, by the way, you&amp;#8217;ll notice that malware reports actually outrank the actual product site. It&amp;#8217;s a nice touch.&lt;/p&gt;
 
 &lt;p&gt;Anyway. Looks fine, right? They&amp;#8217;re just including a local script from the /f directory. No. The script they&amp;#8217;re pulling from a local file is in fact writing a new script tag to the document, which will load a script from an external server. Take a look:&lt;/p&gt;
 
@@ -448,7 +448,7 @@ tmp
    <id>http://www.angryamoeba.co.uk/singlecell/2008/05/20/Chirrup-launched-for-public-use</id>
    <content type="html"> 
 
-&lt;p&gt;Well, that&amp;#8217;s another silly little side-project in the can. If you&amp;#8217;d like to have Twitter comments on your blog, wiki, website, or basically anything with a URL, head on over to &lt;a href="http://chirrup.angryamoeba.co.uk"&gt;http://chirrup.angryamoeba.co.uk&lt;/a&gt; and download Chirrup to get started!&lt;/p&gt;
+&lt;p&gt;Well, that&amp;#8217;s another silly little side-project in the can. If you&amp;#8217;d like to have Twitter comments on your blog, wiki, website, or basically anything with a URL, head on over to &lt;a href="http://chirrup.angryamoeba.co.uk"&gt;chirrup.angryamoeba.co.uk&lt;/a&gt; and download Chirrup to get started!&lt;/p&gt;
 
 &lt;p&gt;Thanks to the &lt;a href="http://www.videojuicer.com"&gt;Videojuicer&lt;/a&gt; dev team for helping with testing - &lt;a href="http://skein.tumblr.com/"&gt;Ted Han&lt;/a&gt;, &lt;a href="http://sd2.com/"&gt;John Carlin&lt;/a&gt;, &lt;a href="http://aelius.net/"&gt;Alex Nichol&lt;/a&gt; and &lt;a href="http://mochapowered.com/"&gt;Adam Livesley&lt;/a&gt;. And thanks to Adam for turning Chirrup into a &lt;a href="http://chirrup.angryamoeba.co.uk/docs/wordpress.html"&gt;wordpress plugin&lt;/a&gt; - this functionality is included in the main &lt;a href="http://chirrup.angryamoeba.co.uk/download.html"&gt;download package &lt;/a&gt;.&lt;/p&gt;
 
@@ -463,7 +463,7 @@ tmp
    <id>http://www.angryamoeba.co.uk/singlecell/2008/05/13/Chirrup-Twitter-comments-for-your-blog</id>
    <content type="html"> 
 
-&lt;p&gt;UPDATE: Chirrup is now available to the public. Visit &lt;a href="http://chirrup.angryamoeba.co.uk"&gt; &lt;a href="http://chirrup.angryamoeba.co.uk"&gt;http://chirrup.angryamoeba.co.uk&lt;/a&gt;&lt;/a&gt; to get your copy.&lt;/p&gt;
+&lt;p&gt;UPDATE: Chirrup is now available to the public. Visit &lt;a href="http://chirrup.angryamoeba.co.uk"&gt;chirrup.angryamoeba.co.uk&lt;/a&gt; to get your copy.&lt;/p&gt;
 
 &lt;p&gt;You might&amp;#8217;ve noticed some new features here at Singlecell - we&amp;#8217;ve been working on a library called Chirrup, which allows you to include comments from Twitter in your pages.&lt;/p&gt;
 
