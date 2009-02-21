@@ -1,0 +1,12 @@
+---
+title: Create with Context on How people really use the iPhone
+layout: post
+---  
+
+<p>The guys and girls over at <a href="http://www.createwithcontext.com/">Create with Context</a> have created a very interesting document detailing the results of their independent user testing of the iPhone, and in a stroke of sheer brilliance they&#8217;ve <a href="http://www.createwithcontext.com/how-people-really-use-the-iphone.html">made it available to all of us</a>.</p>
+
+<p>Their look into usability of the in-built iPhone apps turns up some interesting points about Apple&#8217;s iconography. Many users note confusion around the purpose of some icons, most notably between search and zoom. It seems that some users expect magnifying glass icons to either increase the current zoom level, or to reset the zoom level to a full-page view. This is unfortunate, because the magnifying glass is, on the desktop, the canonical icon for search - so I&#8217;m curious to see if these results are specific to user interfaces that are so centered around zoom and pan, or if we&#8217;ve been missing problems with desktop iconography all along. It&#8217;s also possible that the relatively cramped conditions on the iPhone&#8217;s screen give little opportunity to space controls out and give them distinct context.</p>
+
+<p>Most useful for my fellow Cocoa Touch developers is the section on App Store experiences, which gives insight into app pricing, which App Store listings and the impact of positive/negative reviews on the download page.</p>
+
+<p>It&#8217;s a <a href="http://www.createwithcontext.com/how-people-really-use-the-iphone.html">highly recommended download</a> and I&#8217;d like to thank Create with Context for making it available to all of us.</p>

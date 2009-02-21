@@ -1,0 +1,29 @@
+---
+title: The API antipattern, Twitter, and the Fail Whale's new clothes
+layout: post
+---  
+
+<p>Not enough developers get angry when they encounter the <a href="http://adactio.com/journal/1357">password antipattern</a>. You’ll know it when you see it because you’ll see <strong>site A</strong> asking you for your login credentials for <strong>site B</strong> in order to enable <strong>cool feature C</strong>. That <strong>cool feature C</strong> is <em>usually</em> a mechanic for spamming <strong>site A</strong>’s users into signing up for <strong>site B</strong> notwithstanding, this pattern smells worse than week-old crab left wrapped up in some wet newspaper atop a radiator.</p>
+
+<p>Yes. This pattern is terrible for security because the least secure part of any system is inevitably the fallible bipedal meat-creature who uses that system, and a culture that encourages meat-beings to hand over login credentials to any form that winks and offers to buy us a drink will only further damage our already poor <a href="http://en.wikipedia.org/wiki/Series_of_tubes">intertube</a> survival instincts. Not only is this insecure, but a complete replacement of the concept of <em>authentication</em> by a dangerously brittle system of electronic hearsay.</p>
+
+<h4 id="when_you_say_auth_do_you_mean_authentication_or_authorisation">When you say auth, do you mean authentication or authorisation?</h4>
+
+<p>Let’s go back to basics for a second. What does “authentication” mean? A brief fumble with <a href="http://www.google.co.uk/search?hl=en&amp;q=define%3Aauthentication&amp;btnG=Search">google’s define function</a> yields the following:</p>
+
+<pre><code>[Authentication is] The process of identifying an individual or data. In security systems, authentication is distinct from authorization. Authentication merely confirms that the identification of the individual or data is accurate.
+</code></pre>
+
+<p>And quite right, too. When your small personal army of Twitter client apps* are out there, running in the cloud, firing periodic requests off to Twitter, they’re authenticating as yourself. Twitter has no way to discern whether those requests come from you, or any one of the many agents you authorise to access your account. Put the other way, all agents accessing your account have the full power of the account owner, including the ability to change your password and lock you out of your account. Let’s not even get into the miniature localised apocalypse you’ll trigger whenever you change your password yourself.</p>
+
+<p>Nowhere else, in any sphere of security, is this considered acceptable. Take as an example the entourage who orbit closely around a given celebrity (that’s you, you lucky thing). Your entourage look after you, they have access to your stuff, but they don’t carry your passport and driver’s license. They carry their <em>own identification which institutions accept as authorisation to access your stuff</em>. That’s the right way to do it. Your fabulous slick-haired fashion consultant - his name is Quantum, by the way, not that you care - <em>authenticates</em> as himself when he calls up the designers, but the designers know that he is <em>authorised</em> to buy clothes for you, because you’re too busy recording a voiceover for a rigidly formulaic CG animal cuddlefest about a penguin called Zappy who gets lost in New York with the baby of a wealthy but comedically inept couple.</p>
+
+<p>Anyway. The point is that the various software agents you give access to your account should have their own credentials with which they can access your account. The service they’re working with should recognise those credentials as having access to your account. An agent should never be able to change your password or perform other tasks that are reserved for you and you alone. You should be able to revoke those credentials if you lose trust in one of your agents. You should be able to grant time-limited or once-only to agents you’re just trying out.</p>
+
+<p>There’s one site in particular who <em>already have this solved</em>. It’s <a href="http://flickr.com">Flickr</a>. They nailed it pretty much from the get-go. Just look at the <a href="http://www.flickr.com/services/api/auth.spec.html">documentation</a> for authenticating with them. It’s beautiful, and the fact that no major independent player has been visibly inspired by it is, frankly, shocking.</p>
+
+<p>The vast majority of Twitter’s traffic is via their API. And they’re still running on basic HTTP authentication, the way neanderthals authenticated with <em>their</em> social microstatus aggregators. It’s time for them to do better, like we all know they can.</p>
+
+<p>*For Twitter, being particularly complicit in this problem, shall have the pleasure of being my whipping boy for the purposes of this article.</p>
+
+<p>Addendum: And see below. Twitter comments - I loved the idea of them. But people need to enter their password in order to comment. Twitter&#8217;s bizarrely primitive approach to authentication is a massive barrier to innovation in this way.</p>
