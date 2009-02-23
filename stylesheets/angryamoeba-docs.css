@@ -63,7 +63,7 @@ a.fold {
 	color: white;
 	margin-bottom: 10px;
 }
-.bright a.fold {
+#focus a.fold, .bright a.fold {
 	background: #72BC22;
 	color: white;
 }

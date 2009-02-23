@@ -2,3 +2,27 @@
 layout: default
 ---
 
+<div id="focus" class="section forty-sixty">
+
+			<h2 class="left">
+				<a href="/singlecell{{page.url}}">{{page.title}}</a>
+				<span class="date">{{page.date | date: "%d %b, %Y"}}</span>
+			</h2>
+			
+			<div class="right box">
+				{{content}}
+				{% include dan-bio.html %}
+			</div>
+	
+</div>
+
+<div id="content" class="section forty-sixty">
+	
+
+	<div class="right box bright">
+		<div id="disqus_thread"></div>
+		<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a>		
+	</div>
+
+	
+</div>

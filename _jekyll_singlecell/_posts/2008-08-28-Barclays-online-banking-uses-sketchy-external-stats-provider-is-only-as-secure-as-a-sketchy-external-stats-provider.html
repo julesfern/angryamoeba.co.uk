@@ -11,6 +11,8 @@ layout: post
 
 <img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg" alt="code fail"/><p>That&#8217;s right, every page load from your &#8220;private&#8221;, &#8220;secure&#8221; banking pages is also communicating directly with Webtrends&#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &#8220;<a href="http://www.google.co.uk/search?q=webtrendslive">webtrendslive</a>&#8221;, by the way, you&#8217;ll notice that malware reports actually outrank the actual product site. It&#8217;s a nice touch.</p>
 
+<hr />
+
 <p>Anyway. Looks fine, right? They&#8217;re just including a local script from the /f directory. No. The script they&#8217;re pulling from a local file is in fact writing a new script tag to the document, which will load a script from an external server. Take a look:</p>
 
 <pre class="javascript"><code>// THIS IS ALL INNOCENT ENOUGH

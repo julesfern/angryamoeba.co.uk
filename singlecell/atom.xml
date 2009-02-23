@@ -4,7 +4,7 @@
  <title>Singlecell, the Angry amoeba weblog</title>
  <link href="http://www.angryamoeba.co.uk/singlecell/atom.xml" rel="self"/>
  <link href="http://www.angryamoeba.co.uk/singlecell/"/>
- <updated>2009-02-21T17:16:39+00:00</updated>
+ <updated>2009-02-22T18:24:38+00:00</updated>
  <id>http://www.angryamoeba.co.uk/singlecell</id>
  <author>
    <name>Dan Glegg</name>
@@ -37,6 +37,8 @@
 &lt;p&gt;Not enough developers get angry when they encounter the &lt;a href="http://adactio.com/journal/1357"&gt;password antipattern&lt;/a&gt;. You’ll know it when you see it because you’ll see &lt;strong&gt;site A&lt;/strong&gt; asking you for your login credentials for &lt;strong&gt;site B&lt;/strong&gt; in order to enable &lt;strong&gt;cool feature C&lt;/strong&gt;. That &lt;strong&gt;cool feature C&lt;/strong&gt; is &lt;em&gt;usually&lt;/em&gt; a mechanic for spamming &lt;strong&gt;site A&lt;/strong&gt;’s users into signing up for &lt;strong&gt;site B&lt;/strong&gt; notwithstanding, this pattern smells worse than week-old crab left wrapped up in some wet newspaper atop a radiator.&lt;/p&gt;
 
 &lt;p&gt;Yes. This pattern is terrible for security because the least secure part of any system is inevitably the fallible bipedal meat-creature who uses that system, and a culture that encourages meat-beings to hand over login credentials to any form that winks and offers to buy us a drink will only further damage our already poor &lt;a href="http://en.wikipedia.org/wiki/Series_of_tubes"&gt;intertube&lt;/a&gt; survival instincts. Not only is this insecure, but a complete replacement of the concept of &lt;em&gt;authentication&lt;/em&gt; by a dangerously brittle system of electronic hearsay.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h4 id="when_you_say_auth_do_you_mean_authentication_or_authorisation"&gt;When you say auth, do you mean authentication or authorisation?&lt;/h4&gt;
 
@@ -84,6 +86,8 @@
 cd merb-auth-playground
 merb-gen resource secret
 merb-gen resource user&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
 
 &lt;h3 id="starting_at_the_beginning_merb_auth_core"&gt;Starting at the beginning: merb-auth-core&lt;/h3&gt;
 
@@ -246,6 +250,8 @@ Merb::Slices::config[:merb_auth_slice_password][:layout] = :application&lt;/code
 
 &lt;p&gt;Wouldn’t it be great if you could get them to pop up when you click on items with a particular mouse button or modifier key? Hell yeah it would. And as it turns out, Quicksilver already contains all the science you need to do it. To get started:&lt;/p&gt;
 
+&lt;hr /&gt;
+
 &lt;ol&gt;
 &lt;li&gt;Open Quicksilver’s preference pane and tick ‘&lt;strong&gt;Enable advanced features&lt;/strong&gt;.’ Allow Quicksilver to shout at you for a moment. Agree when it asks to restart itself.&lt;/li&gt;
 &lt;li&gt;Re-open the preference pane and click ‘&lt;strong&gt;Plug-ins&lt;/strong&gt;’ in the toolbar. Search for three addons: &lt;strong&gt;Constallation Menus&lt;/strong&gt;, &lt;strong&gt;Mouse Triggers&lt;/strong&gt; and &lt;strong&gt;User Interface Access&lt;/strong&gt;. Install them.&lt;/li&gt;
@@ -314,6 +320,8 @@ Merb::Slices::config[:merb_auth_slice_password][:layout] = :application&lt;/code
 &lt;p&gt;Unfortunately for Barclays, it doesn&amp;#8217;t matter, and their money was wasted. Because if you want to compromise the computers of Barclays account holders, there&amp;#8217;s no need to circumvent the giant, thoroughly-audited security schemes that are almost certainly in place. Nope, you just need to compromise their analytics provider.&lt;/p&gt;
 
 &lt;img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg" alt="code fail"/&gt;&lt;p&gt;That&amp;#8217;s right, every page load from your &amp;#8220;private&amp;#8221;, &amp;#8220;secure&amp;#8221; banking pages is also communicating directly with Webtrends&amp;#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &amp;#8220;&lt;a href="http://www.google.co.uk/search?q=webtrendslive"&gt;webtrendslive&lt;/a&gt;&amp;#8221;, by the way, you&amp;#8217;ll notice that malware reports actually outrank the actual product site. It&amp;#8217;s a nice touch.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;Anyway. Looks fine, right? They&amp;#8217;re just including a local script from the /f directory. No. The script they&amp;#8217;re pulling from a local file is in fact writing a new script tag to the document, which will load a script from an external server. Take a look:&lt;/p&gt;
 

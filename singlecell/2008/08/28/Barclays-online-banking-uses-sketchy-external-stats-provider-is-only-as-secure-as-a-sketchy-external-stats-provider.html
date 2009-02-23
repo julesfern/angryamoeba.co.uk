@@ -30,6 +30,7 @@
 		<!-- Interactivity -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 		<script type="text/javascript" src="/lib/angryamoeba/angryamoeba-core.js"></script>
+		<script type="text/javascript" src="/lib/angryamoeba/angryamoeba-blog.js"></script>
 </head>
 	
 	<body>
@@ -46,7 +47,96 @@
 			
 
 			
+<div id="focus" class="section forty-sixty">
 
+			<h2 class="left">
+				<a href="/singlecell/2008/08/28/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider.html">Barclays online banking uses sketchy external stats provider, is only as secure as a sketchy external stats provider.</a>
+				<span class="date">28 Aug, 2008</span>
+			</h2>
+			
+			<div class="right box">
+				 
+
+<p>Basic software security, lesson #1: You are only as secure as the weakest point in your system.</p>
+
+<p>It&#8217;s a valuable lesson. Earlier this year Barclays made a big show of security, even going so far as to <a href="http://www.barclays.co.uk/pinsentry/">mail two-factor authentication devices to their customers</a> in an attempt to prevent online banking fraud. That&#8217;s a big investment.</p>
+
+<p>Unfortunately for Barclays, it doesn&#8217;t matter, and their money was wasted. Because if you want to compromise the computers of Barclays account holders, there&#8217;s no need to circumvent the giant, thoroughly-audited security schemes that are almost certainly in place. Nope, you just need to compromise their analytics provider.</p>
+
+<img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg" alt="code fail"/><p>That&#8217;s right, every page load from your &#8220;private&#8221;, &#8220;secure&#8221; banking pages is also communicating directly with Webtrends&#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &#8220;<a href="http://www.google.co.uk/search?q=webtrendslive">webtrendslive</a>&#8221;, by the way, you&#8217;ll notice that malware reports actually outrank the actual product site. It&#8217;s a nice touch.</p>
+
+<hr />
+
+<p>Anyway. Looks fine, right? They&#8217;re just including a local script from the /f directory. No. The script they&#8217;re pulling from a local file is in fact writing a new script tag to the document, which will load a script from an external server. Take a look:</p>
+
+<pre class="javascript"><code>// THIS IS ALL INNOCENT ENOUGH
+var gDomain="statse.webtrendslive.com";
+var gDcsId="REDACTED";
+var gFpc="WT_FPC";
+var gConvert=true;
+var gFpcDom=".barclays.co.uk";
+
+// WELL, IT'S ONLY BANKING INNIT. THE SECURITY MODEL ONLY
+// PREVENTS YOU FROM DOING THIS SO YOU DON'T LOSE YOUR
+// MYSPACE PASSWORD.
+
+if ((typeof(gConvert)!="undefined")&amp;&amp;gConvert&amp;&amp;(document.cookie.indexOf(gFpc+"=")==-1)&amp;&amp;(document.cookie.indexOf("WTLOPTOUT=")==-1)){
+ document.write("&lt;SCR"+"IPT TYPE='text/javascript' SRC='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'&gt;&lt;\/SCR"+"IPT&gt;");
+}</code></pre>
+
+<p>Why does it have to do this, you ask? Because the browser security model <strong>specifically prevents you</strong> from making off-site requests in this way to protect the user from, oh, script injection vulnerabilities and having their details pinched by dastardly or inept external script providers. But this is only banking, right? S&#8217;probably fine to just ignore the reasons not to do it and go ahead with it. It&#8217;s not like you can assess your stats by analyzing your own logs or anything.</p>
+
+<p>Basic software security, lesson #1: You are only as secure as the weakest point in your system.</p>
+
+<p>It&#8217;s a valuable lesson.</p>
+
+				<!-- vCard and bio -->
+<div id="hcard-Dan-Glegg" class="vcard">
+	 <img src="/images/icons/dan-portrait-small.jpg" alt="Photo of Dan speaking at an event" title="Image thanks to Richard Dallaway" class="photo"/>
+	<p>
+		<a class="url fn" href="http://singlecell.angryamoeba.co.uk">Dan Glegg</a> is a software developer living and working in 
+		<span class="adr"><span class="locality">Brighton</span>, <span class="country-name">United Kingdom</span></span>. 
+		He works mainly with Ruby, Objective-C, Flex and W3C standards and spends most of his time 
+		<a class="url" href="/startup.html">working with startup companies</a>.
+	</p>
+	
+	<ul>
+		<li><a href="http://twitter.com/angryamoeba" class="url social twitter">Twitter</a></li>
+		<li><a href="http://www.linkedin.com/in/angryamoeba" class="url social linkedin">LinkedIn</a></li>
+		<li><a href="http://flickr.com/photos/angryamoeba/" class="url social flickr">Flickr</a></li>
+		<li><a href="http://github.com/danski/" class="url social github">Github</a></li>
+		<li><a href="http://delicious.com/danski" class="url social delicious">Del.icio.us</a></li>
+	</ul>								
+
+	<div class="tags">
+		<a href="http://kitchen.technorati.com/contacts/tag/startup">startup</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/entrepreneur">entrepreneur</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/developer">developer</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/engineer">engineer</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/technology">technology</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/consultancy">consultancy</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/ruby">ruby</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/flex">flex</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/objective-c">objective-c</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/iphone">iphone</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/mac">mac</a> 
+		<a href="http://kitchen.technorati.com/contacts/tag/w3c">w3c</a>
+	</div>
+</div>
+			</div>
+	
+</div>
+
+<div id="content" class="section forty-sixty">
+	
+
+	<div class="right box bright">
+		<div id="disqus_thread"></div>
+		<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a>		
+	</div>
+
+	
+</div>
 			
 			
 			<div id="footer" class="section fifty-fifty">
