@@ -21,9 +21,78 @@
 }
 .profile {
 	font-size: 1.2em;
+	text-shadow: #47a0c2 1px 1px 0;
 }
 	.profile em {
 		color: #291C16;
+		text-shadow: none;
 		font-style: normal;
 		font-weight: bold;
 	}
+	
+ul.current-projects {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	color: #47a0c2;
+}
+	.current-projects a {
+		
+	}
+	.current-projects li {
+		background: white 
+					url('../images/containers/project-blue.png') 
+					repeat-x 
+					bottom left;
+		border: 2px solid white;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		padding: 5px;
+		margin-bottom: 5px;
+	}
+	
+h2.social-links {
+	display: none;
+}
+ul.social-links {
+	background: white;
+	list-style-type: none;
+	padding: 10px;
+	margin: 0 0 10px 0;
+	height: 40px;
+}
+	ul.social-links li {
+		height: 16px;
+		float: left;
+		font-size: 0.8em;
+		margin-right: 5px;
+		padding-top: 10px;
+	}
+	
+	ul.social-links li a.social {
+		display: block;
+		height: 18px;
+		padding-left: 23px;
+		padding-right: 15px;
+		background-repeat: no-repeat;
+		background-position: 1px left;			
+	}
+	ul.social-links li a.delicious {
+		background-image: url('../images/icons/delicious-small.gif');
+	}
+	ul.social-links li a.github {
+		background-image: url('../images/icons/github-small.gif');
+	}
+	ul.social-links li a.flickr {
+		background-image: url('../images/icons/flickr-small.gif');
+	}
+	ul.social-links li a.linkedin {
+		background-image: url('../images/icons/linkedin-small.gif');
+	}
+	ul.social-links li a.twitter {
+		background-image: url('../images/icons/twitter-small.gif');
+	}
+	
+.tags {
+	display: none;
+}
