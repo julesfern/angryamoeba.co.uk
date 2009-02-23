@@ -1,2 +1,2 @@
 #!/bin/bash
-jekyll ./_jekyll_singlecell ./singlecell
+jekyll --pygments ./_jekyll_singlecell ./singlecell

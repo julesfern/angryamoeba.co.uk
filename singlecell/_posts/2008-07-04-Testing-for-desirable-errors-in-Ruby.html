@@ -54,43 +54,43 @@
 			<div class="right box">
 				 
 
-Sometimes, you <em>want</em> your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):
+<p>Sometimes, you <em>want</em> your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):</p>
 
-<pre class="ruby"><code>
-# In test_helper.rb:
-def assert_error_raised(errorklass=StandardError, &amp;block)
-     raised = false
-     begin
-       block.call 
-     rescue errorklass 
-       raised = true
-     end
-     # You will see this message if an error was not raised.
-     # If an error was raised which was not of the type you specified, then the test trace
-     # will be allowed to display the error as normal and the test will fail with an E.
-     assert raised, "Expected error #{errorklass.to_s} to be raised but error never encountered."
-end
+<code><notextile><div class="highlight"><pre><span class="c1"># In test_helper.rb:</span>
+<span class="k">def</span> <span class="nf">assert_error_raised</span><span class="p">(</span><span class="n">errorklass</span><span class="o">=</span><span class="no">StandardError</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">block</span><span class="p">)</span>
+     <span class="n">raised</span> <span class="o">=</span> <span class="kp">false</span>
+     <span class="k">begin</span>
+       <span class="n">block</span><span class="o">.</span><span class="n">call</span> 
+     <span class="k">rescue</span> <span class="n">errorklass</span> 
+       <span class="n">raised</span> <span class="o">=</span> <span class="kp">true</span>
+     <span class="k">end</span>
+     <span class="c1"># You will see this message if an error was not raised.</span>
+     <span class="c1"># If an error was raised which was not of the type you specified, then the test trace</span>
+     <span class="c1"># will be allowed to display the error as normal and the test will fail with an E.</span>
+     <span class="n">assert</span> <span class="n">raised</span><span class="p">,</span> <span class="s2">&quot;Expected error </span><span class="si">#{</span><span class="n">errorklass</span><span class="o">.</span><span class="n">to_s</span><span class="si">}</span><span class="s2"> to be raised but error never encountered.&quot;</span>
+<span class="k">end</span>
 
-# In your application code, let's say some_model.rb:
-def do_something_with(array)
-       unless array.is_a?(Array)
-              raise ArgumentError, "Argument of type #{array.class.to_s} given to SomeModel#do_something when argument must be of type Array"
-       end
-       continue_doing_something
-end
+<span class="c1"># In your application code, let&#39;s say some_model.rb:</span>
+<span class="k">def</span> <span class="nf">do_something_with</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+       <span class="k">unless</span> <span class="n">array</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Array</span><span class="p">)</span>
+              <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">&quot;Argument of type </span><span class="si">#{</span><span class="n">array</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">to_s</span><span class="si">}</span><span class="s2"> given to SomeModel#do_something when argument must be of type Array&quot;</span>
+       <span class="k">end</span>
+       <span class="n">continue_doing_something</span>
+<span class="k">end</span>
 
-# In your test suite:
-def test_error_generated_with_bad_argument_to_do_something_with
-       @some_model = SomeModel.new
-       # This test will pass
-       assert_error_raised(ArgumentError) do
-              @some_model.do_something_with "i'm not an array"
-       end
-       # This test will fail and dump the error via your test console's usual channel
-       assert_error_raised(RuntimeError) do
-              @some_model.do_something_with "neither am i"
-       end
-end</code></pre>
+<span class="c1"># In your test suite:</span>
+<span class="k">def</span> <span class="nf">test_error_generated_with_bad_argument_to_do_something_with</span>
+       <span class="vi">@some_model</span> <span class="o">=</span> <span class="no">SomeModel</span><span class="o">.</span><span class="n">new</span>
+       <span class="c1"># This test will pass</span>
+       <span class="n">assert_error_raised</span><span class="p">(</span><span class="no">ArgumentError</span><span class="p">)</span> <span class="k">do</span>
+              <span class="vi">@some_model</span><span class="o">.</span><span class="n">do_something_with</span> <span class="s2">&quot;i&#39;m not an array&quot;</span>
+       <span class="k">end</span>
+       <span class="c1"># This test will fail and dump the error via your test console&#39;s usual channel</span>
+       <span class="n">assert_error_raised</span><span class="p">(</span><span class="no">RuntimeError</span><span class="p">)</span> <span class="k">do</span>
+              <span class="vi">@some_model</span><span class="o">.</span><span class="n">do_something_with</span> <span class="s2">&quot;neither am i&quot;</span>
+       <span class="k">end</span>
+<span class="k">end</span>
+</pre></div></notextile></code>
 
 				<!-- vCard and bio -->
 <div id="hcard-Dan-Glegg" class="vcard">

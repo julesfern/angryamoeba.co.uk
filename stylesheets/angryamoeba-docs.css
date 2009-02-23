@@ -1,4 +1,7 @@
-/* @override http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-docs.css */
+/* @override 
+	http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-docs.css
+	http://www.angryamoeba.dev/stylesheets/angryamoeba-docs.css
+*/
 
 /*
 	Angry amoeba 2009 "Planetary" - Documents CSS
@@ -11,7 +14,7 @@
 */
 
 p {
-	margin: 10px 0;
+	margin: 0px 0 10px 0;
 	font-size: 0.9em;
 	line-height: 1.8em;
 }
@@ -84,12 +87,6 @@ code {
 	background: white;
 }
 
-pre {
-	display: block;
-	margin: 0;
-	color: white;
-}
-
 blockquote {
 }
 	.box .inner blockquote .inner {
@@ -102,3 +99,82 @@ blockquote {
 	.box.bright blockquote .inner {
 		background-color: #fcf7d5 !important;
 	}
+	
+code pre {
+	display: block;
+	margin: 0;
+	color: white;
+	overflow: auto;
+}
+
+/* @group Pygments theme */
+
+.hll { background-color: #ffffcc }
+.c { color: #EFEFEF; font-style: italic } 			/* Comment */
+.err { border: 1px solid #FF0000 } 					/* Error */
+.k { color: #ea007e; font-weight: bold } 			/* Keyword */
+.o { color: #666666 } 								/* Operator */
+
+.cm { color: #408090; font-style: italic } 			/* Comment.Multiline */
+.cp { color: #007020 } 								/* Comment.Preproc */
+.c1 { color: #EFEFEF; font-style: italic } 			/* Comment.Single */
+.cs { color: #408090; background-color: #fff0f0 } 	/* Comment.Special */
+
+.gd { color: #A00000 } 								/* Generic.Deleted */
+.ge { font-style: italic } 							/* Generic.Emph */
+.gr { color: #FF0000 } 								/* Generic.Error */
+.gh { color: #000080; font-weight: bold } 			/* Generic.Heading */
+.gi { color: #00A000 }								/* Generic.Inserted */
+.go { color: #303030 } 								/* Generic.Output */
+.gp { color: #c65d09; font-weight: bold } 			/* Generic.Prompt */
+.gs { font-weight: bold } 							/* Generic.Strong */
+.gu { color: #800080; font-weight: bold } 			/* Generic.Subheading */
+.gt { color: #0040D0 } 								/* Generic.Traceback */
+
+.kc { color: #007020; font-weight: bold } 			/* Keyword.Constant */
+.kd { color: #007020; font-weight: bold } 			/* Keyword.Declaration */
+.kn { color: #007020; font-weight: bold } 			/* Keyword.Namespace */
+.kp { color: #f00} 									/* Keyword.Pseudo */
+.kr { color: #007020; font-weight: bold } 			/* Keyword.Reserved */
+.kt { color: #902000 } 								/* Keyword.Type */
+
+.m { color: #208050 } 								/* Literal.Number */
+.s { color: #4070a0 } 								/* Literal.String */
+.w { color: #bbbbbb } 								/* Text.Whitespace */
+.mf { color: #208050 } 								/* Literal.Number.Float */
+.mh { color: #208050 } 								/* Literal.Number.Hex */
+.mi { color: #208050 } 								/* Literal.Number.Integer */
+.mo { color: #208050 } 								/* Literal.Number.Oct */
+.sb { color: #4070a0 } 								/* Literal.String.Backtick */
+.sc { color: #4070a0 } 								/* Literal.String.Char */
+.sd { color: #4070a0; font-style: italic } 			/* Literal.String.Doc */
+.s2 { color: #4070a0 } 								/* Literal.String.Double */
+.se { color: #4070a0; font-weight: bold } 			/* Literal.String.Escape */
+.sh { color: #4070a0 } 								/* Literal.String.Heredoc */
+.si { color: #70a0d0; font-style: italic } 			/* Literal.String.Interpol */
+.sx { color: #c65d09 } 								/* Literal.String.Other */
+.sr { color: #235388 } 								/* Literal.String.Regex */
+.s1 { color: #4070a0 } 								/* Literal.String.Single */
+.ss { color: #517918 } 								/* Literal.String.Symbol */
+.il { color: #208050 } 								/* Literal.Number.Integer.Long */
+
+.na { color: #4070a0 } 								/* Name.Attribute */
+.nb { color: #00ff1c} 								/* Name.Builtin */
+.nc { color: #0e84b5; font-weight: bold } 			/* Name.Class */
+.no { color: #60add5 } 								/* Name.Constant */
+.nd { color: #555555; font-weight: bold } 			/* Name.Decorator */
+.ni { color: #d55537; font-weight: bold } 			/* Name.Entity */
+.ne { color: #007020 } 								/* Name.Exception */
+.nf { color: #de9a00} 								/* Name.Function */
+.nl { color: #002070; font-weight: bold } 			/* Name.Label */
+.nn { color: #0e84b5; font-weight: bold } 			/* Name.Namespace */
+.nt { color: #062873; font-weight: bold } 			/* Name.Tag */
+.nv { color: #bb60d5 } 								/* Name.Variable */
+.bp { color: #007020 } 								/* Name.Builtin.Pseudo */
+.vc { color: #bb60d5 } 								/* Name.Variable.Class */
+.vg { color: #bb60d5 } 								/* Name.Variable.Global */
+.vi { color: #bb60d5 } 								/* Name.Variable.Instance */
+
+.ow { color: #007020; font-weight: bold } 			/* Operator.Word */
+
+/* @end */

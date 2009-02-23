@@ -1,4 +1,7 @@
-/* @override http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-about.css */
+/* @override 
+	http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-about.css
+	http://www.angryamoeba.dev/stylesheets/angryamoeba-about.css
+*/
 
 /*
 	Angry amoeba 2009 "Planetary" - About/Bio CSS
@@ -55,16 +58,22 @@ h2.social-links {
 	display: none;
 }
 ul.social-links {
-	background: white;
-	list-style-type: none;
-	padding: 10px;
-	margin: 0 0 10px 0;
 	height: 40px;
+	padding: 10px 40px;
+	margin: 0 0 10px 0;
+	list-style-type: none;
+	background: white 
+				url('../images/containers/project-blue.png') 
+				repeat-x 
+				bottom left;
+	border: 2px solid white;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 	ul.social-links li {
 		height: 16px;
 		float: left;
-		font-size: 0.8em;
+		font-size: 1.2em;
 		margin-right: 5px;
 		padding-top: 10px;
 	}
