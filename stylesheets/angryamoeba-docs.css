@@ -18,7 +18,7 @@ p {
 	font-size: 0.9em;
 	line-height: 1.8em;
 }
-h2 {
+h2, #focus h1.left {
 	color: white;
 	font-weight: normal;
 	font-size: 2em;
@@ -31,11 +31,11 @@ h2 {
 	h2 a {
 		color: white;
 	}
-	#focus h2 a {
+	#focus h1 a, #focus h2 a {
 		color: #291c16;
 	}
 	
-	h2 .date {
+	#focus h1 .date, h2 .date {
 		display: block;
 		font-size: 0.9em;
 		font-weight: bold;

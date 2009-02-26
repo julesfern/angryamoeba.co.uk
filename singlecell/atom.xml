@@ -4,7 +4,7 @@
  <title>Singlecell, the Angry amoeba weblog</title>
  <link href="http://www.angryamoeba.co.uk/singlecell/atom.xml" rel="self"/>
  <link href="http://www.angryamoeba.co.uk/singlecell/"/>
- <updated>2009-02-23T23:16:56+00:00</updated>
+ <updated>2009-02-26T01:17:54+00:00</updated>
  <id>http://www.angryamoeba.co.uk/singlecell</id>
  <author>
    <name>Dan Glegg</name>
@@ -357,7 +357,7 @@ if ((typeof(gConvert)!="undefined")&amp;amp;&amp;amp;gConvert&amp;amp;&amp;amp;(
 
 &lt;p&gt;Sometimes, you &lt;em&gt;want&lt;/em&gt; your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&amp;#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):&lt;/p&gt;
 
-&lt;code&gt;&lt;notextile&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# In test_helper.rb:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# In test_helper.rb:&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;assert_error_raised&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;errorklass&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="no"&gt;StandardError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;amp&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="n"&gt;block&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
      &lt;span class="n"&gt;raised&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kp"&gt;false&lt;/span&gt;
      &lt;span class="k"&gt;begin&lt;/span&gt;
@@ -391,8 +391,7 @@ if ((typeof(gConvert)!="undefined")&amp;amp;&amp;amp;gConvert&amp;amp;&amp;amp;(
               &lt;span class="vi"&gt;@some_model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;do_something_with&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;neither am i&amp;quot;&lt;/span&gt;
        &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/notextile&gt;&lt;/code&gt;
-</content>
+&lt;/pre&gt;&lt;/div&gt;</content>
  </entry>
  
  <entry>

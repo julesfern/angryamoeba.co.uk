@@ -5,7 +5,7 @@ layout: post
 
 <p>Sometimes, you <em>want</em> your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):</p>
 
-<code>{% highlight ruby %}
+{% highlight ruby %}
 # In test_helper.rb:
 def assert_error_raised(errorklass=StandardError, &amp;block)
      raised = false
@@ -40,4 +40,4 @@ def test_error_generated_with_bad_argument_to_do_something_with
               @some_model.do_something_with "neither am i"
        end
 end
-{% endhighlight %}</code>
+{% endhighlight %}

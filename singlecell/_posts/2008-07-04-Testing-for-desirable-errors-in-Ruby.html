@@ -38,7 +38,6 @@
 		<ol class="sub navigation">
 			<li><h1><a href="/" class="home"><img src="/images/brand/amoeba-text-small.png" alt="Dan Glegg, Angry amoeba" /></a></h1></li>
 			<li><a href="/singlecell/" class="blog">Singlecell Blog</a></li>
-			<li><a href="/startup.html" class="consulting">Services for Startups</a></li>
 			<li><a href="/about.html" class="about">About</a></li>
 		</ol>
 </div>			
@@ -46,17 +45,17 @@
 			
 <div id="focus" class="section forty-sixty">
 
-			<h2 class="left">
+			<h1 class="left">
 				<a href="/singlecell">Testing for desirable errors in Ruby</a>
 				<span class="date"></span>
-			</h2>
+			</h1>
 			
 			<div class="right box">
 				 
 
 <p>Sometimes, you <em>want</em> your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):</p>
 
-<code><notextile><div class="highlight"><pre><span class="c1"># In test_helper.rb:</span>
+<div class="highlight"><pre><span class="c1"># In test_helper.rb:</span>
 <span class="k">def</span> <span class="nf">assert_error_raised</span><span class="p">(</span><span class="n">errorklass</span><span class="o">=</span><span class="no">StandardError</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">block</span><span class="p">)</span>
      <span class="n">raised</span> <span class="o">=</span> <span class="kp">false</span>
      <span class="k">begin</span>
@@ -90,8 +89,7 @@
               <span class="vi">@some_model</span><span class="o">.</span><span class="n">do_something_with</span> <span class="s2">&quot;neither am i&quot;</span>
        <span class="k">end</span>
 <span class="k">end</span>
-</pre></div></notextile></code>
-
+</pre></div>
 				<!-- vCard and bio -->
 <div id="hcard-Dan-Glegg" class="vcard">
 	 <img src="/images/icons/dan-portrait-small.jpg" alt="Photo of Dan speaking at an event" title="Image thanks to Richard Dallaway" class="photo"/>
@@ -99,7 +97,7 @@
 		<a class="url fn" href="http://www.angryamoeba.co.uk/singlecell/">Dan Glegg</a> is a software developer living and working in 
 		<span class="adr"><span class="locality">Brighton</span>, <span class="country-name">United Kingdom</span></span>. 
 		He works mainly with Ruby, Objective-C, Flex and W3C standards and spends most of his time 
-		<a class="url" href="/startup.html">working with startup companies</a>.
+		developing products, often with startup companies.
 	</p>
 	
 	<ul>
@@ -161,7 +159,6 @@
 	<ol class="navigation right">
 		<li><a href="/" class="home">Home</a></li>
 		<li><a href="/singlecell/" class="blog" rel="external">Singlecell Blog</a></li>
-		<li><a href="/startup.html" class="consulting">Services for Startups</a></li>
 		<li><a href="/about.html" class="about">About</a></li>
 		<li><a href="http://validator.w3.org/check?uri=referer" rel="external">Validate HTML</a></li>
 	</ol>				

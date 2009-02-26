@@ -65,6 +65,29 @@
 				position: relative;
 				top: 8px;
 			}
+			
+#archive {
+	
+}
+	#archive div {
+		clear: both;
+	}
+	#archive .even {
+	
+	}
+	#archive .odd {
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		background: #000;
+	}
+	#archive h2 {
+		width: 280px;
+		float: left;
+		clear: none;
+		margin-right: 5px;
+		font-size: 1.3em;
+		padding: 10px;
+	}
 
 .vcard {
 	background: #E1F5FD;

@@ -23,10 +23,10 @@
 	line-height: 1.3em;
 }
 .profile {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	text-shadow: #47a0c2 1px 1px 0;
 }
-	.profile em {
+	.profile em, .profile abbr {
 		color: #291C16;
 		text-shadow: none;
 		font-style: normal;
@@ -48,10 +48,11 @@ ul.current-projects {
 					repeat-x 
 					bottom left;
 		border: 2px solid white;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		padding: 5px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		padding: 10px;
 		margin-bottom: 5px;
+		text-shadow: white 1px 1px 0;
 	}
 	
 h2.social-links {
@@ -59,7 +60,7 @@ h2.social-links {
 }
 ul.social-links {
 	height: 40px;
-	padding: 10px 40px;
+	padding: 10px 0px 10px 30px;
 	margin: 0 0 10px 0;
 	list-style-type: none;
 	background: white 
@@ -67,14 +68,14 @@ ul.social-links {
 				repeat-x 
 				bottom left;
 	border: 2px solid white;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 }
 	ul.social-links li {
 		height: 16px;
 		float: left;
 		font-size: 1.2em;
-		margin-right: 5px;
+		margin-right: 10px;
 		padding-top: 10px;
 	}
 	
@@ -84,7 +85,7 @@ ul.social-links {
 		padding-left: 23px;
 		padding-right: 15px;
 		background-repeat: no-repeat;
-		background-position: 1px left;			
+		background-position: 1px left;
 	}
 	ul.social-links li a.delicious {
 		background-image: url('../images/icons/delicious-small.gif');

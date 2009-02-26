@@ -38,7 +38,6 @@
 		<ol class="sub navigation">
 			<li><h1><a href="/" class="home"><img src="/images/brand/amoeba-text-small.png" alt="Dan Glegg, Angry amoeba" /></a></h1></li>
 			<li><a href="/singlecell/" class="blog">Singlecell Blog</a></li>
-			<li><a href="/startup.html" class="consulting">Services for Startups</a></li>
 			<li><a href="/about.html" class="about">About</a></li>
 		</ol>
 </div>			
@@ -79,7 +78,7 @@
 		<a class="url fn" href="http://www.angryamoeba.co.uk/singlecell/">Dan Glegg</a> is a software developer living and working in 
 		<span class="adr"><span class="locality">Brighton</span>, <span class="country-name">United Kingdom</span></span>. 
 		He works mainly with Ruby, Objective-C, Flex and W3C standards and spends most of his time 
-		<a class="url" href="/startup.html">working with startup companies</a>.
+		developing products, often with startup companies.
 	</p>
 	
 	<ul>
@@ -271,292 +270,54 @@ merb-gen resource user</code></pre>
 	
 		</div>
 
-	
-		<div class="section forty-sixty">
-	
 
-			<h2 class="left">
+<div id="archive" class="section forty-sixty">
+	<div>
+		
+			<h2 class="odd">
 				<a href="/singlecell/2008/11/13/Create-with-Context-on-How-people-really-use-the-iPhone.html">Create with Context on How people really use the iPhone</a>
 				<span class="date">13 Nov, 2008</span>
 			</h2>
 			
-			<div class="right box">
-				 
-
-<p>The guys and girls over at <a href="http://www.createwithcontext.com/">Create with Context</a> have created a very interesting document detailing the results of their independent user testing of the iPhone, and in a stroke of sheer brilliance they&#8217;ve <a href="http://www.createwithcontext.com/how-people-really-use-the-iphone.html">made it available to all of us</a>.</p>
-
-<p>Their look into usability of the in-built iPhone apps turns up some interesting points about Apple&#8217;s iconography. Many users note confusion around the purpose of some icons, most notably between search and zoom. It seems that some users expect magnifying glass icons to either increase the current zoom level, or to reset the zoom level to a full-page view. This is unfortunate, because the magnifying glass is, on the desktop, the canonical icon for search - so I&#8217;m curious to see if these results are specific to user interfaces that are so centered around zoom and pan, or if we&#8217;ve been missing problems with desktop iconography all along. It&#8217;s also possible that the relatively cramped conditions on the iPhone&#8217;s screen give little opportunity to space controls out and give them distinct context.</p>
-
-<p>Most useful for my fellow Cocoa Touch developers is the section on App Store experiences, which gives insight into app pricing, which App Store listings and the impact of positive/negative reviews on the download page.</p>
-
-<p>It&#8217;s a <a href="http://www.createwithcontext.com/how-people-really-use-the-iphone.html">highly recommended download</a> and I&#8217;d like to thank Create with Context for making it available to all of us.</p>
-
-				
-				
-					<a class="fold" href="/singlecell/2008/11/13/Create-with-Context-on-How-people-really-use-the-iPhone.html#disqus_thread">
-						Permalink to this article
-					</a>
-				
-
-				
-				
-			</div>
-	
-		</div>
-
-	
-		<div class="section forty-sixty">
-	
-
-			<h2 class="left">
+		
+			<h2 class="even">
 				<a href="/singlecell/2008/08/28/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider.html">Barclays online banking uses sketchy external stats provider, is only as secure as a sketchy external stats provider.</a>
 				<span class="date">28 Aug, 2008</span>
 			</h2>
 			
-			<div class="right box">
-				 
-
-<p>Basic software security, lesson #1: You are only as secure as the weakest point in your system.</p>
-
-<p>It&#8217;s a valuable lesson. Earlier this year Barclays made a big show of security, even going so far as to <a href="http://www.barclays.co.uk/pinsentry/">mail two-factor authentication devices to their customers</a> in an attempt to prevent online banking fraud. That&#8217;s a big investment.</p>
-
-<p>Unfortunately for Barclays, it doesn&#8217;t matter, and their money was wasted. Because if you want to compromise the computers of Barclays account holders, there&#8217;s no need to circumvent the giant, thoroughly-audited security schemes that are almost certainly in place. Nope, you just need to compromise their analytics provider.</p>
-
-<img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg" alt="code fail"/><p>That&#8217;s right, every page load from your &#8220;private&#8221;, &#8220;secure&#8221; banking pages is also communicating directly with Webtrends&#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &#8220;<a href="http://www.google.co.uk/search?q=webtrendslive">webtrendslive</a>&#8221;, by the way, you&#8217;ll notice that malware reports actually outrank the actual product site. It&#8217;s a nice touch.</p>
-
-
-				
-				
-					<a class="fold folded" href="/singlecell/2008/08/28/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider.html#disqus_thread">
-						Read full article
-					</a>
-				
-
-				
-				
-			</div>
-	
-		</div>
-
-	
-		<div class="section forty-sixty">
-	
-
-			<h2 class="left">
+		
+			<h2 class="odd">
 				<a href="/singlecell/2008/07/04/Testing-for-desirable-errors-in-Ruby.html">Testing for desirable errors in Ruby</a>
 				<span class="date">04 Jul, 2008</span>
 			</h2>
-			
-			<div class="right box">
-				 
-
-<p>Sometimes, you <em>want</em> your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):</p>
-
-<code><notextile><div class="highlight"><pre><span class="c1"># In test_helper.rb:</span>
-<span class="k">def</span> <span class="nf">assert_error_raised</span><span class="p">(</span><span class="n">errorklass</span><span class="o">=</span><span class="no">StandardError</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">block</span><span class="p">)</span>
-     <span class="n">raised</span> <span class="o">=</span> <span class="kp">false</span>
-     <span class="k">begin</span>
-       <span class="n">block</span><span class="o">.</span><span class="n">call</span> 
-     <span class="k">rescue</span> <span class="n">errorklass</span> 
-       <span class="n">raised</span> <span class="o">=</span> <span class="kp">true</span>
-     <span class="k">end</span>
-     <span class="c1"># You will see this message if an error was not raised.</span>
-     <span class="c1"># If an error was raised which was not of the type you specified, then the test trace</span>
-     <span class="c1"># will be allowed to display the error as normal and the test will fail with an E.</span>
-     <span class="n">assert</span> <span class="n">raised</span><span class="p">,</span> <span class="s2">&quot;Expected error </span><span class="si">#{</span><span class="n">errorklass</span><span class="o">.</span><span class="n">to_s</span><span class="si">}</span><span class="s2"> to be raised but error never encountered.&quot;</span>
-<span class="k">end</span>
-
-<span class="c1"># In your application code, let&#39;s say some_model.rb:</span>
-<span class="k">def</span> <span class="nf">do_something_with</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-       <span class="k">unless</span> <span class="n">array</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Array</span><span class="p">)</span>
-              <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">&quot;Argument of type </span><span class="si">#{</span><span class="n">array</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">to_s</span><span class="si">}</span><span class="s2"> given to SomeModel#do_something when argument must be of type Array&quot;</span>
-       <span class="k">end</span>
-       <span class="n">continue_doing_something</span>
-<span class="k">end</span>
-
-<span class="c1"># In your test suite:</span>
-<span class="k">def</span> <span class="nf">test_error_generated_with_bad_argument_to_do_something_with</span>
-       <span class="vi">@some_model</span> <span class="o">=</span> <span class="no">SomeModel</span><span class="o">.</span><span class="n">new</span>
-       <span class="c1"># This test will pass</span>
-       <span class="n">assert_error_raised</span><span class="p">(</span><span class="no">ArgumentError</span><span class="p">)</span> <span class="k">do</span>
-              <span class="vi">@some_model</span><span class="o">.</span><span class="n">do_something_with</span> <span class="s2">&quot;i&#39;m not an array&quot;</span>
-       <span class="k">end</span>
-       <span class="c1"># This test will fail and dump the error via your test console&#39;s usual channel</span>
-       <span class="n">assert_error_raised</span><span class="p">(</span><span class="no">RuntimeError</span><span class="p">)</span> <span class="k">do</span>
-              <span class="vi">@some_model</span><span class="o">.</span><span class="n">do_something_with</span> <span class="s2">&quot;neither am i&quot;</span>
-       <span class="k">end</span>
-<span class="k">end</span>
-</pre></div></notextile></code>
-
-				
-				
-					<a class="fold" href="/singlecell/2008/07/04/Testing-for-desirable-errors-in-Ruby.html#disqus_thread">
-						Permalink to this article
-					</a>
-				
-
-				
-				
-			</div>
-	
-		</div>
-
-	
-		<div class="section forty-sixty">
-	
-
-			<h2 class="left">
+			</div><div>
+		
+			<h2 class="even">
 				<a href="/singlecell/2008/07/03/Chirrup-0-81-released.html">Chirrup 0.81 released</a>
 				<span class="date">03 Jul, 2008</span>
 			</h2>
 			
-			<div class="right box">
-				 
-
-<p>Hi there, sorry I haven&#8217;t written in a while. It&#8217;s this damned work business. Some actual content is promised soon.</p>
-
-<p>Anyhow - A rather nasty text-escaping bug popped up in Chirrup, so I&#8217;ve issued a patch in version 0.81 which is <a href="http://chirrup.angryamoeba.co.uk">available for download</a> now.</p>
-
-<p>The problem: Badly-formatted tweets containing certain special characters caused Chirrup&#8217;s JSON to fail parsing and the Chirrup UI to not display.</p>
-
-<p>The fix: Improved sanitisation routine for tweet data being sent over JSON.</p>
-
-<p>Happy Tweeting.</p>
-
-				
-				
-					<a class="fold" href="/singlecell/2008/07/03/Chirrup-0-81-released.html#disqus_thread">
-						Permalink to this article
-					</a>
-				
-
-				
-				
-			</div>
-	
-		</div>
-
-	
-		<div class="section forty-sixty">
-	
-
-			<h2 class="left">
+		
+			<h2 class="odd">
 				<a href="/singlecell/2008/05/24/How-to-force-Git-to-ignore-files.html">How to force Git to ignore files</a>
 				<span class="date">24 May, 2008</span>
 			</h2>
 			
-			<div class="right box">
-				 
-
-Just documenting this one for later, really. If you&#8217;re setting up a git repository and you need to ignore certain types of file - logs, or python bytecode (not that I&#8217;m dealing with those two problems at this exact moment or anything), the procedure is quite simple:
-
-<pre><code>
-# Get to the hidden .git directory within your project.
-cd /path/to/your/project
-cd .git/info
-# in .git/info is a file named "exclude". Open it in whatever you like. Here we'll open it with Textmate.
-mate exclude
-</code></pre>
-
-The file&#8217;s contents are, by default, commented out. To add your own ignore rules, just add each rule on a new line. Here&#8217;s a simple example from a Python project which prevents bytecode and Textmate project files from being committed:
-
-<pre><code>
-*.pyc
-*.tmproj
-</code></pre>
-
-In a Rails project, you&#8217;d likely want a set of rules like the following <em>completely untested</em> fragment:
-
-<pre><code>
-log
-*.log
-*.pid
-tmp
-</code></pre>
-
-				
-				
-					<a class="fold" href="/singlecell/2008/05/24/How-to-force-Git-to-ignore-files.html#disqus_thread">
-						Permalink to this article
-					</a>
-				
-
-				
-				
-			</div>
-	
-		</div>
-
-	
-		<div class="section forty-sixty">
-	
-
-			<h2 class="left">
+		
+			<h2 class="even">
 				<a href="/singlecell/2008/05/20/Chirrup-launched-for-public-use.html">Chirrup launched for public use</a>
 				<span class="date">20 May, 2008</span>
 			</h2>
-			
-			<div class="right box">
-				 
-
-<p>Well, that&#8217;s another silly little side-project in the can. If you&#8217;d like to have Twitter comments on your blog, wiki, website, or basically anything with a URL, head on over to <a href="http://chirrup.angryamoeba.co.uk">chirrup.angryamoeba.co.uk</a> and download Chirrup to get started!</p>
-
-<p>Thanks to the <a href="http://www.videojuicer.com">Videojuicer</a> dev team for helping with testing - <a href="http://skein.tumblr.com/">Ted Han</a>, <a href="http://sd2.com/">John Carlin</a>, <a href="http://aelius.net/">Alex Nichol</a> and <a href="http://mochapowered.com/">Adam Livesley</a>. And thanks to Adam for turning Chirrup into a <a href="http://chirrup.angryamoeba.co.uk/docs/wordpress.html">wordpress plugin</a> - this functionality is included in the main <a href="http://chirrup.angryamoeba.co.uk/download.html">download package </a>.</p>
-
-<p>Thanks for bearing with us over the testing period, and have fun with Chirrup!</p>
-
-				
-				
-					<a class="fold" href="/singlecell/2008/05/20/Chirrup-launched-for-public-use.html#disqus_thread">
-						Permalink to this article
-					</a>
-				
-
-				
-				
-			</div>
-	
-		</div>
-
-	
-		<div class="section forty-sixty">
-	
-
-			<h2 class="left">
+			</div><div>
+		
+			<h2 class="odd">
 				<a href="/singlecell/2008/05/13/Chirrup-Twitter-comments-for-your-blog.html">Chirrup - Twitter comments for your blog!</a>
 				<span class="date">13 May, 2008</span>
 			</h2>
 			
-			<div class="right box">
-				 
-
-<p>UPDATE: Chirrup is now available to the public. Visit <a href="http://chirrup.angryamoeba.co.uk">chirrup.angryamoeba.co.uk</a> to get your copy.</p>
-
-<p>You might&#8217;ve noticed some new features here at Singlecell - we&#8217;ve been working on a library called Chirrup, which allows you to include comments from Twitter in your pages.</p>
-
-<p>The idea behind Chirrup is to provide a more natural relationship between dialogue happening on individual pages and dialogue happening in public on applications such as Twitter. People are discussing content in comment sections, and then duplicating the discussion on Twitter - so why not marry the two up?</p>
-
-<p>When you post a comment to a page via Chirrup, your comment is sent as an @reply to the blog&#8217;s owner, and contains both the URL and your comment. This means that your comments are completely legible to the rest of Twitter, and contain no unnecessary data.</p>
-
-<p>Chirrup&#8217;s server-side component then slurps up the blog owner&#8217;s @replies and sorts through them for Chirrup responses. It supports compression and decompression of tinyurl&#8217;s, so comments sent with all major Twitter clients can be recognised by Chirrup&#8217;s parser.</p>
-
-<p>Chirrup will enjoy a short testing period on this page while I snarf down huge piles of my own dog food, and will then be released under a <a href="http://creativecommons.org">Creative Commons</a> license.</p>
-
-<p>In the meantime, if you find a bug in Chirrup&#8217;s behaviour, I&#8217;d be obliged if you&#8217;d post it to the <a href="http://www.bugtails.com/projects/156/">Chirrup bugtracker</a> on <a href="http://tailshq.com">Tails</a>.</p>
-
-				
-				
-					<a class="fold" href="/singlecell/2008/05/13/Chirrup-Twitter-comments-for-your-blog.html#disqus_thread">
-						Permalink to this article
-					</a>
-				
-
-				
-				
-			</div>
-	
-		</div>
-
+		
+	</div>
+</div>
 
 <script type="text/javascript">
 //<![CDATA[
@@ -594,7 +355,6 @@ tmp
 	<ol class="navigation right">
 		<li><a href="/" class="home">Home</a></li>
 		<li><a href="/singlecell/" class="blog" rel="external">Singlecell Blog</a></li>
-		<li><a href="/startup.html" class="consulting">Services for Startups</a></li>
 		<li><a href="/about.html" class="about">About</a></li>
 		<li><a href="http://validator.w3.org/check?uri=referer" rel="external">Validate HTML</a></li>
 	</ol>				
