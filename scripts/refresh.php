@@ -1,8 +1,8 @@
 <? 
 	chdir("..");
 	$op = -1;
-	$script = (getcwd()."/scripts/jekyll.sh");
-	echo("executing ".$script."<br />");
+	$script = ("./scripts/jekyll.sh");
+	echo("executing ".$script." in working directory ".getcwd()."<br />");
 	passthru($script, $op);
 ?>
 
