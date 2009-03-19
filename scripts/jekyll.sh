@@ -1,4 +1,7 @@
 #!/bin/bash
-echo `git pull`
-echo `jekyll --pygments ./_jekyll_singlecell ./singlecell`
-echo "Complete"
+echo "Running jekyll recompile in directory" `pwd` '<br />';
+echo "Updating from git origin...<br />";
+git pull
+echo "Recompiling and highlighting with Jekyll...<br />";
+jekyll --pygments ./_jekyll_singlecell ./singlecell
+exit 0;

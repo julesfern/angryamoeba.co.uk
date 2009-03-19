@@ -1,16 +1,9 @@
 <? 
 	chdir("..");
-	$op = array();
-	$status = -1;
-	exec("./scripts/jekyll.sh"), $op, $status);
+	$op = -1;
+	$script = (getcwd()."/scripts/jekyll.sh");
+	echo("executing ".$script."<br />");
+	passthru($script, $op);
 ?>
-<?=
-	getcwd();
-?>
-<?
-	foreach($op as $line) {
-		echo($line);
-		echo("<br />");
-	}
-	echo("Exited with status ".$status);
-?>
+
+Exited with status <?= $op ?>
