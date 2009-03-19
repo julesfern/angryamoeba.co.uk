@@ -23,8 +23,8 @@ layout: default
 				{{post.content | before_fold}}
 				
 				{% if post.folded %}
-					<a class="fold folded" href="/singlecell{{post.url}}#disqus_thread">
-						Read full article
+					<a class="fold folded" href="/singlecell{{post.url}}">
+						Read full article and comments
 					</a>
 				{% else %}
 					<a class="fold" href="/singlecell{{post.url}}#disqus_thread">
