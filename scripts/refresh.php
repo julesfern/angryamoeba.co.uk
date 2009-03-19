@@ -2,7 +2,7 @@
 	chdir("..");
 	$op = array();
 	$status = -1;
-	exec((getcwd()."/scripts/jekyll.sh"), $op, $status);
+	exec("./scripts/jekyll.sh"), $op, $status);
 ?>
 <?=
 	getcwd();
