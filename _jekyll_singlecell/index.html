@@ -43,12 +43,12 @@ layout: default
 
 <div id="archive" class="section forty-sixty">
 	<div>
-		{% for post in site.posts offset:5 %}
-			<h2 class="{% cycle 'odd','even' %}">
+		{% for post in site.posts offset:5 %}		
+			<h2 class="{% cycle 'toggler': 'odd','even' %}">
 				<a href="/singlecell{{post.url}}">{{post.title}}</a>
 				<span class="date">{{post.date | date: "%d %b, %Y"}}</span>
 			</h2>
-			{% cycle '','','</div><div>' %}
+			{% cycle 'closer': ' ',' ','</div><div>' %}
 		{% endfor %}
 	</div>
 </div>
