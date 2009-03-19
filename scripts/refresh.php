@@ -4,6 +4,9 @@
 	$status = -1;
 	exec((getcwd()."/scripts/jekyll.sh"), $op, $status);
 ?>
+<?=
+	getcwd();
+?>
 <?
 	foreach($op as $line) {
 		echo($line);
