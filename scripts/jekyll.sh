@@ -1,11 +1,16 @@
 #!/bin/bash
-echo "Running jekyll recompile in directory" `pwd` '<br />';
+
 echo "Updating from git origin...<br />";
 
-cd `pwd` && git pull;
+git pull > last_pull
+sleep 20
+echo "`cat last_pull` <br />"
 
-echo "Recompiling and highlighting with Jekyll...<br />";
+echo "Git pull completed, recompiling jekyll <br />"
 
-jekyll --pygments "`pwd`/_jekyll_singlecell" "`pwd`/singlecell"
+echo "" > last_jekyll
+jekyll --pygments "`pwd`/_jekyll_singlecell" "`pwd`/singlecell" > last_jekyll
+sleep 10
+echo "`cat last_jekyll`<br />"
 
 exit 0;
