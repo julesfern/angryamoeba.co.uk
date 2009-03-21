@@ -10,8 +10,7 @@
 	ob_start(); 
 
 	chdir("..");
-	//$script = ("./scripts/jekyll.sh");
-	$script = "git pull && jekyll --pygments ./_jekyll_singlecell ./singlecell";
+	$script = "git pull && jekyll --pygments --lsi ./_jekyll_singlecell ./singlecell";
 	
 	echo("executing ".$script." in working directory ".getcwd()."<br />");
 	passthru($script);

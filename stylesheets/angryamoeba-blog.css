@@ -89,6 +89,35 @@
 		padding: 10px;
 	}
 
+.related {
+	margin-top: 10px;
+	padding: 10px;
+	background: #EFEFEF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	
+}
+	.box .related h4 {
+		border: none;
+	}
+	.related ul {
+		list-style-type: none;
+	}
+	.related abbr {
+		font-size: 0.6em;
+		color: #999;
+		text-shadow: #FFF 1px 1px;
+		display: block;
+		float: left;
+	}
+	.related a {
+		display: block;
+		margin-left: 60px;
+	}
+	.related li {
+		margin-bottom: 5px;
+	}
+
 .vcard {
 	background: #E1F5FD;
 	padding: 10px;

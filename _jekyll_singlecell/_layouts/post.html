@@ -12,6 +12,15 @@ layout: default
 			<div class="right box">
 				{{content}}
 				{% include dan-bio.html %}
+				
+				<div class="related">
+					<h4>Related posts</h4>
+					<ul>
+						{% for post in site.related_posts limit:3 %}
+						      <li><abbr title="{{ post.date }}">{{ post.date | date_to_string }}</abbr> <a href="/singlecell{{ post.url }}">{{ post.title }}</a></li>
+						    {% endfor %}
+					</ul>
+				</div>
 			</div>
 	
 </div>
