@@ -1,7 +1,6 @@
 ---
 title: Design competitions are PR you don't need.
 layout: post
-published: false
 ---
 
 A little exposition
