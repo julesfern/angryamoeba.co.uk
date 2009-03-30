@@ -4,15 +4,19 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Singlecell, the Angry amoeba weblog</title>
- <link href="http://www.angryamoeba.co.uk/singlecell/atom.xml" rel="self"/>
- <link href="http://www.angryamoeba.co.uk/singlecell/"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://www.angryamoeba.co.uk/singlecell</id>
- <author>
-   <name>Dan Glegg</name>
-   <email>dan@angryamoeba.co.uk</email>
- </author>
+	<title>Singlecell, the Angry amoeba weblog</title>
+
+	<link href="http://www.angryamoeba.co.uk/singlecell/atom.xml" rel="self"/>
+	<link href="http://www.angryamoeba.co.uk/singlecell/"/>
+	
+	<icon>http://angryamoeba.co.uk/images/icons/favicon.png</icon>
+	
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>http://www.angryamoeba.co.uk/singlecell</id>
+	<author>
+		<name>Dan Glegg</name>
+		<email>dan@angryamoeba.co.uk</email>
+	</author>
  
  {% for post in site.posts %}
  <entry>
