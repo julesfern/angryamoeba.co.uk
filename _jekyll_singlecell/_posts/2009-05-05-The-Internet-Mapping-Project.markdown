@@ -3,7 +3,7 @@ title: The Internet Mapping Project
 layout: post
 ---
 
-[Kevin Kelly][1], of *Wired* fame, has launched a lovely collaborative project to map the Internet, sensibly named [The Internet Mapping Project][project].
+[Kevin Kelly][kk], of *Wired* fame, has launched a lovely collaborative project to map the Internet, sensibly named [The Internet Mapping Project][project].
 
 The goal is for individuals to try and map the hairy N-dimensional structure of the Internet into a two-dimensional representation that matches their own interpretation of it, but the interesting twist is that contributors are expected to place their 'home' on the map. The split in designs is interesting - some contributors have drawn the internet from a [position of consumption][consumption], placing their home at the center of a network of services, while others have drawn their maps from a [position of oversight][oversight], trying to make sense of the many brands and roles that dominate our lives online. 
 
