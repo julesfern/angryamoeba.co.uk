@@ -13,7 +13,7 @@ What I ended up with is basically a water cycle diagram from year 10 geography c
 
 <a href="http://www.flickr.com/photos/angryamoeba/3597068559/sizes/l/"><img src="http://files.angryamoeba.co.uk/crap/imapmed.png" /></a>
 
-<small>*which means I would, under the reign of my former teacher, have lost marks for failing to add artistic flair to what is intended to be a scientific topic.</small>
+*which means I would, under the reign of my former teacher, have lost marks for failing to add artistic flair to what is intended to be a scientific topic.
 
 
 [kk]: http://www.kk.org
