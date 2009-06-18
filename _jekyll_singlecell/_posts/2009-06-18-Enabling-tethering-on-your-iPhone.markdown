@@ -21,8 +21,9 @@ Whether or not the operators will act on this finding is unknown.
 
 Disclosure: I already hold a data contract with O2 and don't plan on getting rid of it, as I find the USB modem very useful.
 
-<sup>1</sup>. May in fact be strictly limited
-<sup>2</sup>. The use of terminology like "unlimited within fair use" is a long-standing tradition among mobile operators, who have no problem using double, triple or even quintuple negatives if it'll shift more phones.
+Footnotes:
+1. May in fact be strictly limited
+2. The use of terminology like "unlimited within fair use" is a long-standing tradition among mobile operators, who have no problem using double, triple or even quintuple negatives if it'll shift more phones.
 
 
 [o2fail]: http://twitter.com/#search?q=o2fail 
