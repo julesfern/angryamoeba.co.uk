@@ -6,26 +6,16 @@ layout: post
 The [Kübler-Ross][wikipedia] model is a classic pattern that defines how people deal with great loss or catastrophe. It's the five-stage grief model so beloved by TV scriptwriters - [an array of shows][tvrefs] have made use of the model, most notably [this brilliant episode of The Simpsons][simpsons] in which Homer learns of his own impending demise:
 
 <blockquote>
-Hibbert: There are five stages. First is denial.
-
-Homer: No way, because I'm not dying.
-
-Hibbert: Next comes anger.
-
-Homer: Why you little...
-
-Hibbert: After that comes fear.
-
-Homer: What's after fear? What's after fear?
-
-Hibbert: Bargaining.
-
-Homer: Doc, you've got to get me out of this. I'll make it worth your while.
-
-Hibbert: And finally, comes acceptance.
-
-Homer: Well, we've all got to go sometime.
-
+Hibbert: There are five stages. First is denial.<br />
+Homer: No way, because I'm not dying.<br />
+Hibbert: Next comes anger.<br />
+Homer: Why you little...<br />
+Hibbert: After that comes fear.<br />
+Homer: What's after fear? What's after fear?<br />
+Hibbert: Bargaining.<br />
+Homer: Doc, you've got to get me out of this. I'll make it worth your while.<br />
+Hibbert: And finally, comes acceptance.<br />
+Homer: Well, we've all got to go sometime.<br />
 Hibbert: Mr. Simpson, your progress is remarkable!
 </blockquote>
 	
