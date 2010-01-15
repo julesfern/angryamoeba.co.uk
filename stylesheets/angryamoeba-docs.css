@@ -1,6 +1,7 @@
 /* @override 
 	http://www.angryamoeba.dev:8081/stylesheets/angryamoeba-docs.css
 	http://www.angryamoeba.dev/stylesheets/angryamoeba-docs.css
+	http://angryamoeba.co.uk/stylesheets/angryamoeba-docs.css
 */
 
 /*
@@ -46,7 +47,7 @@ h2, #focus h1.left {
 #focus .box a , .bright a {
 	color: blue;
 }
-.box h3, .box h4, .box h5 {	
+.box h1, .box h2, .box h3, .box h4, .box h5 {	
 	padding-bottom: 10px;
 	border-bottom: 1px solid #62534c;
 }
@@ -90,7 +91,7 @@ code {
 blockquote {
 }
 	.box .inner blockquote .inner {
-		padding: 0 10px;	
+		padding: 10px;	
 		font-style: italic;
 		border: 2px dashed #CCC;
 		-moz-border-radius: 10px;
@@ -98,6 +99,9 @@ blockquote {
 	}
 	.box.bright blockquote .inner {
 		background-color: #fcf7d5 !important;
+	}
+	blockquote p:last-child {
+		margin: 0;
 	}
 	
 code pre {
