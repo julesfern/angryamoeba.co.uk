@@ -47,7 +47,8 @@ h2, #focus h1.left {
 #focus .box a , .bright a {
 	color: blue;
 }
-.box h1, .box h2, .box h3, .box h4, .box h5 {	
+.box h1, .box h2, .box h3, .box h4, .box h5 {
+	font-size: 20px;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #62534c;
 }
