@@ -47,6 +47,8 @@ For this, I have a suggestion. I would like to see the following work in HTML5:
 
 No, you haven't gone mad. That is an &lt;embed /&gt; tag. Yes, they're disgusting. But they also match the semantic we want - we want an *embedded application* which just *happens* to have been written as an HTML5 document. We want the security domain inherent to embed tags, which allows the host document to remain opaque to the client document at the host browser's discretion. This is the semantic I would like to see for embedded applications in HTML5.
 
+**Update**: When publishing this post, and thoroughly buggering up my code sample escapes, I noticed that the above embed code actually renders in webkit! No Firefox support though, alas.
+
 [html5video]: http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html
 [webkit]: http://webkit.org/
 [youtubehtml5]: http://youtube.com/html5
