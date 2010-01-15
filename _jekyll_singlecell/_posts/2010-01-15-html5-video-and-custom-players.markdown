@@ -17,14 +17,14 @@ Secondly, an embedded flash video naturally must come with a user interface, whi
 HTML5 video is referenced assets, not embedded behavior
 -------------------------------------------------------
 
-Now. HTML5's new <code>&lt;video /&gt;</code> tag lets us deliver the content - the video file itself - but it does not let us deliver all the other bits and bobs that make web video so valuable. Video rendered with the <code>&lt;video /&gt;</code> tag will have no interactive elements such as advertising or social features, nor will it have the ability to share an embed code for itself. These features must now be delegated to the HTML and Javascript *around* the video player rather than being encapsulated within it.
+Now. HTML5's new &lt;video /&gt; tag lets us deliver the content - the video file itself - but it does not let us deliver all the other bits and bobs that make web video so valuable. Video rendered with the &lt;video /&gt; tag will have no interactive elements such as advertising or social features, nor will it have the ability to share an embed code for itself. These features must now be delegated to the HTML and Javascript *around* the video player rather than being encapsulated within it.
 
-This behavior makes sense, given the semantics of HTML - much like the <code>&lt;img /&gt;</code> tag, the <code>&lt;video /&gt;</code> tag is a dumb reference to an external asset, and the browser is free to ignore it, use the alternate text, or render it depending on the situation and its capabilities.
+This behavior makes sense, given the semantics of HTML - much like the &lt;img /&gt; tag, the &lt;video /&gt; tag is a dumb reference to an external asset, and the browser is free to ignore it, use the alternate text, or render it depending on the situation and its capabilities.
 
 What's missing from the HTML5 picture?
 --------------------------------------
 
-The point I'm trying to demonstrate here is that the <code>&lt;video /&gt;</code> tag is just a small part of the puzzle for video on a post-flash web. As a video publisher, I want to be able to deliver a player - not just a video file - to users, and make it easy for them to share that experience with others.
+The point I'm trying to demonstrate here is that the &lt;video /&gt; tag is just a small part of the puzzle for video on a post-flash web. As a video publisher, I want to be able to deliver a player - not just a video file - to users, and make it easy for them to share that experience with others.
 
 "But Dan," I hear you cry, "you can just build a player out of markup and javascript!" And indeed you can. Youtube already have an [excellent duplicate of their flash player built in HTML5][youtubehtml5], after all. But let's look at the problems of sharing such a player.
 
@@ -32,20 +32,20 @@ First, you're going to try having users copy and paste the gigantic wedge of mar
 
 Then you're going to refactor the bloody thing to something like this:
 
-<pre><code class="html"><script type="text/javascript" src="http://mysite.com/player.js?replace=thevideotag" />
-	<video src="http://assets.mysite.com/some-overdone-meme-lol.mp4" id="thevideotag" /></code></pre>
+<pre><code class="html">&lt;script type=&quot;text/javascript&quot; src=&quot;http://mysite.com/player.js?replace=thevideotag&quot; /&gt;
+	&lt;video src=&quot;http://assets.mysite.com/some-overdone-meme-lol.mp4&quot; id=&quot;thevideotag&quot; /&gt;</code></pre>
 	
-Which is cool, because if the Javascript fails then you still have the video tag to fall back on. However this will also fail, because you can't share <code>&lt;script /&gt;</code> tags on forums or social networks for security reasons. And that pesky asset URL problem is still there.
+Which is cool, because if the Javascript fails then you still have the video tag to fall back on. However this will also fail, because you can't share &lt;script /&gt; tags on forums or social networks for security reasons. And that pesky asset URL problem is still there.
 
-"Eureka!" You will think next, "I will serve the player remotely from my application as an HTML5 document unto itself!" And that is a good suggestion. However, the only way to embed such an application is by using an <code>&lt;iframe /&gt;</code>, and that is, to be blunt, fucking disgusting. You can't use iframes on most forums or social networks, and they have absolutely monstrous security problems. They also have very poor semantic value for the use to which we want them put.
+"Eureka!" You will think next, "I will serve the player remotely from my application as an HTML5 document unto itself!" And that is a good suggestion. However, the only way to embed such an application is by using an &lt;iframe /&gt;, and that is, to be blunt, fucking disgusting. You can't use iframes on most forums or social networks, and they have absolutely monstrous security problems. They also have very poor semantic value for the use to which we want them put.
 
 HTML5 is supposed to be an *application* markup language. It's not just for documents anymore. The standard is absolutely lousy with interesting interactivity (such as [OS-native drag and drop][html5dragdrop]), but it contains no firm way for applications to be nested or otherwise made modular.
 
 For this, I have a suggestion. I would like to see the following work in HTML5:
 
-<pre><code class="html"><embed type="text/html" width="800" height="450" src="http://mysite.com/player.html?video_id=FOO" /></code></pre>
+<pre><code class="html">&lt;embed type=&quot;text/html&quot; width=&quot;800&quot; height=&quot;450&quot; src=&quot;http://mysite.com/player.html?video_id=FOO&quot; /&gt;</code></pre>
 
-No, you haven't gone mad. That is an <code>&lt;embed /&gt;</code> tag. Yes, they're disgusting. But they also match the semantic we want - we want an *embedded application* which just *happens* to have been written as an HTML5 document. We want the security domain inherent to embed tags, which allows the host document to remain opaque to the client document at the host browser's discretion. This is the semantic I would like to see for embedded applications in HTML5.
+No, you haven't gone mad. That is an &lt;embed /&gt; tag. Yes, they're disgusting. But they also match the semantic we want - we want an *embedded application* which just *happens* to have been written as an HTML5 document. We want the security domain inherent to embed tags, which allows the host document to remain opaque to the client document at the host browser's discretion. This is the semantic I would like to see for embedded applications in HTML5.
 
 [html5video]: http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html
 [webkit]: http://webkit.org/
