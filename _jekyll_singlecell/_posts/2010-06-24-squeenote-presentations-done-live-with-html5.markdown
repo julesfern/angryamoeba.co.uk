@@ -14,7 +14,7 @@ Using this principle as a guide, I hacked up a quick [Node.js][node] and [Socket
 Designed for audiences like this.
 ---------------------------------
 
-<a href="http://www.flickr.com/photos/chesh2000/380186134/" title="Photo by Jay Goldman"><img src="http://img.skitch.com/20100624-t71h39wqub8g1cr9752tnwirbx.jpg"></a>
+<p><a href="http://www.flickr.com/photos/chesh2000/380186134/" title="Photo by Jay Goldman"><img src="http://img.skitch.com/20100624-t71h39wqub8g1cr9752tnwirbx.jpg"></a></p>
 
 The presentation was a success, and I was struck by the creative potential of allowing audience members their own runtime instance of a slide deck. What's possible with this setup that isn't possible with a regular Keynote presentation? Including hyperlinks for audiences to follow for further reading is basic. We can do more:
 
@@ -25,7 +25,7 @@ The presentation was a success, and I was struck by the creative potential of al
 Introducing Squeenote
 ---------------------
 
-<img src="http://img.skitch.com/20100624-eswfi1h9dym3qq1rp7whacekad.jpg">
+<p><img src="http://img.skitch.com/20100624-eswfi1h9dym3qq1rp7whacekad.jpg"></p>
 
 I've since cleaned up this presentation engine and released it under the name [Squeenote][squeenote]. Authoring presentations for Squeenote is ridiculously simple; a presentation is simply an HTML file containing an ordered list of slides. See the [README][readme] for more information. Here's the initial feature list:
 
@@ -42,7 +42,7 @@ So I heard you like Presentations
 
 Squeenote includes [a short presentation about Squeenote, authored in Squeenote][presentation].
 
-<a href="http://squeenote.angryamoeba.co.uk"><img src="http://img.skitch.com/20100624-g99kep5rqysh17qea3swd4658b.jpg"></a>
+<p><a href="http://squeenote.angryamoeba.co.uk"><img src="http://img.skitch.com/20100624-g99kep5rqysh17qea3swd4658b.jpg"></a></p>
 
 Clone it and use it
 -------------------
