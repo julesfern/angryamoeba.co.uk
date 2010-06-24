@@ -3,6 +3,8 @@ title: Introducing Squeenote - Presentations done live with HTML5!
 layout: post
 ---
 
+<p><img src="http://img.skitch.com/20100624-eswfi1h9dym3qq1rp7whacekad.jpg"></p>
+
 I recently gave a presentation to my colleagues at [Videojuicer][videojuicer] about HTML5 and what it means for our business and our technology roadmap. Being a mindless sheep, I did of course opt to create the presentation itself in HTML5 with the intention of having the audience follow along in their browsers, without the aid of a projector.
 
 Then, a thought occurred.
@@ -24,8 +26,6 @@ The presentation was a success, and I was struck by the creative potential of al
 
 Introducing Squeenote
 ---------------------
-
-<p><img src="http://img.skitch.com/20100624-eswfi1h9dym3qq1rp7whacekad.jpg"></p>
 
 I've since cleaned up this presentation engine and released it under the name [Squeenote][squeenote]. Authoring presentations for Squeenote is ridiculously simple; a presentation is simply an HTML file containing an ordered list of slides. See the [README][readme] for more information. Here's the initial feature list:
 
