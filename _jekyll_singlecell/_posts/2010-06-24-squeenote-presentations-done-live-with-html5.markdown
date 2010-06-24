@@ -14,7 +14,7 @@ Using this principle as a guide, I hacked up a quick [Node.js][node] and [Socket
 Designed for audiences like this.
 ---------------------------------
 
-<a href="http://www.flickr.com/photos/chesh2000/380186134/"><img src="http://img.skitch.com/20100624-t71h39wqub8g1cr9752tnwirbx.jpg"></a>
+<a href="http://www.flickr.com/photos/chesh2000/380186134/" title="Photo by Jay Goldman"><img src="http://img.skitch.com/20100624-t71h39wqub8g1cr9752tnwirbx.jpg"></a>
 
 The presentation was a success, and I was struck by the creative potential of allowing audience members their own runtime instance of a slide deck. What's possible with this setup that isn't possible with a regular Keynote presentation? Including hyperlinks for audiences to follow for further reading is basic. We can do more:
 
@@ -42,7 +42,7 @@ So I heard you like Presentations
 
 Squeenote includes [a short presentation about Squeenote, authored in Squeenote][presentation].
 
-<a href="http://squeenote.angryamoeba.co.uk" title="Photo by Jay Goldman"><img src="http://img.skitch.com/20100624-g99kep5rqysh17qea3swd4658b.jpg"></a>
+<a href="http://squeenote.angryamoeba.co.uk"><img src="http://img.skitch.com/20100624-g99kep5rqysh17qea3swd4658b.jpg"></a>
 
 Clone it and use it
 -------------------
