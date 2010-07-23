@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8" />	
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+  <title>Progressive enhancement - good, clean version</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+  
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    
+    // BAD
+    
+    function switchAccordian(li_id){
+      var accordian = $("ul.accordian");
+      var show = $("li[id='"+li_id+"'] > div", accordian);
+      var hide = $("li[id!='"+li_id+"'] > div", accordian);
+      
+      show.slideDown();
+      hide.slideUp();
+      
+      show.closest("li").attr("class", "active");
+      hide.closest("li").attr("class", "hidden");
+      
+      return false;
+    }
+  
+    $(document).ready(function() {
+      $("ul.accordian > li > h2").click(function(event) {
+        event.preventDefault();
+        switchAccordian($(this).closest("li").attr("id"));
+      })
+    })
+  </script>
+  
+
+</head>
+<body>
+  
+  <nav>
+    <h1>Progressive enhancement done right</h1>
+    <ul>
+      <li><a href="bad.html">Bad example</a></li>
+      <li><a href="good.html">Good example</a></li>
+    </ul>
+  </nav>
+  
+  <ul class="accordian">
+    <li id="accordian-1">
+      <h2><a href="destination.html">Menu item 1</a></h2>
+      <div>
+        The content for menu item 1. <a href="destination.html">Read more...</a>
+      </div>
+    </li>
+    
+    <li id="accordian-2">
+      <h2><a href="destination.html">Menu item 2</a></h2>
+      <div>
+        The content for menu item 2. <a href="destination.html">Read more...</a>
+      </div>
+    </li>
+    
+    <li id="accordian-3">
+      <h2><a href="destination.html">Menu item 3</a></h2>
+      <div>
+        The content for menu item 3. <a href="destination.html">Read more...</a>
+      </div>
+    </li>
+  </ul>
+  
+
+</body>
+</html><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>good</title>
+	
+</head>
+
+<body>
+
+
+</body>
+</html>
