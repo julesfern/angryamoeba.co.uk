@@ -6,6 +6,7 @@
   
   <title>Progressive enhancement - good, clean version</title>
   <link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="goodstyles.css" type="text/css" media="screen" />
   
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script type="text/javascript">
@@ -30,7 +31,8 @@
       $("ul.accordian > li > h2").click(function(event) {
         event.preventDefault();
         switchAccordian($(this).closest("li").attr("id"));
-      })
+      });
+      switchAccordian("accordian-0");
     })
   </script>
   
@@ -69,20 +71,6 @@
     </li>
   </ul>
   
-
-</body>
-</html><?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<title>good</title>
-	
-</head>
-
-<body>
-
 
 </body>
 </html>
