@@ -33,7 +33,7 @@ Included is a mobile-first stylesheet that should work well for all screen width
 Using Nav.js is pretty simple:
 
 1. Check out the [repo][repo].
-2. Open template.html and populate the <code>article</code> element with markup - stuff rendered using a markdown processor works best.
-3. For best results, combine the template with [Jekyll][jekyll] or [Liquid][liquid] and replace the contents of the <code>article</code> element with your <code>{{content}}</code>
+2. Open template.html and populate the article element with markup - stuff rendered using a markdown processor works best.
+3. For best results, combine the template with [Jekyll][jekyll] or [Liquid][liquid] and replace the contents of the article element with your content.
 
 I briefly considered making Nav.js into a Jekyll plugin, but I don't want to limit people's flexibility - so take the JS, take the basic CSS provided, and hack it to shreds.

@@ -1,0 +1,5 @@
+# Jekyll core configuration
+source: "_jekyll_singlecell"
+destination: "singlecell"
+permalink: "/:title/"
+paginate: 5
