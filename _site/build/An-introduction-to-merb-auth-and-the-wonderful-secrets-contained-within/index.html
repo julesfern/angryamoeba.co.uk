@@ -1,0 +1,199 @@
+<div id="focus" class="section forty-sixty">
+
+			<h1 class="left">
+				<a href="/singlecell/An-introduction-to-merb-auth-and-the-wonderful-secrets-contained-within/">An introduction to merb-auth and the wonderful secrets contained within</a>
+				<span class="date">22 Nov, 2008</span>
+			</h1>
+			
+			<div class="right box">
+				<p>The point of a framework is to help automate common work, right? So why is building your application’s authentication system so repetetive? The <a href="http://merbivore.com/">Merb</a> framework does a lot of useful things and, thankfully, finally includes core patterns and support for user authentication within the framework. It’s called merb-auth, it just moved into town, and it is already beating up other frameworks and stealing their lunch money. And dating your daughter.</p>
+
+<p>You should use merb-auth because:
+</p>
+<ul>
+<li>It provides a clean, easily-extendable structure for authentication.</li>
+<li>It’s part of the official framework, so it’s far less likely to break between versions.</li>
+<li>It’s just plain damned sensible when you weigh up what it automates for you.</li>
+</ul>
+
+<p>So let’s build a quick merb app to test it with:</p>
+
+<pre><code class="bash">merb-gen app merb-auth-playground
+cd merb-auth-playground
+merb-gen resource secret
+merb-gen resource user</code></pre>
+
+<hr />
+
+<h3 id="starting_at_the_beginning_merb_auth_core">Starting at the beginning: merb-auth-core</h3>
+
+<pre><code class="ruby"># Add this to config/dependencies.rb if not already present
+dependency "merb-auth-core"</code></pre>
+
+<p>What happened? Nothing you can see just yet. This is because, as with all merb components that offer a “core” package, the core contains only structure upon which to hang your own code. merb-auth-core doesn’t care about or do anything to your app. It just provides some hooks for you to start using. What merb-auth-core <em>actually</em> gives us is:</p>
+
+<ul>
+<li>Nifty support for storing authentication details in the user’s session:</li>
+</ul>
+<pre><code class="ruby"># In any of your controllers
+if session.user
+    "You're logged in as user ID #{session.user.id}"
+else
+    "You're logged out, so you don't get an ID. You don't deserve one."
+end</code></pre>
+
+<ul>
+<li>Support for <strong>strategies</strong>. Strategies are ways to authenticate a user. A username and password sent from a form is one strategy. OpenID is another, OAuth yet another. You can <em>register</em> your own strategies with merb-auth, and <em>activate</em> them when you want them used. When merb-auth tries to authenticate the user, it will call a method named <em>run!</em> on each strategy in turn until one returns a user or it runs out of strategies. If a user is returned, then the authentication is successful. If not, then the authentication was unsuccessful and an exception will be raised.</li>
+</ul>
+<p>Strategies look like this:</p>
+
+<pre><code class="ruby"># This is an example strategy
+class Merb::Authentication
+  module Strategies
+      class MyCustomStrategy
+
+        def run!
+          do_something_that_returns_either_a_user_or_nil_or_false
+        end 
+
+        def strategy_error_message
+          "AND THEN THERE WAS FAIL"
+        end
+
+      end
+  end
+end</code></pre>
+
+<p>You can register and activate them like this:</p>
+
+<pre><code class="ruby"># In config/init.rb:
+Merb::Bootloader.after_app_loads do
+    Merb::Authentication.register :custom_strategy, Merb.root / "path/to/your/strategy.rb"
+  Merb::Authentication.activate! :custom_strategy
+end</code></pre>
+
+<ul>
+<li>An <em>ensure_authenticated</em> method we can use in our controllers.</li>
+</ul>
+<pre><code class="ruby">class Secrets &lt; Merb::Controller
+    before :ensure_authenticated
+
+    def index
+        "lol, juicy secrets"
+    end     
+end</code></pre>
+
+<p>There’s also one very important thing that merb-auth <strong>does not</strong> give you. Merb-auth is <strong>Bring Your Own Model</strong> code, which means you’re expected to write your own user model. If your user class is called User, which it probably is, then merb-auth will find it just fine with zero configuration. If your user class is called something else, then you’re a masochist, and you should add this to your init.rb:</p>
+
+<pre><code class="ruby"># config/init.rb:
+Merb::BootLoader.after_app_loads do
+  Merb::Authentication.user_class = MyCustomUserClass
+
+
+
+end</code></pre>
+
+<h3 id="going_deeper_merb_auth_more">Going deeper: merb-auth-more</h3>
+
+<p>Adding merb-auth-core to our app got us all this sweet structure and architecture for free - we can trade authentication strategies with other developers, pretty much any merb developer we hire can understand our authentication system and we still get to define business logic ourselves. But what if we want to use merb-auth-core to do something totally basic that every developer has to build at least over 9000 times in their lifetime, like basic password auth? Enter <strong>merb-auth-more</strong>. Merb-auth-more doesn’t contain any new architecture over and above merb-auth-core, but it what it does include is a package of ready-made auth strategies that work wonderfully right out the box. Let’s use merb-auth-more to add simple login form support to our application:</p>
+
+<pre><code class="ruby"># Add this to config/dependencies.rb if not already present
+dependency "merb-auth-more"</code></pre>
+
+<p>And if we didn’t already, let’s craft a really simple user model including merb-auth-more’s salted, hashed password module.</p>
+
+<pre><code class="bash">merb-gen resource user</code></pre>
+
+<pre><code class="ruby"># In app/models/user.rb
+require 'merb-auth-more/mixins/salted_user'
+class User
+    include DataMapper::Resource
+    include Merb::Authentication::Mixins::SaltedUser
+
+    property :id, Serial
+    property :email, String, :format=&gt;:email_address
+    property :login, String, :nullable=&gt;false
+
+    # You do not have to define password or password_confirmation attributes - the SaltedUser mixin does this for you.
+    # You do not have to define the ::authenticate! method - SaltedUser does this for you.      
+
+end</code></pre>
+
+<p>If you don’t want to use :login and :password as the params for logging in, or you want users to login using another property, you can easily customise this behaviour with this code:</p>
+
+<pre><code class="ruby"># config/init.rb:
+Merb::BootLoader.after_app_loads do
+  Merb::Plugins.config[:"merb-auth"][:login_param] = :email
+    Merb::Plugins.config[:"merb-auth"][:password_param] = :secret_squirrel_decoder_ring
+end</code></pre>
+
+<p>Woot! Full authentication from controller to model is ours to use, enjoy and love, with little to no maintenance or hassle. But we don’t have any views set up to allow users to log in, which is somewhat problematic. But don’t panic, honey. Merb’s got your back.</p>
+
+<h3 id="hot_damn_merb_auth_slice_password">Hot damn: merb-auth-slice-password</h3>
+
+<p>Merb-slices are awesome. They’re little apps designed to run inside your main apps - they can have their own controllers, models, helpers and views, which your main application can override on a file-by-file basis. They’re plugins on steroids - essentially the best way to refactor and share complex behaviour from one merb app to another. <strong>Merb-auth-slice-password</strong> is a merb slice built on top of merb-auth-core and -more which uses merb-auth-more’s auth strategies to provide a simple login/logout mechanism for your app. Let’s get it running:</p>
+
+<pre><code class="ruby"># Add this to config/dependencies.rb if not already present
+dependency "merb-auth-slice-password"</code></pre>
+
+<pre><code class="ruby"># In your config/router.rb
+# This will 'mount' the slice within your app's URL structure. 
+# The :path_prefix option tells the router not to mount the slice at a subfolder like /merb-auth-slice-password/login.
+# below: Merb::Router.prepare do
+add_slice(:MerbAuthSlicePassword, :path_prefix =&gt; nil)
+# above: end</code></pre>
+
+<pre><code class="bash">rake slices:merb-auth-slice-password:install
+rake db:automigrate</code></pre>
+
+<p>Let’s try booting up the app! Use the merb command to fire it up and check it out in a web browser. Hit http://localhost:4000 and you should see the merb welcome screen:</p>
+
+<p><img alt="Merb welcome screen" src="http://img.skitch.com/20081121-g36hbtg8e4hn4jxbyffgg6xyxf.jpg"/></p>
+
+<p>However, hit the protected controller we made at http://localhost:4000/secrets and hot diggity damn, free login functionality!</p>
+
+<p><img alt="Hot damn" src="http://img.skitch.com/20081121-gc9hd428jk9x4qf6dhqu7fncfd.jpg"/></p>
+
+<p>Now the login you have here follows a pattern called <em>exceptional authentication</em>. Merb-auth considers you being logged out (when you need to be logged in) to be an exception, just like NotFound or any other exception. So instead of needing to bounce users to Sessions#new when the user visits a protected URL, we raise an exception and display the login page right there. A single specific URL with a :return_to param is still used to start the session as merb URLs can perform differently depending on the request method used, and we most likely want to render the GET version of the URL upon successful login.</p>
+
+<p>Let’s finish you up by making some changes to the somewhat simplistic login form provided by slice-password. Because we’re dealing with a slice here, we can easily provide new templates for the slice. Check out the directory structure of your project - since you installed that slice, you’ve got a slices folder in the root. Within it, a folder for each of your slices, gloriously arranged for your inspection. Each folder empty, awaiting your instructions. With any slice, you can override views on a per-file basis. Unfortunately due to <a href="http://merb.lighthouseapp.com/projects/7433-merb/tickets/1024-merb-auth-slice-password-and-overrides-problem#ticket-1024-2">this bug</a> in Merb 1.0, we have to go about this in a slightly askew fashion for slice-password. In terminal:</p>
+
+<pre><code class="bash">rake slices:merb-auth-slice-password:freeze</code></pre>
+
+<p>This will copy the slice files into your slices folder for you to tweak. I’m also going to force the slice files to render inside my main application’s layout:</p>
+
+<pre><code class="ruby">#in config/init.rb
+Merb::Slices::config[:merb_auth_slice_password][:layout] = :application</code></pre>
+
+<p>I’ll restart the slice to see what happened:</p>
+
+<p><img alt="Just awesome" src="http://img.skitch.com/20081122-cxn9jf913799586p93rtm6wpgr.jpg"/></p>
+
+<p>Awesome.</p>
+
+				Included file 'dan-bio.html' not found in _includes directory
+			</div>
+	
+</div>
+
+<div id="content" class="section forty-sixty">
+	
+
+	<div class="right box bright">
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'singlecell'; // required: replace example with your forum shortname
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+
+	
+</div>

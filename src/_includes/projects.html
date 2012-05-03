@@ -1,0 +1,35 @@
+<section class="departures departing">
+  <h2><time datetime="{{site.time | to_html5_datetime}}">Working on:</time></h2>
+  <ul>
+    <li>
+      <h3>
+        <a href="http://danski.github.com/spah">Spah</a>:
+        Stateful single-page view framework
+      </h3>
+      <p class="wip-task">Initial version. Documentation and Express.js tie-ins</p>
+      <span class="progress" data-progress="75%"></span>
+    </li>
+    <li>
+      <h3>
+        <a href="http://github.com/danski/nav.js">Nav.js</a>:
+        HTML Documentation viewer
+      </h3>
+      <p class="wip-task">1.0 Released</p>
+      <span class="progress" data-progress="100%"></span>
+    </li>
+  </ul>
+  <a href="#departures-shipped" class="departure-disclose show-departed">Recently shipped</a>
+</section>
+<section class="departures departed" id="departures-shipped">
+  <h2><time datetime="{{site.time | to_html5_datetime}}">Shipped:</time></h2>
+  <ul>
+    <li>
+      <h3>
+        <a href="http://danski.github.com/squeenote">Squeenote</a>:
+        Participatory slide decks for public speaking
+      </h3>
+      <p class="wip-task">Initial release</p>
+      <span class="progress" data-progress="100%"></span>
+    </li>
+  </ul>
+</section>

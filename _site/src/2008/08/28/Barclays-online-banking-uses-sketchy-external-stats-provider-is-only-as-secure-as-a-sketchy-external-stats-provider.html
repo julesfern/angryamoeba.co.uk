@@ -1,0 +1,32 @@
+<p>Basic software security, lesson #1: You are only as secure as the weakest point in your system.</p>
+
+<p>It&#8217;s a valuable lesson. Earlier this year Barclays made a big show of security, even going so far as to <a href="http://www.barclays.co.uk/pinsentry/">mail two-factor authentication devices to their customers</a> in an attempt to prevent online banking fraud. That&#8217;s a big investment.</p>
+
+<p>Unfortunately for Barclays, it doesn&#8217;t matter, and their money was wasted. Because if you want to compromise the computers of Barclays account holders, there&#8217;s no need to circumvent the giant, thoroughly-audited security schemes that are almost certainly in place. Nope, you just need to compromise their analytics provider.</p>
+
+<img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg" alt="code fail"/><p>That&#8217;s right, every page load from your &#8220;private&#8221;, &#8220;secure&#8221; banking pages is also communicating directly with Webtrends&#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &#8220;<a href="http://www.google.co.uk/search?q=webtrendslive">webtrendslive</a>&#8221;, by the way, you&#8217;ll notice that malware reports actually outrank the actual product site. It&#8217;s a nice touch.</p>
+
+<hr />
+
+<p>Anyway. Looks fine, right? They&#8217;re just including a local script from the /f directory. No. The script they&#8217;re pulling from a local file is in fact writing a new script tag to the document, which will load a script from an external server. Take a look:</p>
+
+<pre class="javascript"><code>// THIS IS ALL INNOCENT ENOUGH
+var gDomain="statse.webtrendslive.com";
+var gDcsId="REDACTED";
+var gFpc="WT_FPC";
+var gConvert=true;
+var gFpcDom=".barclays.co.uk";
+
+// WELL, IT'S ONLY BANKING INNIT. THE SECURITY MODEL ONLY
+// PREVENTS YOU FROM DOING THIS SO YOU DON'T LOSE YOUR
+// MYSPACE PASSWORD.
+
+if ((typeof(gConvert)!="undefined")&amp;&amp;gConvert&amp;&amp;(document.cookie.indexOf(gFpc+"=")==-1)&amp;&amp;(document.cookie.indexOf("WTLOPTOUT=")==-1)){
+ document.write("&lt;SCR"+"IPT TYPE='text/javascript' SRC='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'&gt;&lt;\/SCR"+"IPT&gt;");
+}</code></pre>
+
+<p>Why does it have to do this, you ask? Because the browser security model <strong>specifically prevents you</strong> from making off-site requests in this way to protect the user from, oh, script injection vulnerabilities and having their details pinched by dastardly or inept external script providers. But this is only banking, right? S&#8217;probably fine to just ignore the reasons not to do it and go ahead with it. It&#8217;s not like you can assess your stats by analyzing your own logs or anything.</p>
+
+<p>Basic software security, lesson #1: You are only as secure as the weakest point in your system.</p>
+
+<p>It&#8217;s a valuable lesson.</p>

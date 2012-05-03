@@ -1,0 +1,585 @@
+/* @override 
+	http://localhost:4000/css/angryamoeba.css */
+
+/**
+ * General depth progression:
+ * starfield.jpg -> atmosphere.gif -> hillside.png -> topsoil.gif -> core.png -> ?
+ **/
+
+/* @group Basics */
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: #01374c;
+  font-size: 18px;
+  line-height: 1.6em;
+  font-family: "Palatino Linotype Bold",Palatino,FreeSerif,serif;
+}
+.ie body {
+  font-family: Times, serif;
+}
+.clearfix {
+  clear: both;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+  margin: 0 0 1em 0;
+}
+a:hover {
+  text-decoration: underline;
+}
+body > * {
+  display: block;
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+body > * > * {
+  width: 1000px;
+  margin: 0 auto;
+  clear: both;
+}
+body script {
+  display: none;
+}
+
+/* @end */
+
+/* @group Widgets */
+
+section.comments#comments {
+  min-height: 0;
+  height: auto;
+}
+section.comments > h1 {
+  display: none;
+}
+section.comments #disqus_thread {
+  clear: both;
+  height: auto;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+#dsq-footer {
+  display: none;
+}
+
+/* @group Section timestamps */
+
+header time {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  top: 0.2em;
+  left: 0;
+  width: 130px;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 5px 5px 10px;
+  background: #333;
+  color: #FFF;
+  border-radius: 5px 0 0 5px;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+}
+header time:after {
+  position: absolute;
+  right: -20px;
+  top: 0;
+  
+  content: " ";
+  width: 0; 
+  height: 0; 
+  border-bottom: 20px solid transparent;  /* left arrow slant */
+  border-top: 20px solid transparent; /* right arrow slant */
+  border-left: 20px solid #2f2f2f; /* bottom, add background color here */
+  font-size: 0px;
+  line-height: 0px;
+}
+body > header time,
+.archives header time {
+  background-color: #FFF;
+  color: #333;
+  text-shadow: none;
+}
+body> header time:after,
+.archives header time:after {
+  border-left: 20px solid #FFF; /* bottom, add background color here */
+}
+
+/* @end */
+
+/* @group Project departures */
+
+.departures {
+  width: 650px;
+  padding: 0 0 2em 180px;
+  position: relative;
+  color: #AAA;
+}
+.departures h1,
+.departures h2 {
+  font-size: 1em;
+  margin: 0;
+}
+.departures ul,
+.departures ol {
+  margin: 0;
+  padding: 0 0 5px 0;
+  list-style-type: none;
+}
+.departures li > * {
+  position: relative;
+  z-index: 1000;
+}
+.departures a {
+  color: #FFF;
+  text-decoration: underline;
+}
+.departures li {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid rgba(255,255,255,0.0);
+  -webkit-transition: border 0.3s ease-out 0, box-shadow 0.3s ease-out 0.3s;
+}
+.departures li:last-child {
+  margin-bottom: 0;
+}
+.departures li h3 {
+  margin: 0 0 5px 0;
+}
+.departures li h3 a {
+}
+.departures li .wip-version {
+  margin: 0 10px 0 0;
+  float: left;
+}
+.departures li .wip-task {
+  margin: 0;
+}
+.departures li .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  width: attr(data-progress);
+  height: 100%;
+  color: transparent;
+  z-index: 0;
+  background-color: rgba(61, 50, 45,0.8);
+}
+.departures li {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+.departures li .progress {
+  border-right: 1px dashed rgba(255,255,255,0.4);
+  border-radius: 8px 0 0 8px;
+  -webkit-border-radius: 8px 0 0 8px;
+  -moz-border-radius: 8px 0 0 8px;
+}
+.departures li.complete .progress {
+  border: none;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
+.departures li.build-complete {
+  box-shadow: 0px 0px 10px rgba(255,255,255,0.3);
+  border-color: rgba(255,255,255,0.4);
+}
+.departures li.complete.build-complete {
+  border-color: rgba(172, 216, 234, 0.8);
+}
+.departures a.show-departed {
+  float: right;
+  opacity: 0.5;
+}
+
+/* @group Departures - page-specific styles */
+
+.index .departed,
+.post .departures {
+  display: none;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Archives, comments */
+
+.archives > div,
+.comments > div {
+  width: 650px;
+  height: 5em;
+  padding-left: 180px;
+}
+.archives > div > h1 {
+  width: 320px;
+  line-height: 1.1em;
+  color: #FFF;
+  float: left;
+}
+.archive-search {
+  float: right;
+  position: relative;
+  top: -0.3em; /* Match to padding-top on .text */
+}
+.archive-search fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.archive-search .text {
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  width: 200px;
+  height: 1.4em;
+  padding: 0.5em 100px 0.5em 0.8em;
+  background: #4d382e;
+  color: #FFF;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+.archive-search .submit {
+  display: none;
+}
+.archive-search .reset {
+  display: block;
+  position: absolute;
+  top: 0.3em;
+  right: 0.3em;
+  z-index: 2000;
+  text-decoration: none;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.9em;
+  color: transparent;
+  opacity: 0;
+  background: #f5f5f5 url('/img/icons/close.png') no-repeat center center;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+.search-active .archive-search .reset {
+  opacity: 1;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Page sections */
+
+/* @group Main header */
+
+body > header {
+  background: black url('/img/background/starfield.jpg') no-repeat top center;
+  color: white;
+  position: relative;
+}
+body > header:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background: transparent url('/img/background/atmosphere.gif') no-repeat top center;
+  z-index: 100;
+}
+body > header h1 {
+  width: 308px;
+  height: 75px;
+  margin: 0 auto 0 auto;
+  padding: 0.5em 0 1em 0;
+  text-align: center;
+}
+
+/* @end */
+
+/* @group Focus - sky section AND header extensions for archive mode */
+
+.focus {
+  min-height: 500px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+body > header {
+  
+}
+body.archives > header {
+  min-height: 0;
+  padding: 20px 0 120px 0;
+}
+
+.focus,
+body.archives > header {
+  position: relative;
+  background: #acd8ea url('/img/background/hillside.png') no-repeat center bottom;
+}
+.focus > h1 {
+  display: none;
+}
+body.archives > header:after {
+  display: none;
+}
+
+/* @end */
+
+/* @group Archives and comments */
+
+section.archives,
+section.comments {
+  min-height: 500px;
+  padding-top: 40px;
+  background: #291c16 url('/img/background/topsoil.gif') no-repeat center top;
+  position: relative;
+  color: #FFF;
+}
+
+/* @end */
+
+/* @group Footer */
+
+body > footer {
+  height: 2em;
+  padding: 0 0 120px 0;
+  background: #291c16 url('/img/background/core.png') no-repeat center bottom;
+}
+
+/* @end */
+
+/* @end */
+
+
+/* @group Article */
+
+article {
+  padding: 0 0 60px 180px;
+  width: 650px;
+  z-index: 2000;
+  position: relative;
+}
+
+/* @group Header */
+
+article h1, 
+article h2 {
+  font-size: 2.5em;
+  line-height: 1.1em;
+  min-height: 2em;
+  color: #FFF;
+  text-shadow: 1px 1px 5px #4bb5dd;
+  margin: 0 0 0.5em 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+article h1 a, 
+article h2 a {
+  color: #FFF;
+}
+
+
+/* @end */
+
+/* @group Content */
+
+article p,
+article ul,
+article ol {
+  text-shadow: 1px 1px 2px #FFF;
+}
+article a {
+  color: #487715;
+  text-decoration: underline;
+}
+article h3 {
+  
+}
+article h4,
+article h5,
+article h6 {
+  
+}
+
+article img {
+  display: block;
+  position: relative;
+  left: -6px; /* Match to (padding+border/2) */
+  margin: 0 auto;
+  background: #FFF url('/img/containers/stripes-light.png');
+  box-shadow: 0 0 15px #4bb5dd;
+  padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+article code {
+  /** inline code **/
+  display: inline-block;
+  background: #333;
+  color: #FFF;
+  font-size: 0.9em;
+  text-shadow: none;
+  
+  padding: 0 5px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+article pre {
+  display: block;
+  background: #FFF url('/img/containers/stripes-light.png');
+  padding: 5px;
+  border: 5px solid #FFF;
+  border-radius: 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 10px;
+  font-size: 16px;
+}
+article pre code {
+  display: block;
+}
+article footer {
+  padding: 1em 0 2em 0;
+}
+article footer a {
+  display: inline-block;
+  position: relative;
+  margin-left: 3.5em;
+}
+article footer a.read-more:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: -3.5em;
+  top: -0.8em;
+  width: 3em;
+  height: 3em;
+  background: #FFF url('/img/icons/elipsis.png') no-repeat center center;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+article footer a.discuss:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: -3.5em;
+  top: -0.8em;
+  width: 3em;
+  height: 3em;
+  background: #FFF url('/img/icons/quotes.png') no-repeat center center;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+
+article.search-result {
+  padding-bottom: 1em;
+}
+article.search-result div {
+  display: none;
+}
+article.search-result footer {
+  display: none;
+}
+
+/* @end */
+
+/* @group Archive post overrides */
+
+.archives article,
+.archives article p,
+.archives article ul,
+.archives article ol,
+.archives article h1,
+.archives article h2,
+.comments article,
+.comments article p,
+.comments article ul,
+.comments article ol,
+.comments article h1,
+.comments article h2 {
+  color: #FFF;
+  text-shadow: none;
+}
+.archives p a,
+.archives ul a,
+.archives ol a,
+.archives footer a,
+.comments a,
+body> footer a {
+  color: #fffdad;
+}
+section.archives img {
+  border-color: #6b493a;
+  background-image: url('/img/containers/stripes-dark.png');
+  box-shadow: 0px 0px 10px #000;
+}
+
+/* @end */
+/* @end */
+
+
+/* @group Paginators */
+
+.pagination {
+  text-align: center;
+  padding: 0 0 60px 180px;
+  width: 650px;
+  color: #FFF;
+}
+.pagination .paginator {
+  position: relative;
+}
+.pagination .info {
+  padding: 0 1em;
+  opacity: 0.5;
+}
+.pagination .next:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  right: -3.5em;
+  top: -0.9em;
+  width: 3em;
+  height: 3em;
+  background: #FFF url('/img/icons/next.png') no-repeat center center;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+.pagination .prev:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: -3.5em;
+  top: -0.9em;
+  width: 3em;
+  height: 3em;
+  background: #FFF url('/img/icons/prev.png') no-repeat center center;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+
+/* @end */

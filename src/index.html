@@ -1,0 +1,38 @@
+---
+title: Angry amoeba
+layout: base
+navigation: index
+---
+
+{% assign summarize = true %}
+
+{% include header.html %}
+
+{% unless paginator.previous_page %}
+  <section id="focus" class="focus">
+    <h1>Most recent post</h1>
+    
+    {% for post in paginator.posts limit:1 %}
+      {% include post.html %} 
+    {% endfor %}
+    
+  </section>
+{% endunless %}
+
+<section id="archives" class="archives">
+  {% include archive-header.html %}
+  
+  {% if paginator.previous_page %}
+    {% for post in paginator.posts %}
+      {% include post.html %}
+    {% endfor %}
+  {% else %}
+    {% for post in paginator.posts offset:1 %}
+      {% include post.html %}
+    {% endfor %}
+  {% endif %}
+  
+</section>
+<footer>
+  {% include paginator.html %}
+</footer>

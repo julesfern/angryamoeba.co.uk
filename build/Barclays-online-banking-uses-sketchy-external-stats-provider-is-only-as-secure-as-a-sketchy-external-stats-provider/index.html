@@ -1,0 +1,144 @@
+<!DOCTYPE html>	
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" itemscope itemtype="http://schema.org/Organization"> <!--<![endif]-->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		
+		<title>Barclays online banking uses sketchy external stats provider, is only as secure as a sketchy external stats provider.</title>
+		
+		<meta name="ROBOTS" content="ALL" />
+		<meta name="Description" content="A blog. Things of Interest: technology, gaming, web standards, and the open web." />
+
+		<!-- Service discovery -->
+		<link rel="alternate" type="application/atom+xml" href="http://angryamoeba.co.uk/singlecell/atom.xml" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/img/icons/favicon.png" />
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="/css/normalize.css" type="text/css" />
+		<link rel="stylesheet" href="/css/ir_black.css" type="text/css" />
+		<link rel="stylesheet" href="/css/angryamoeba.css" type="text/css" />
+		
+		<!-- Interactivity -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<!--[if lt IE 9 ]>
+		  <script type="text/javascript" src="/js/html5.js"></script>  
+		<![endif]-->
+		<script type="text/javascript" src="/js/angryamoeba.enhance.js"></script>
+		
+		
+</head>
+	
+	<body class="post">		
+			<script type="text/javascript">foo = "bar";</script>
+			
+			<header>
+  <h1>
+    <a href="/">
+      <img src="/img/brand/amoeba-large-text.png" alt="Dan Glegg - Software created, Inventions made to order" />
+    </a>
+  </h1>
+  
+  
+</header>
+
+<section id="focus" class="focus">
+   
+   <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="headline"> 
+      <a href="/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider/" itemprop="url">Barclays online banking uses sketchy external stats provider, is only as secure as a sketchy external stats provider.</a>
+    </h2>
+    <time datetime="2008-08-28">
+      28 Aug 2008
+    </time>
+  </header>
+      
+  <div itemprop="articleBody">
+    
+      <p>Basic software security, lesson #1: You are only as secure as the weakest point in your system.</p>
+
+<p>It&#8217;s a valuable lesson. Earlier this year Barclays made a big show of security, even going so far as to <a href="http://www.barclays.co.uk/pinsentry/">mail two-factor authentication devices to their customers</a> in an attempt to prevent online banking fraud. That&#8217;s a big investment.</p>
+
+<p>Unfortunately for Barclays, it doesn&#8217;t matter, and their money was wasted. Because if you want to compromise the computers of Barclays account holders, there&#8217;s no need to circumvent the giant, thoroughly-audited security schemes that are almost certainly in place. Nope, you just need to compromise their analytics provider.</p>
+
+<img src="http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg" alt="code fail"/><p>That&#8217;s right, every page load from your &#8220;private&#8221;, &#8220;secure&#8221; banking pages is also communicating directly with Webtrends&#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &#8220;<a href="http://www.google.co.uk/search?q=webtrendslive">webtrendslive</a>&#8221;, by the way, you&#8217;ll notice that malware reports actually outrank the actual product site. It&#8217;s a nice touch.</p>
+
+<hr />
+
+<p>Anyway. Looks fine, right? They&#8217;re just including a local script from the /f directory. No. The script they&#8217;re pulling from a local file is in fact writing a new script tag to the document, which will load a script from an external server. Take a look:</p>
+
+<pre class="javascript"><code>// THIS IS ALL INNOCENT ENOUGH
+var gDomain="statse.webtrendslive.com";
+var gDcsId="REDACTED";
+var gFpc="WT_FPC";
+var gConvert=true;
+var gFpcDom=".barclays.co.uk";
+
+// WELL, IT'S ONLY BANKING INNIT. THE SECURITY MODEL ONLY
+// PREVENTS YOU FROM DOING THIS SO YOU DON'T LOSE YOUR
+// MYSPACE PASSWORD.
+
+if ((typeof(gConvert)!="undefined")&amp;&amp;gConvert&amp;&amp;(document.cookie.indexOf(gFpc+"=")==-1)&amp;&amp;(document.cookie.indexOf("WTLOPTOUT=")==-1)){
+ document.write("&lt;SCR"+"IPT TYPE='text/javascript' SRC='"+"http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+gDomain+"/"+gDcsId+"/wtid.js"+"'&gt;&lt;\/SCR"+"IPT&gt;");
+}</code></pre>
+
+<p>Why does it have to do this, you ask? Because the browser security model <strong>specifically prevents you</strong> from making off-site requests in this way to protect the user from, oh, script injection vulnerabilities and having their details pinched by dastardly or inept external script providers. But this is only banking, right? S&#8217;probably fine to just ignore the reasons not to do it and go ahead with it. It&#8217;s not like you can assess your stats by analyzing your own logs or anything.</p>
+
+<p>Basic software security, lesson #1: You are only as secure as the weakest point in your system.</p>
+
+<p>It&#8217;s a valuable lesson.</p>
+
+    
+  </div>
+  
+  <footer>
+    
+      
+        <a href="/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider/#disqus_thread" class="discuss">Discuss</a>
+      
+    
+  </footer>
+</article>  
+</section>
+
+<section id="comments" class="comments">
+  <h1>Comments</h1>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'singlecell'; // required: replace example with your forum shortname
+    var disqus_developer = 1;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+</section>
+<footer>
+</footer>
+			
+			
+			<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1036922-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	</body>
+	
+</html>

@@ -1,0 +1,39 @@
+---
+layout: post
+title: "Nav.js - make READMEs easier to grok"
+---
+
+[repo]: http://github.com/danski/nav.js
+[spah]: http://danski.github.com/spah
+[jekyll]: http://github.com/mojombo/jekyll
+[liquid]: http://github.com/tobias/liquid
+[scrollTo]: http://flesler.blogspot.co.uk/2007/10/jqueryscrollto.html
+
+<img src="https://img.skitch.com/20120427-rnce73fhm3qq25qww82mj98iff.png" alt="Screenshot of Nav.js in use" />
+
+I've just pushed to [Github][repo] a small tool that I've been using internally for making long documents more readable. Here's the problem:
+
+- Github expects a README to display on the front page
+- Some projects have very long README files
+- Long documents are a pain to navigate
+
+So [Nav.js][repo] is a Javascript hack to give long documents a nice, readable overview which follows the user around the page and has some nice tricks like popping open sub-sections as the user scrolls into them.
+
+If you want to know what it looks like, [here's a live demo][spah] of Nav.js being used in another project I have in progress.
+
+Nav.js does the following to your docs:
+
+- Creates an outline with hierarchy directly reflecting your use of H1..H6 - H2 is a sub-heading, H3 is a sub-sub heading, and so on.
+- Attaches scroll listeners using [jQuery-scrollTo][scrollTo] and watches on-screen heading positions to determine which sections to pop open in the document overview.
+- Binds to internal links and provides graceful internal navigation
+- Formats code sections. Any paragraph ending with a colon and immediately followed by a code segment is treated as paired with that code segment, and gets special display privileges.
+
+Included is a mobile-first stylesheet that should work well for all screen widths.
+
+Using Nav.js is pretty simple:
+
+1. Check out the [repo][repo].
+2. Open template.html and populate the <code>article</code> element with markup - stuff rendered using a markdown processor works best.
+3. For best results, combine the template with [Jekyll][jekyll] or [Liquid][liquid] and replace the contents of the <code>article</code> element with your content.
+
+I briefly considered making Nav.js into a Jekyll plugin, but I don't want to limit people's flexibility - so take the JS, take the basic CSS provided, and hack it to shreds.

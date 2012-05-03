@@ -1,5 +1,30 @@
 # Jekyll core configuration
-source: "_jekyll_singlecell"
-destination: "singlecell"
+source: "src"
+destination: "build"
 permalink: "/:title/"
 paginate: 5
+
+post_digest_url: "posts.json"
+post_digest_template: "_includes/post.html"
+post_digest_template_defaults:
+  summarize: true
+
+urls:
+  index: "/"
+  about: "/about"
+  twitter: "http://twitter.com/angryamoeba"
+  facebook: "http://facebook.com/angryamoeba"
+
+github:
+  username: danski
+  
+projects:
+  active:
+    - id: spah
+      name: Spah
+      repo: true
+      pages: true
+    - id: nav.js
+      name: Nav.js
+      repo: true
+      pages: true

@@ -1,0 +1,60 @@
+<div id="focus" class="section forty-sixty">
+
+			<h1 class="left">
+				<a href="/singlecell/How-to-force-Git-to-ignore-files/">How to force Git to ignore files</a>
+				<span class="date">24 May, 2008</span>
+			</h1>
+			
+			<div class="right box">
+				Just documenting this one for later, really. If you&#8217;re setting up a git repository and you need to ignore certain types of file - logs, or python bytecode (not that I&#8217;m dealing with those two problems at this exact moment or anything), the procedure is quite simple:
+
+<pre><code>
+# Get to the hidden .git directory within your project.
+cd /path/to/your/project
+cd .git/info
+# in .git/info is a file named "exclude". Open it in whatever you like. Here we'll open it with Textmate.
+mate exclude
+</code></pre>
+
+The file&#8217;s contents are, by default, commented out. To add your own ignore rules, just add each rule on a new line. Here&#8217;s a simple example from a Python project which prevents bytecode and Textmate project files from being committed:
+
+<pre><code>
+*.pyc
+*.tmproj
+</code></pre>
+
+In a Rails project, you&#8217;d likely want a set of rules like the following <em>completely untested</em> fragment:
+
+<pre><code>
+log
+*.log
+*.pid
+tmp
+</code></pre>
+
+				Included file 'dan-bio.html' not found in _includes directory
+			</div>
+	
+</div>
+
+<div id="content" class="section forty-sixty">
+	
+
+	<div class="right box bright">
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'singlecell'; // required: replace example with your forum shortname
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+
+	
+</div>

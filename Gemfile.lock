@@ -14,10 +14,12 @@ GEM
       kramdown (~> 0.13)
       liquid (~> 2.3)
       maruku (~> 0.5)
+    json (1.6.3)
     kramdown (0.13.5)
     liquid (2.3.0)
     maruku (0.6.0)
       syntax (>= 1.0.0)
+    nokogiri (1.5.0)
     posix-spawn (0.3.6)
     syntax (1.0.0)
 
@@ -26,4 +28,6 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  json
   maruku
+  nokogiri

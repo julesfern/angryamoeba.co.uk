@@ -1,0 +1,38 @@
+<p>Sometimes, you <em>want</em> your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):</p>
+
+<div>
+  <pre><code class='ruby'># In test_helper.rb:
+def assert_error_raised(errorklass=StandardError, &amp;amp;block)
+     raised = false
+     begin
+       block.call 
+     rescue errorklass 
+       raised = true
+     end
+     # You will see this message if an error was not raised.
+     # If an error was raised which was not of the type you specified, then the test trace
+     # will be allowed to display the error as normal and the test will fail with an E.
+     assert raised, &quot;Expected error #{errorklass.to_s} to be raised but error never encountered.&quot;
+end
+
+# In your application code, let's say some_model.rb:
+def do_something_with(array)
+       unless array.is_a?(Array)
+              raise ArgumentError, &quot;Argument of type #{array.class.to_s} given to SomeModel#do_something when argument must be of type Array&quot;
+       end
+       continue_doing_something
+end
+
+# In your test suite:
+def test_error_generated_with_bad_argument_to_do_something_with
+       @some_model = SomeModel.new
+       # This test will pass
+       assert_error_raised(ArgumentError) do
+              @some_model.do_something_with &quot;i'm not an array&quot;
+       end
+       # This test will fail and dump the error via your test console's usual channel
+       assert_error_raised(RuntimeError) do
+              @some_model.do_something_with &quot;neither am i&quot;
+       end
+end</code></pre>
+</div>

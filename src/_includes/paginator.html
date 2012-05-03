@@ -1,0 +1,17 @@
+<div class="pagination">
+  {% if paginator.previous_page == 1 %}
+    <a href="/" class="paginator prev">Newest</a>
+  {% elsif paginator.previous_page %}
+    <a href="/page{{ paginator.previous_page }}" class="paginator prev">Newer</a>
+  {% endif %}
+  
+  <span class="paginator info">
+    {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  
+  {% if paginator.next_page == paginator.total_pages %}
+    <a href="/page{{ paginator.next_page }}" class="paginator next">Oldest</a>
+  {% elsif paginator.next_page %}
+    <a href="/page{{ paginator.next_page }}" class="paginator next">Older</a>
+  {% endif %}
+</div>

@@ -1,0 +1,38 @@
+<p>Okay, so I&#8217;m basing my optimism for <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html'>HTML5 video</a> on a hypothetical future where Internet Explorer vanishes from the earth, and even in the browsers that <em>do</em> support it, codec support is inconsistent, but in my opinion those differences will become meaningless very rapidly because there is only one truly dominant browser engine in the mobile space, and it&#8217;s <a href='http://webkit.org/'>Webkit</a>. And mobile is where HTML5 video will truly shine, because you don&#8217;t get Flash video on the iPhone and you do get Webkit. I wish it were more complicated, I really do. If it were more complicated I could make some extra money as a consultant.</p>
+
+<p>I digress. Or rather, because the digression occurs so early, I fail to begin. So let us begin.</p>
+
+<h2 id='where_does_the_value_in_viral_video_come_from'>Where does the value in viral video come from?</h2>
+
+<p>Why are agencies able to charge gigantic sums for the privilege of having their brand associated with a video of fifteen hundred people being a bloody nuisance at King&#8217;s Cross station? Firstly, it builds intangible value. Exercising control over any large brand has traditionally been an epic, thankless task, so the concept of simply producing something amusing and using people&#8217;s newfound capacity for mass sharing as a delivery and targeting strategy was a bit of a sensation.</p>
+
+<p>Secondly, an embedded flash video naturally must come with a user interface, which means interactivity. And where you have interactivity you can generate clicks that lead directly to your product. The value comes from not just embedding the video, but embedding the video player with all its little hidden engagement-measuring technology and up-front calls to action. In most commercial video environments, the content itself is just a tiny part of what gets delivered to the user&#8217;s browser.</p>
+
+<h2 id='html5_video_is_referenced_assets_not_embedded_behavior'>HTML5 video is referenced assets, not embedded behavior</h2>
+
+<p>Now. HTML5&#8217;s new &#60;video /&#62; tag lets us deliver the content - the video file itself - but it does not let us deliver all the other bits and bobs that make web video so valuable. Video rendered with the &#60;video /&#62; tag will have no interactive elements such as advertising or social features, nor will it have the ability to share an embed code for itself. These features must now be delegated to the HTML and Javascript <em>around</em> the video player rather than being encapsulated within it.</p>
+
+<p>This behavior makes sense, given the semantics of HTML - much like the &#60;img /&#62; tag, the &#60;video /&#62; tag is a dumb reference to an external asset, and the browser is free to ignore it, use the alternate text, or render it depending on the situation and its capabilities.</p>
+
+<h2 id='whats_missing_from_the_html5_picture'>What&#8217;s missing from the HTML5 picture?</h2>
+
+<p>The point I&#8217;m trying to demonstrate here is that the &#60;video /&#62; tag is just a small part of the puzzle for video on a post-flash web. As a video publisher, I want to be able to deliver a player - not just a video file - to users, and make it easy for them to share that experience with others.</p>
+
+<p>&#8220;But Dan,&#8221; I hear you cry, &#8220;you can just build a player out of markup and javascript!&#8221; And indeed you can. Youtube already have an <a href='http://youtube.com/html5'>excellent duplicate of their flash player built in HTML5</a>, after all. But let&#8217;s look at the problems of sharing such a player.</p>
+
+<p>First, you&#8217;re going to try having users copy and paste the gigantic wedge of markup and javascript that make up your player. This will fail for a few reasons - most notably, you can&#8217;t release patches for the player once it&#8217;s been embedded, and you must implement permanent URLs for your video assets.</p>
+
+<p>Then you&#8217;re going to refactor the bloody thing to something like this:</p>
+<pre><code class='html'>&lt;script type=&quot;text/javascript&quot; src=&quot;http://mysite.com/player.js?replace=thevideotag&quot; /&gt;
+	&lt;video src=&quot;http://assets.mysite.com/some-overdone-meme-lol.mp4&quot; id=&quot;thevideotag&quot; /&gt;</code></pre>
+<p>Which is cool, because if the Javascript fails then you still have the video tag to fall back on. However this will also fail, because you can&#8217;t share &#60;script /&#62; tags on forums or social networks for security reasons. And that pesky asset URL problem is still there.</p>
+
+<p>&#8220;Eureka!&#8221; You will think next, &#8220;I will serve the player remotely from my application as an HTML5 document unto itself!&#8221; And that is a good suggestion. However, the only way to embed such an application is by using an &#60;iframe /&#62;, and that is, to be blunt, fucking disgusting. You can&#8217;t use iframes on most forums or social networks, and they have absolutely monstrous security problems. They also have very poor semantic value for the use to which we want them put.</p>
+
+<p>HTML5 is supposed to be an <em>application</em> markup language. It&#8217;s not just for documents anymore. The standard is absolutely lousy with interesting interactivity (such as <a href='http://www.whatwg.org/specs/web-apps/current-work/#dnd'>OS-native drag and drop</a>), but it contains no firm way for applications to be nested or otherwise made modular.</p>
+
+<p>For this, I have a suggestion. I would like to see the following work in HTML5:</p>
+<pre><code class='html'>&lt;embed type=&quot;text/html&quot; width=&quot;800&quot; height=&quot;450&quot; src=&quot;http://mysite.com/player.html?video_id=FOO&quot; /&gt;</code></pre>
+<p>No, you haven&#8217;t gone mad. That is an &#60;embed /&#62; tag. Yes, they&#8217;re disgusting. But they also match the semantic we want - we want an <em>embedded application</em> which just <em>happens</em> to have been written as an HTML5 document. We want the security domain inherent to embed tags, which allows the host document to remain opaque to the client document at the host browser&#8217;s discretion. This is the semantic I would like to see for embedded applications in HTML5.</p>
+
+<p><strong>Update</strong>: When publishing this post, and thoroughly buggering up my code sample escapes, I noticed that the above embed code actually renders in webkit! No Firefox support though, alas.</p>

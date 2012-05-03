@@ -1,0 +1,18 @@
+---
+layout: base
+navigation: post
+---
+
+{% include header.html %}
+
+<section id="focus" class="focus">
+   {% assign post = page %}
+   {% include post.html %} 
+</section>
+
+<section id="comments" class="comments">
+  <h1>Comments</h1>
+  {% include disqus-comments.html %}
+</section>
+<footer>
+</footer>

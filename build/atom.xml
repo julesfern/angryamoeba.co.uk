@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+	<title>Singlecell, the Angry amoeba weblog</title>
+
+	<link href="http://www.angryamoeba.co.uk/singlecell/atom.xml" rel="self"/>
+	<link href="http://www.angryamoeba.co.uk/singlecell/"/>
+	
+	<icon>http://angryamoeba.co.uk/images/icons/favicon.png</icon>
+	
+	<updated>2012-05-03T17:18:54+01:00</updated>
+	<id>http://www.angryamoeba.co.uk/singlecell</id>
+	<author>
+		<name>Dan Glegg</name>
+		<email>dan@angryamoeba.co.uk</email>
+	</author>
+ 
+ 
+ <entry>
+   <title>Nav.js - make READMEs easier to grok</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/nav-dot-js-make-readmes-more-grokkable/"/>
+   <updated>2012-04-27T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/nav-dot-js-make-readmes-more-grokkable</id>
+   <content type="html">&lt;img src='https://img.skitch.com/20120427-rnce73fhm3qq25qww82mj98iff.png' alt='Screenshot of Nav.js in use' /&gt;&lt;p&gt;I&amp;#8217;ve just pushed to &lt;a href='http://github.com/danski/nav.js'&gt;Github&lt;/a&gt; a small tool that I&amp;#8217;ve been using internally for making long documents more readable. Here&amp;#8217;s the problem:&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Github expects a README to display on the front page&lt;/li&gt;
+
+&lt;li&gt;Some projects have very long README files&lt;/li&gt;
+
+&lt;li&gt;Long documents are a pain to navigate&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;So &lt;a href='http://github.com/danski/nav.js'&gt;Nav.js&lt;/a&gt; is a Javascript hack to give long documents a nice, readable overview which follows the user around the page and has some nice tricks like popping open sub-sections as the user scrolls into them.&lt;/p&gt;&lt;p&gt;If you want to know what it looks like, &lt;a href='http://danski.github.com/spah'&gt;here&amp;#8217;s a live demo&lt;/a&gt; of Nav.js being used in another project I have in progress.&lt;/p&gt;&lt;p&gt;Nav.js does the following to your docs:&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Creates an outline with hierarchy directly reflecting your use of H1..H6 - H2 is a sub-heading, H3 is a sub-sub heading, and so on.&lt;/li&gt;
+
+&lt;li&gt;Attaches scroll listeners using &lt;a href='http://flesler.blogspot.co.uk/2007/10/jqueryscrollto.html'&gt;jQuery-scrollTo&lt;/a&gt; and watches on-screen heading positions to determine which sections to pop open in the document overview.&lt;/li&gt;
+
+&lt;li&gt;Binds to internal links and provides graceful internal navigation&lt;/li&gt;
+
+&lt;li&gt;Formats code sections. Any paragraph ending with a colon and immediately followed by a code segment is treated as paired with that code segment, and gets special display privileges.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Included is a mobile-first stylesheet that should work well for all screen widths.&lt;/p&gt;&lt;p&gt;Using Nav.js is pretty simple:&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;Check out the &lt;a href='http://github.com/danski/nav.js'&gt;repo&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;Open template.html and populate the &lt;code&gt;article&lt;/code&gt; element with markup - stuff rendered using a markdown processor works best.&lt;/li&gt;
+
+&lt;li&gt;For best results, combine the template with &lt;a href='http://github.com/mojombo/jekyll'&gt;Jekyll&lt;/a&gt; or &lt;a href='http://github.com/tobias/liquid'&gt;Liquid&lt;/a&gt; and replace the contents of the &lt;code&gt;article&lt;/code&gt; element with your content.&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;I briefly considered making Nav.js into a Jekyll plugin, but I don&amp;#8217;t want to limit people&amp;#8217;s flexibility - so take the JS, take the basic CSS provided, and hack it to shreds.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Introducing Squeenote - Presentations done live with HTML5!</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/squeenote-presentations-done-live-with-html5/"/>
+   <updated>2010-06-24T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/squeenote-presentations-done-live-with-html5</id>
+   <content type="html">&lt;p&gt;&lt;img src='http://img.skitch.com/20100624-eswfi1h9dym3qq1rp7whacekad.jpg' /&gt;&lt;/p&gt;&lt;p&gt;I recently gave a presentation to my colleagues at &lt;a href='http://videojuicer.com'&gt;Videojuicer&lt;/a&gt; about HTML5 and what it means for our business and our technology roadmap. Being a mindless sheep, I did of course opt to create the presentation itself in HTML5 with the intention of having the audience follow along in their browsers, without the aid of a projector.&lt;/p&gt;&lt;p&gt;Then, a thought occurred.&lt;/p&gt;&lt;p&gt;&lt;em&gt;If I&amp;#8217;m putting a slide deck on screens that are owned by the audience, then the audience should get some control of their own.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;Using this principle as a guide, I hacked up a quick &lt;a href='http://nodejs.org'&gt;Node.js&lt;/a&gt; and &lt;a href='http://socket.io'&gt;Socket.io&lt;/a&gt; demo that would allow audience members to either sit back and follow the presentation as I moved through the slides, or to break off from the flow and browse the deck themselves, rejoining the rest of the audience whenever they choose.&lt;/p&gt;&lt;h2 id='designed_for_audiences_like_this'&gt;Designed for audiences like this.&lt;/h2&gt;&lt;p&gt;&lt;a href='http://www.flickr.com/photos/chesh2000/380186134/' title='Photo by Jay Goldman'&gt;&lt;img src='http://img.skitch.com/20100624-t71h39wqub8g1cr9752tnwirbx.jpg' /&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;The presentation was a success, and I was struck by the creative potential of allowing audience members their own runtime instance of a slide deck. What&amp;#8217;s possible with this setup that isn&amp;#8217;t possible with a regular Keynote presentation? Including hyperlinks for audiences to follow for further reading is basic. We can do more:&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Include interactive elements in slides. Navigable data visualisations, canvas objects, tech demos, whatever.&lt;/li&gt;
+
+&lt;li&gt;Use selective disclosure to keep slides brief but allow individual audience members to drill down on items they find interesting.&lt;/li&gt;
+
+&lt;li&gt;Allow audiences to simply save your presentation out of their browsers.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 id='introducing_squeenote'&gt;Introducing Squeenote&lt;/h2&gt;&lt;p&gt;&lt;object id='videojuicer_seed_demo_presentation_153' height='199' classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' width='550'&gt; &lt;param name='movie' value='http://player.videojuicer.com/bootstrap.swf' /&gt; &lt;param name='allowfullscreen' value='true' /&gt; &lt;param name='allowscriptaccess' value='always' /&gt; &lt;param name='flashvars' value='seed_name=demo&amp;presentation_id=153' /&gt; &lt;param name='name' value='videojuicer_seed_demo_presentation_153' /&gt; &lt;param name='wmode' value='transparent' /&gt; &lt;embed name='videojuicer_seed_demo_presentation_153' src='http://player.videojuicer.com/bootstrap.swf' allowfullscreen='true' type='application/x-shockwave-flash' allowscriptaccess='always' wmode='transparent' height='199' flashvars='seed_name=demo&amp;presentation_id=153' width='550' /&gt; &lt;/object&gt;&lt;/p&gt;&lt;p&gt;I&amp;#8217;ve since cleaned up this presentation engine and released it under the name &lt;a href='http://github.com/danski/squeenote'&gt;Squeenote&lt;/a&gt;. Authoring presentations for Squeenote is ridiculously simple; a presentation is simply an HTML file containing an ordered list of slides. See the &lt;a href='http://github.com/danski/Squeenote/blob/master/readme.mdown'&gt;README&lt;/a&gt; for more information. Here&amp;#8217;s the initial feature list:&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Presenter follow/unfollow for audience members&lt;/li&gt;
+
+&lt;li&gt;Password-protected presenter mode&lt;/li&gt;
+
+&lt;li&gt;Support for HTML5-friendly browsers. Tested in Safari, Chrome, Firefox, Mobile Safari.&lt;/li&gt;
+
+&lt;li&gt;Themeable. Since a presentation is just an HTML file, a theme is just CSS and/or JS.&lt;/li&gt;
+
+&lt;li&gt;Includes a default theme using CSS3 Transitions, with basic iPad and iPhone support for audience members.&lt;/li&gt;
+
+&lt;li&gt;Modular and hackable. All components, including the Squeenote UI, are replaceable and extendable.&lt;/li&gt;
+
+&lt;li&gt;Designed for archival. A Squeenote presentation can be uploaded to a static web server without the Node.js component and it will run in &amp;#8220;presenter offline&amp;#8221; mode.&lt;/li&gt;
+&lt;/ul&gt;&lt;h2 id='so_i_heard_you_like_presentations'&gt;So I heard you like Presentations&lt;/h2&gt;&lt;p&gt;Squeenote includes &lt;a href='http://squeenote.angryamoeba.co.uk'&gt;a short presentation about Squeenote, authored in Squeenote&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href='http://squeenote.angryamoeba.co.uk'&gt;&lt;img src='http://img.skitch.com/20100624-g99kep5rqysh17qea3swd4658b.jpg' /&gt;&lt;/a&gt;&lt;/p&gt;&lt;h2 id='clone_it_and_use_it'&gt;Clone it and use it&lt;/h2&gt;&lt;p&gt;Squeenote is available for free at my &lt;a href='http://github.com/danski/squeenote'&gt;Github profile&lt;/a&gt;. It&amp;#8217;s released under a &lt;a href='http://creativecommons.org/licenses/by/2.0/uk/'&gt;Creative Commons&lt;/a&gt; license as it is intended to be altered in a highly-personalised fashion.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>What does HTML5 mean for viral video?</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/html5-video-and-custom-players/"/>
+   <updated>2010-01-15T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/html5-video-and-custom-players</id>
+   <content type="html">&lt;p&gt;Okay, so I&amp;#8217;m basing my optimism for &lt;a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html'&gt;HTML5 video&lt;/a&gt; on a hypothetical future where Internet Explorer vanishes from the earth, and even in the browsers that &lt;em&gt;do&lt;/em&gt; support it, codec support is inconsistent, but in my opinion those differences will become meaningless very rapidly because there is only one truly dominant browser engine in the mobile space, and it&amp;#8217;s &lt;a href='http://webkit.org/'&gt;Webkit&lt;/a&gt;. And mobile is where HTML5 video will truly shine, because you don&amp;#8217;t get Flash video on the iPhone and you do get Webkit. I wish it were more complicated, I really do. If it were more complicated I could make some extra money as a consultant.&lt;/p&gt;&lt;p&gt;I digress. Or rather, because the digression occurs so early, I fail to begin. So let us begin.&lt;/p&gt;&lt;h2 id='where_does_the_value_in_viral_video_come_from'&gt;Where does the value in viral video come from?&lt;/h2&gt;&lt;p&gt;Why are agencies able to charge gigantic sums for the privilege of having their brand associated with a video of fifteen hundred people being a bloody nuisance at King&amp;#8217;s Cross station? Firstly, it builds intangible value. Exercising control over any large brand has traditionally been an epic, thankless task, so the concept of simply producing something amusing and using people&amp;#8217;s newfound capacity for mass sharing as a delivery and targeting strategy was a bit of a sensation.&lt;/p&gt;&lt;p&gt;Secondly, an embedded flash video naturally must come with a user interface, which means interactivity. And where you have interactivity you can generate clicks that lead directly to your product. The value comes from not just embedding the video, but embedding the video player with all its little hidden engagement-measuring technology and up-front calls to action. In most commercial video environments, the content itself is just a tiny part of what gets delivered to the user&amp;#8217;s browser.&lt;/p&gt;&lt;h2 id='html5_video_is_referenced_assets_not_embedded_behavior'&gt;HTML5 video is referenced assets, not embedded behavior&lt;/h2&gt;&lt;p&gt;Now. HTML5&amp;#8217;s new &amp;#60;video /&amp;#62; tag lets us deliver the content - the video file itself - but it does not let us deliver all the other bits and bobs that make web video so valuable. Video rendered with the &amp;#60;video /&amp;#62; tag will have no interactive elements such as advertising or social features, nor will it have the ability to share an embed code for itself. These features must now be delegated to the HTML and Javascript &lt;em&gt;around&lt;/em&gt; the video player rather than being encapsulated within it.&lt;/p&gt;&lt;p&gt;This behavior makes sense, given the semantics of HTML - much like the &amp;#60;img /&amp;#62; tag, the &amp;#60;video /&amp;#62; tag is a dumb reference to an external asset, and the browser is free to ignore it, use the alternate text, or render it depending on the situation and its capabilities.&lt;/p&gt;&lt;h2 id='whats_missing_from_the_html5_picture'&gt;What&amp;#8217;s missing from the HTML5 picture?&lt;/h2&gt;&lt;p&gt;The point I&amp;#8217;m trying to demonstrate here is that the &amp;#60;video /&amp;#62; tag is just a small part of the puzzle for video on a post-flash web. As a video publisher, I want to be able to deliver a player - not just a video file - to users, and make it easy for them to share that experience with others.&lt;/p&gt;&lt;p&gt;&amp;#8220;But Dan,&amp;#8221; I hear you cry, &amp;#8220;you can just build a player out of markup and javascript!&amp;#8221; And indeed you can. Youtube already have an &lt;a href='http://youtube.com/html5'&gt;excellent duplicate of their flash player built in HTML5&lt;/a&gt;, after all. But let&amp;#8217;s look at the problems of sharing such a player.&lt;/p&gt;&lt;p&gt;First, you&amp;#8217;re going to try having users copy and paste the gigantic wedge of markup and javascript that make up your player. This will fail for a few reasons - most notably, you can&amp;#8217;t release patches for the player once it&amp;#8217;s been embedded, and you must implement permanent URLs for your video assets.&lt;/p&gt;&lt;p&gt;Then you&amp;#8217;re going to refactor the bloody thing to something like this:&lt;/p&gt;&lt;pre&gt;&lt;code class='html'&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;http://mysite.com/player.js?replace=thevideotag&amp;quot; /&amp;gt;
+	&amp;lt;video src=&amp;quot;http://assets.mysite.com/some-overdone-meme-lol.mp4&amp;quot; id=&amp;quot;thevideotag&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Which is cool, because if the Javascript fails then you still have the video tag to fall back on. However this will also fail, because you can&amp;#8217;t share &amp;#60;script /&amp;#62; tags on forums or social networks for security reasons. And that pesky asset URL problem is still there.&lt;/p&gt;&lt;p&gt;&amp;#8220;Eureka!&amp;#8221; You will think next, &amp;#8220;I will serve the player remotely from my application as an HTML5 document unto itself!&amp;#8221; And that is a good suggestion. However, the only way to embed such an application is by using an &amp;#60;iframe /&amp;#62;, and that is, to be blunt, fucking disgusting. You can&amp;#8217;t use iframes on most forums or social networks, and they have absolutely monstrous security problems. They also have very poor semantic value for the use to which we want them put.&lt;/p&gt;&lt;p&gt;HTML5 is supposed to be an &lt;em&gt;application&lt;/em&gt; markup language. It&amp;#8217;s not just for documents anymore. The standard is absolutely lousy with interesting interactivity (such as &lt;a href='http://www.whatwg.org/specs/web-apps/current-work/#dnd'&gt;OS-native drag and drop&lt;/a&gt;), but it contains no firm way for applications to be nested or otherwise made modular.&lt;/p&gt;&lt;p&gt;For this, I have a suggestion. I would like to see the following work in HTML5:&lt;/p&gt;&lt;pre&gt;&lt;code class='html'&gt;&amp;lt;embed type=&amp;quot;text/html&amp;quot; width=&amp;quot;800&amp;quot; height=&amp;quot;450&amp;quot; src=&amp;quot;http://mysite.com/player.html?video_id=FOO&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;No, you haven&amp;#8217;t gone mad. That is an &amp;#60;embed /&amp;#62; tag. Yes, they&amp;#8217;re disgusting. But they also match the semantic we want - we want an &lt;em&gt;embedded application&lt;/em&gt; which just &lt;em&gt;happens&lt;/em&gt; to have been written as an HTML5 document. We want the security domain inherent to embed tags, which allows the host document to remain opaque to the client document at the host browser&amp;#8217;s discretion. This is the semantic I would like to see for embedded applications in HTML5.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: When publishing this post, and thoroughly buggering up my code sample escapes, I noticed that the above embed code actually renders in webkit! No Firefox support though, alas.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Developers and the Kübler-Ross model</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/kubler-ross-developers/"/>
+   <updated>2009-09-30T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/kubler-ross-developers</id>
+   <content type="html">&lt;p&gt;The &lt;a href='http://en.wikipedia.org/wiki/Kübler-Ross_model'&gt;Kübler-Ross&lt;/a&gt; model is a classic pattern that defines how people deal with great loss or catastrophe. It&amp;#8217;s the five-stage grief model so beloved by TV scriptwriters - &lt;a href='http://tvtropes.org/pmwiki/pmwiki.php/Main/FiveStagesOfGrief'&gt;an array of shows&lt;/a&gt; have made use of the model, most notably &lt;a href='http://en.wikipedia.org/wiki/One_Fish,_Two_Fish,_Blowfish,_Blue_Fish'&gt;this brilliant episode of The Simpsons&lt;/a&gt; in which Homer learns of his own impending demise:&lt;/p&gt;&lt;blockquote&gt;
+Hibbert: There are five stages. First is denial.&lt;br /&gt;
+Homer: No way, because I'm not dying.&lt;br /&gt;
+Hibbert: Next comes anger.&lt;br /&gt;
+Homer: Why you little...&lt;br /&gt;
+Hibbert: After that comes fear.&lt;br /&gt;
+Homer: What's after fear? What's after fear?&lt;br /&gt;
+Hibbert: Bargaining.&lt;br /&gt;
+Homer: Doc, you've got to get me out of this. I'll make it worth your while.&lt;br /&gt;
+Hibbert: And finally, comes acceptance.&lt;br /&gt;
+Homer: Well, we've all got to go sometime.&lt;br /&gt;
+Hibbert: Mr. Simpson, your progress is remarkable!
+&lt;/blockquote&gt;&lt;p&gt;It only occurred to me recently that the same model applies to a developer being told that his work has a bug. Not just a simple display bug, but one of those really nasty voodoo buggers that defy all attempts at rational explanation and turn debugging into a two-day stretch of swearing, shouting, and occult sacrifices. Observe:&lt;/p&gt;&lt;h2 id='denial'&gt;Denial&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Nah, that works just fine. Must be a freak happenstance, or the user&amp;#8217;s machine is knackered.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2 id='anger'&gt;Anger&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Why do people bring me all these problems? Give the users better training!&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2 id='bargaining'&gt;Bargaining&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Maybe we can just fix it in the next version, so I can get on with my life?&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2 id='depression'&gt;Depression&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;This problem will never go away. It&amp;#8217;s going to actually haunt me until I die. I am Moby Dick to this bug&amp;#8217;s Ahab.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;h2 id='acceptance'&gt;Acceptance&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;If I fix this, I can have my life back.&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Charging for the last inch</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Enabling-tethering-on-your-iPhone/"/>
+   <updated>2009-06-18T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Enabling-tethering-on-your-iPhone</id>
+   <content type="html">&lt;p&gt;When apple announced the iPhone OS&amp;#8217; new capability to provide a tethered cellular data connection to your laptop, the masses rejoiced. When some carriers announced hefty additional charges for the privilege of using your &amp;#8216;unlimited&amp;#8217; data plan on a larger screen that you already own, the masses wept. It was as if a great many voices cried out and then were suddenly compelled to create a &lt;a href='http://twitter.com/#search?q=o2fail'&gt;new trending topic&lt;/a&gt; on Twitter.&lt;/p&gt;&lt;p&gt;The problem, it seems, is that O2 promise to give you unlimited&lt;sup&gt;1&lt;/sup&gt; use of your iPhone&amp;#8217;s data connection, on condition that you do not take them up on the offer&lt;sup&gt;2&lt;/sup&gt;. The deal as they see it is that you can consume a reasonable amount of data on your iPhone itself, but if you want to view that data on a big screen - say, a laptop you already own - it&amp;#8217;ll cost you another £13 per month for the privilege. For those playing along at home, that&amp;#8217;s the same price as a standard O2 USB modem plan, only they don&amp;#8217;t give you the modem.&lt;/p&gt;&lt;p&gt;Therein lies the obvious question. Why does it cost more to download a reasonable amount of data to my laptop than to my telephone, especially when the difference between the two is rapidly thinning?&lt;/p&gt;&lt;p&gt;For those who feel that being charged £13/mo to deliver data over the final inch between your phone and your laptop is an insulting proposition, you know have another option. &lt;a href='http://help.benm.at'&gt;One brave soul&lt;/a&gt; has created a small web application that provides tethering configuration for almost any carrier, enabling iPhone tethering without forcing you to buy a costly data plan in addition to the one already included your standard iPhone contract.&lt;/p&gt;&lt;p&gt;For those who choose this path, there are a few immediately obvious ways to profile a user&amp;#8217;s connection to determine whether or not they&amp;#8217;re tethering, so be mindful:&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;If your user agent string is anything other than Mobile Safari, then you&amp;#8217;re tethering.&lt;/li&gt;
+
+&lt;li&gt;If you&amp;#8217;re loading Flash movies, then you&amp;#8217;re tethering.&lt;/li&gt;
+
+&lt;li&gt;If you&amp;#8217;re loading Java applets, then you&amp;#8217;re tethering.&lt;/li&gt;
+&lt;/ol&gt;&lt;p&gt;Whether or not the operators will act on this finding is unknown.&lt;/p&gt;&lt;p&gt;Disclosure: I already hold a data contract with O2 and don&amp;#8217;t plan on getting rid of it, as I find the USB modem very useful.&lt;/p&gt;&lt;p&gt;Footnotes:&lt;/p&gt;&lt;ol&gt;
+&lt;li&gt;May in fact be strictly limited&lt;/li&gt;
+
+&lt;li&gt;The use of terminology like &amp;#8220;unlimited within fair use&amp;#8221; is a long-standing tradition among mobile operators, who have no problem using double, triple or even quintuple negatives if it&amp;#8217;ll shift more phones.&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>The Internet Mapping Project</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/The-Internet-Mapping-Project/"/>
+   <updated>2009-05-05T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/The-Internet-Mapping-Project</id>
+   <content type="html">&lt;p&gt;&lt;a href='http://www.kk.org'&gt;Kevin Kelly&lt;/a&gt;, of &lt;em&gt;Wired&lt;/em&gt; fame, has launched a lovely collaborative project to map the Internet, sensibly named &lt;a href='http://www.kk.org/internet-mapping/'&gt;The Internet Mapping Project&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The goal is for individuals to try and map the hairy N-dimensional structure of the Internet into a two-dimensional representation that matches their own interpretation of it, but the interesting twist is that contributors are expected to place their &amp;#8216;home&amp;#8217; on the map. The split in designs is interesting - some contributors have drawn the internet from a &lt;a href='http://www.flickr.com/photos/kevinkelly/3585540367/in/set-72157613562011932/'&gt;position of consumption&lt;/a&gt;, placing their home at the center of a network of services, while others have drawn their maps from a &lt;a href='http://www.flickr.com/photos/kevinkelly/3390479096/in/set-72157613562011932/'&gt;position of oversight&lt;/a&gt;, trying to make sense of the many brands and roles that dominate our lives online.&lt;/p&gt;&lt;p&gt;I decided to try my hand at contributing myself, so I spent an hour this morning with a biro trying to make sense of the thing. I wanted to illustrate the difference and interdependence between things online that are predetermined, and things online that &lt;em&gt;just happen&lt;/em&gt;. It also amused me to depict &amp;#8216;the bubble&amp;#8217; as a self-contained structure that is completely insulated from outside realities, and in which you are &lt;a href='http://uk.imdb.com/title/tt0074812/'&gt;unable to survive past thirty&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;What I ended up with is basically a water cycle diagram from year 10 geography class, except I didn&amp;#8217;t colour it in*.&lt;/p&gt;&lt;a href='http://www.flickr.com/photos/angryamoeba/3597068559/sizes/l/'&gt;&lt;img src='http://files.angryamoeba.co.uk/crap/imapmed.png' /&gt;&lt;/a&gt;&lt;p&gt;*which means I would, under the reign of my former teacher, have lost marks for failing to add artistic flair to what is intended to be a scientific topic.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Design competitions are PR you don't need.</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Design-competitions-are-PR-you-dont-need/"/>
+   <updated>2009-03-27T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Design-competitions-are-PR-you-dont-need</id>
+   <content type="html">&lt;h4&gt;A little exposition&lt;/h4&gt;&lt;p&gt;Earlier this week, the folks over at &lt;a href='http://carsonified.com' title='Carsonified home page'&gt;Carsonified&lt;/a&gt; managed to stir up a bit of an unintentional fuss when they &lt;a href='http://www.carsonified.com/fowd/new-competition-design-the-fowd-2009-holding-slide' title='Carsonified design competition'&gt;started a design competition&lt;/a&gt; on their blog. The resulting flame war waged over the issue of what constitutes &amp;#8220;spec work&amp;#8221; vs. what constitutes a &amp;#8220;PR opportunity&amp;#8221;, and managed to completely avoid mentioning what I think is the real problem with &amp;#8220;opportunities&amp;#8221; of this type in the year 2009.&lt;/p&gt;&lt;h4&gt;Hold up, Ebenezer. What's wrong with entering a design competition?&lt;/h4&gt;&lt;p&gt;Absolutely nothing. Let&amp;#8217;s get this straight. You&amp;#8217;re a creative person, for whom work well done is its own reward. It would be fun to enter a competition, even when there will probably be no material reward for doing so. It&amp;#8217;s more productive than garden-variety procrastination, right? But I shall try to put this kindly, as I do not wish to cause unintentional offense: &lt;strong&gt;If you think that the most efficient way to promote yourself is to design something for somebody else&amp;#8217;s brand, then you need your head examining&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;More specifically, if you think that the best place to publish that work is on a slide, in a room containing a finite number of people, during a break when nothing of interest is happening on the stage and everybody is clustered around laptops enjoying the conference&amp;#8217;s corridor track, then be serious. What do you think the conversion rate from peer/competitor to paying customer will be in this case?&lt;/p&gt;&lt;h4&gt;Holy crap, people. It's 2009.&lt;/h4&gt;&lt;p&gt;I don&amp;#8217;t care if you&amp;#8217;re a coder, a UX specialist, a semantics geek, a DBA, an artworker or an illustrator. You should not be waiting on ideas from competitions or design briefs. If you sit doing nothing until a brief lands on your desk, you&amp;#8217;re a vending machine with lungs.&lt;/p&gt;&lt;p&gt;At &lt;a href='http://www.videojuicer.com' title='Videojuicer'&gt;Videojuicer&lt;/a&gt; we have a hiring policy for developers - personally-motivated work inspired by the need to solve a pre-existing problem, even a minor one, will always trump equivalent commercially-briefed experience when it comes to choosing candidates. We weight our decisions in this manner because we want people who identify problems and then go on to give a crap about solving them. We do not want people who sit helplessly on their hands until the problem is broken down for them.&lt;/p&gt;&lt;p&gt;Competitions create an illusory line between the judging and the judged. In reality, that line vanished the day universities started running ethernet to the dorm room. Indeed, the development community today is democratised to the point of closely emulating the scientific community&amp;#8217;s approach to peer publishing and review, and those practices are not lagging far behind (if at all) in the design best practices, accessibility and user experience domains.&lt;/p&gt;&lt;p&gt;The Internet &lt;em&gt;worked&lt;/em&gt;. Value by affiliation is dead. We should be conceiving, creating and deploying ideas as rapidly as possible, selecting the ones that work for progression and speaking about the successes &lt;em&gt;and&lt;/em&gt; the failures at geek meetups, conferences and in writing as much as possible.&lt;/p&gt;&lt;p&gt;Sure, throw out a competition entry or two. But do it for fun. Don&amp;#8217;t be fooled into thinking it&amp;#8217;s the best way to market your skills. You do not have to pander to anybody. Your work can stand on its own. Get on with your life, create the things you want to create and use those things to achieve your goals.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Introducing the new Angry amoeba</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Announcing-the-new-Amoeba/"/>
+   <updated>2009-03-21T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Announcing-the-new-Amoeba</id>
+   <content type="html">&lt;p&gt;Over the last couple of days, we pushed out several long-overdue updates to the Angry amoeba site - and I thought it&amp;#8217;d be fun to go into a little detail about the design and process behind the new version. I wanted the new site to meet several key business objectives:&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Refresh the Angry amoeba brand.&lt;/li&gt;
+
+&lt;li&gt;Drive attention to both our commercial and our open source projects.&lt;/li&gt;
+
+&lt;li&gt;Decrease homepage bounce rate.&lt;/li&gt;
+
+&lt;li&gt;Increase conversion rate from main site to our satellite product sites.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;And several key nerd objectives:&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Blog like a hacker using &lt;a href='http://github.com/mojombo/jekyll'&gt;Jekyll&lt;/a&gt; (inspired by &lt;a href='http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html'&gt;TPW&lt;/a&gt; and &lt;a href='http://blog.new-bamboo.co.uk/2009/2/20/migrating-from-mephisto-to-jekyll'&gt;New Bamboo&lt;/a&gt;).&lt;/li&gt;
+
+&lt;li&gt;Site source should be available on &lt;a href='http://github.com/danski/angryamoeba.co.uk/'&gt;Github&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;Blog posts should be licensed with machine-readable &lt;a href='http://creativecommons.org'&gt;CC&lt;/a&gt; Attribution licenses, site copy should be under traditional Copyright.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;To start, I made some &lt;a href='http://github.com/danski/jekyll'&gt;customisations to Jekyll&lt;/a&gt; to get everything working just as desired. Mainly, I wanted the ability to fold blog posts, and I wanted to be able to handle that elegantly while authoring. I settled on a fairly simple solution, which is to fold posts around &amp;#60;hr /&amp;#62; tags.&lt;/p&gt;&lt;p&gt;Prior to this relaunch, the vast majority of our traffic was organic - that is, occurring naturally through search. Those visitors were arriving at the old site, reading old blog content, and then falling through our fingers. Any successful redesign will expose these users to more recent content through a related posts element, or other means of content suggestion.&lt;/p&gt;&lt;p&gt;The numbers for the first 48 hours seem positive, although I&amp;#8217;ll wait for the initial ooh-look-a-relaunched-site spike to calm down before doing any serious analysis of the design&amp;#8217;s success:&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;Bounce rate from homepage down 50% - 30% of homepage visits converted into blog visits&lt;/li&gt;
+
+&lt;li&gt;Twitter and Github engagement noticeably increased&lt;/li&gt;
+
+&lt;li&gt;Bounce rate within the blog is noticeably decreased&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;I also have some advice to offer when migrating to a new site, particularly if your URL structure is changing and you do not wish to lose your hard-earned Google placement.&lt;/p&gt;&lt;p&gt;In order to preserve our existing inbound links, our web server was configured to redirect the most freqently-hit URLs from the old site to their new equivalents. The redirect is done with a HTTP 301 Moved Permanently status, which serves to inform search spiders that the new URLs are formal replacements for the old ones, allowing us to preserve age and placement for our most popular articles. This may seem basic, but you&amp;#8217;d be surprised at how easy it is to lose sight of these steps in the rush of deploying a new site or app.&lt;/p&gt;&lt;p&gt;You may have also noticed that &lt;a href='http://chirrup.angryamoeba.co.uk'&gt;Chirrup&lt;/a&gt;, our Twitter commenting system, has been replaced on our blog with Disqus, a more conventional solution for blog comments. This is because I have concluded that as it stands, Chirrup doesn&amp;#8217;t &lt;em&gt;quite&lt;/em&gt; work as a standalone comment system, and that it needs re-examining in the light of Twitter&amp;#8217;s OAuth support becoming available.&lt;/p&gt;&lt;p&gt;The site also has a &lt;a href='http://www.bugtails.com/projects/13/'&gt;public bugtracker available on Tails&lt;/a&gt;. If you spot any problems, dropping a ticket there is the best way to let me know about them.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>The Hacker's Amendment</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/The-Hacker-s-Amendment/"/>
+   <updated>2009-02-17T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/The-Hacker-s-Amendment</id>
+   <content type="html">&lt;a href=&quot;http://slashdot.org/~Artraze&quot;&gt;Artraze&lt;/a&gt;, a commenter on Slashdot, discussing &lt;a href=&quot;http://tech.slashdot.org/article.pl?sid=09/02/16/2259257&quot;&gt;the possibility of sinister DRM in Windows 7&lt;/a&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Congress shall pass no law limiting the rights of persons to manipulate, operate, or otherwise utilize as they see fit any of their possessions or effects, nor the sale or trade of tools to be used for such purposes.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;What can I say, apart from a strong, resounding &lt;strong&gt;yes&lt;/strong&gt;?&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The API antipattern, Twitter, and the Fail Whale's new clothes</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/The-API-antipattern-Twitter-and-the-Fail-Whale-s-new-clothes/"/>
+   <updated>2008-11-28T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/The-API-antipattern-Twitter-and-the-Fail-Whale-s-new-clothes</id>
+   <content type="html">&lt;p&gt;Not enough developers get angry when they encounter the &lt;a href=&quot;http://adactio.com/journal/1357&quot;&gt;password antipattern&lt;/a&gt;. You’ll know it when you see it because you’ll see &lt;strong&gt;site A&lt;/strong&gt; asking you for your login credentials for &lt;strong&gt;site B&lt;/strong&gt; in order to enable &lt;strong&gt;cool feature C&lt;/strong&gt;. That &lt;strong&gt;cool feature C&lt;/strong&gt; is &lt;em&gt;usually&lt;/em&gt; a mechanic for spamming &lt;strong&gt;site A&lt;/strong&gt;’s users into signing up for &lt;strong&gt;site B&lt;/strong&gt; notwithstanding, this pattern smells worse than week-old crab left wrapped up in some wet newspaper atop a radiator.&lt;/p&gt;
+
+&lt;p&gt;Yes. This pattern is terrible for security because the least secure part of any system is inevitably the fallible bipedal meat-creature who uses that system, and a culture that encourages meat-beings to hand over login credentials to any form that winks and offers to buy us a drink will only further damage our already poor &lt;a href=&quot;http://en.wikipedia.org/wiki/Series_of_tubes&quot;&gt;intertube&lt;/a&gt; survival instincts. Not only is this insecure, but a complete replacement of the concept of &lt;em&gt;authentication&lt;/em&gt; by a dangerously brittle system of electronic hearsay.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;when_you_say_auth_do_you_mean_authentication_or_authorisation&quot;&gt;When you say auth, do you mean authentication or authorisation?&lt;/h4&gt;
+
+&lt;p&gt;Let’s go back to basics for a second. What does “authentication” mean? A brief fumble with &lt;a href=&quot;http://www.google.co.uk/search?hl=en&amp;amp;q=define%3Aauthentication&amp;amp;btnG=Search&quot;&gt;google’s define function&lt;/a&gt; yields the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Authentication is] The process of identifying an individual or data. In security systems, authentication is distinct from authorization. Authentication merely confirms that the identification of the individual or data is accurate.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And quite right, too. When your small personal army of Twitter client apps* are out there, running in the cloud, firing periodic requests off to Twitter, they’re authenticating as yourself. Twitter has no way to discern whether those requests come from you, or any one of the many agents you authorise to access your account. Put the other way, all agents accessing your account have the full power of the account owner, including the ability to change your password and lock you out of your account. Let’s not even get into the miniature localised apocalypse you’ll trigger whenever you change your password yourself.&lt;/p&gt;
+
+&lt;p&gt;Nowhere else, in any sphere of security, is this considered acceptable. Take as an example the entourage who orbit closely around a given celebrity (that’s you, you lucky thing). Your entourage look after you, they have access to your stuff, but they don’t carry your passport and driver’s license. They carry their &lt;em&gt;own identification which institutions accept as authorisation to access your stuff&lt;/em&gt;. That’s the right way to do it. Your fabulous slick-haired fashion consultant - his name is Quantum, by the way, not that you care - &lt;em&gt;authenticates&lt;/em&gt; as himself when he calls up the designers, but the designers know that he is &lt;em&gt;authorised&lt;/em&gt; to buy clothes for you, because you’re too busy recording a voiceover for a rigidly formulaic CG animal cuddlefest about a penguin called Zappy who gets lost in New York with the baby of a wealthy but comedically inept couple.&lt;/p&gt;
+
+&lt;p&gt;Anyway. The point is that the various software agents you give access to your account should have their own credentials with which they can access your account. The service they’re working with should recognise those credentials as having access to your account. An agent should never be able to change your password or perform other tasks that are reserved for you and you alone. You should be able to revoke those credentials if you lose trust in one of your agents. You should be able to grant time-limited or once-only to agents you’re just trying out.&lt;/p&gt;
+
+&lt;p&gt;There’s one site in particular who &lt;em&gt;already have this solved&lt;/em&gt;. It’s &lt;a href=&quot;http://flickr.com&quot;&gt;Flickr&lt;/a&gt;. They nailed it pretty much from the get-go. Just look at the &lt;a href=&quot;http://www.flickr.com/services/api/auth.spec.html&quot;&gt;documentation&lt;/a&gt; for authenticating with them. It’s beautiful, and the fact that no major independent player has been visibly inspired by it is, frankly, shocking.&lt;/p&gt;
+
+&lt;p&gt;The vast majority of Twitter’s traffic is via their API. And they’re still running on basic HTTP authentication, the way neanderthals authenticated with &lt;em&gt;their&lt;/em&gt; social microstatus aggregators. It’s time for them to do better, like we all know they can.&lt;/p&gt;
+
+&lt;p&gt;*For Twitter, being particularly complicit in this problem, shall have the pleasure of being my whipping boy for the purposes of this article.&lt;/p&gt;
+
+&lt;p&gt;Addendum: And see below. Twitter comments - I loved the idea of them. But people need to enter their password in order to comment. Twitter&amp;#8217;s bizarrely primitive approach to authentication is a massive barrier to innovation in this way.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>An introduction to merb-auth and the wonderful secrets contained within</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/An-introduction-to-merb-auth-and-the-wonderful-secrets-contained-within/"/>
+   <updated>2008-11-22T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/An-introduction-to-merb-auth-and-the-wonderful-secrets-contained-within</id>
+   <content type="html">&lt;p&gt;The point of a framework is to help automate common work, right? So why is building your application’s authentication system so repetetive? The &lt;a href=&quot;http://merbivore.com/&quot;&gt;Merb&lt;/a&gt; framework does a lot of useful things and, thankfully, finally includes core patterns and support for user authentication within the framework. It’s called merb-auth, it just moved into town, and it is already beating up other frameworks and stealing their lunch money. And dating your daughter.&lt;/p&gt;
+
+&lt;p&gt;You should use merb-auth because:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It provides a clean, easily-extendable structure for authentication.&lt;/li&gt;
+&lt;li&gt;It’s part of the official framework, so it’s far less likely to break between versions.&lt;/li&gt;
+&lt;li&gt;It’s just plain damned sensible when you weigh up what it automates for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So let’s build a quick merb app to test it with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;merb-gen app merb-auth-playground
+cd merb-auth-playground
+merb-gen resource secret
+merb-gen resource user&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;starting_at_the_beginning_merb_auth_core&quot;&gt;Starting at the beginning: merb-auth-core&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# Add this to config/dependencies.rb if not already present
+dependency &quot;merb-auth-core&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What happened? Nothing you can see just yet. This is because, as with all merb components that offer a “core” package, the core contains only structure upon which to hang your own code. merb-auth-core doesn’t care about or do anything to your app. It just provides some hooks for you to start using. What merb-auth-core &lt;em&gt;actually&lt;/em&gt; gives us is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Nifty support for storing authentication details in the user’s session:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# In any of your controllers
+if session.user
+    &quot;You're logged in as user ID #{session.user.id}&quot;
+else
+    &quot;You're logged out, so you don't get an ID. You don't deserve one.&quot;
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for &lt;strong&gt;strategies&lt;/strong&gt;. Strategies are ways to authenticate a user. A username and password sent from a form is one strategy. OpenID is another, OAuth yet another. You can &lt;em&gt;register&lt;/em&gt; your own strategies with merb-auth, and &lt;em&gt;activate&lt;/em&gt; them when you want them used. When merb-auth tries to authenticate the user, it will call a method named &lt;em&gt;run!&lt;/em&gt; on each strategy in turn until one returns a user or it runs out of strategies. If a user is returned, then the authentication is successful. If not, then the authentication was unsuccessful and an exception will be raised.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Strategies look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# This is an example strategy
+class Merb::Authentication
+  module Strategies
+      class MyCustomStrategy
+
+        def run!
+          do_something_that_returns_either_a_user_or_nil_or_false
+        end 
+
+        def strategy_error_message
+          &quot;AND THEN THERE WAS FAIL&quot;
+        end
+
+      end
+  end
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can register and activate them like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# In config/init.rb:
+Merb::Bootloader.after_app_loads do
+    Merb::Authentication.register :custom_strategy, Merb.root / &quot;path/to/your/strategy.rb&quot;
+  Merb::Authentication.activate! :custom_strategy
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;An &lt;em&gt;ensure_authenticated&lt;/em&gt; method we can use in our controllers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;class Secrets &amp;lt; Merb::Controller
+    before :ensure_authenticated
+
+    def index
+        &quot;lol, juicy secrets&quot;
+    end     
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There’s also one very important thing that merb-auth &lt;strong&gt;does not&lt;/strong&gt; give you. Merb-auth is &lt;strong&gt;Bring Your Own Model&lt;/strong&gt; code, which means you’re expected to write your own user model. If your user class is called User, which it probably is, then merb-auth will find it just fine with zero configuration. If your user class is called something else, then you’re a masochist, and you should add this to your init.rb:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# config/init.rb:
+Merb::BootLoader.after_app_loads do
+  Merb::Authentication.user_class = MyCustomUserClass
+
+
+
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;going_deeper_merb_auth_more&quot;&gt;Going deeper: merb-auth-more&lt;/h3&gt;
+
+&lt;p&gt;Adding merb-auth-core to our app got us all this sweet structure and architecture for free - we can trade authentication strategies with other developers, pretty much any merb developer we hire can understand our authentication system and we still get to define business logic ourselves. But what if we want to use merb-auth-core to do something totally basic that every developer has to build at least over 9000 times in their lifetime, like basic password auth? Enter &lt;strong&gt;merb-auth-more&lt;/strong&gt;. Merb-auth-more doesn’t contain any new architecture over and above merb-auth-core, but it what it does include is a package of ready-made auth strategies that work wonderfully right out the box. Let’s use merb-auth-more to add simple login form support to our application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# Add this to config/dependencies.rb if not already present
+dependency &quot;merb-auth-more&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And if we didn’t already, let’s craft a really simple user model including merb-auth-more’s salted, hashed password module.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;merb-gen resource user&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# In app/models/user.rb
+require 'merb-auth-more/mixins/salted_user'
+class User
+    include DataMapper::Resource
+    include Merb::Authentication::Mixins::SaltedUser
+
+    property :id, Serial
+    property :email, String, :format=&amp;gt;:email_address
+    property :login, String, :nullable=&amp;gt;false
+
+    # You do not have to define password or password_confirmation attributes - the SaltedUser mixin does this for you.
+    # You do not have to define the ::authenticate! method - SaltedUser does this for you.      
+
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you don’t want to use :login and :password as the params for logging in, or you want users to login using another property, you can easily customise this behaviour with this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# config/init.rb:
+Merb::BootLoader.after_app_loads do
+  Merb::Plugins.config[:&quot;merb-auth&quot;][:login_param] = :email
+    Merb::Plugins.config[:&quot;merb-auth&quot;][:password_param] = :secret_squirrel_decoder_ring
+end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Woot! Full authentication from controller to model is ours to use, enjoy and love, with little to no maintenance or hassle. But we don’t have any views set up to allow users to log in, which is somewhat problematic. But don’t panic, honey. Merb’s got your back.&lt;/p&gt;
+
+&lt;h3 id=&quot;hot_damn_merb_auth_slice_password&quot;&gt;Hot damn: merb-auth-slice-password&lt;/h3&gt;
+
+&lt;p&gt;Merb-slices are awesome. They’re little apps designed to run inside your main apps - they can have their own controllers, models, helpers and views, which your main application can override on a file-by-file basis. They’re plugins on steroids - essentially the best way to refactor and share complex behaviour from one merb app to another. &lt;strong&gt;Merb-auth-slice-password&lt;/strong&gt; is a merb slice built on top of merb-auth-core and -more which uses merb-auth-more’s auth strategies to provide a simple login/logout mechanism for your app. Let’s get it running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# Add this to config/dependencies.rb if not already present
+dependency &quot;merb-auth-slice-password&quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;# In your config/router.rb
+# This will 'mount' the slice within your app's URL structure. 
+# The :path_prefix option tells the router not to mount the slice at a subfolder like /merb-auth-slice-password/login.
+# below: Merb::Router.prepare do
+add_slice(:MerbAuthSlicePassword, :path_prefix =&amp;gt; nil)
+# above: end&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;rake slices:merb-auth-slice-password:install
+rake db:automigrate&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s try booting up the app! Use the merb command to fire it up and check it out in a web browser. Hit http://localhost:4000 and you should see the merb welcome screen:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;Merb welcome screen&quot; src=&quot;http://img.skitch.com/20081121-g36hbtg8e4hn4jxbyffgg6xyxf.jpg&quot;/&gt;&lt;/p&gt;
+
+&lt;p&gt;However, hit the protected controller we made at http://localhost:4000/secrets and hot diggity damn, free login functionality!&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;Hot damn&quot; src=&quot;http://img.skitch.com/20081121-gc9hd428jk9x4qf6dhqu7fncfd.jpg&quot;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Now the login you have here follows a pattern called &lt;em&gt;exceptional authentication&lt;/em&gt;. Merb-auth considers you being logged out (when you need to be logged in) to be an exception, just like NotFound or any other exception. So instead of needing to bounce users to Sessions#new when the user visits a protected URL, we raise an exception and display the login page right there. A single specific URL with a :return_to param is still used to start the session as merb URLs can perform differently depending on the request method used, and we most likely want to render the GET version of the URL upon successful login.&lt;/p&gt;
+
+&lt;p&gt;Let’s finish you up by making some changes to the somewhat simplistic login form provided by slice-password. Because we’re dealing with a slice here, we can easily provide new templates for the slice. Check out the directory structure of your project - since you installed that slice, you’ve got a slices folder in the root. Within it, a folder for each of your slices, gloriously arranged for your inspection. Each folder empty, awaiting your instructions. With any slice, you can override views on a per-file basis. Unfortunately due to &lt;a href=&quot;http://merb.lighthouseapp.com/projects/7433-merb/tickets/1024-merb-auth-slice-password-and-overrides-problem#ticket-1024-2&quot;&gt;this bug&lt;/a&gt; in Merb 1.0, we have to go about this in a slightly askew fashion for slice-password. In terminal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;rake slices:merb-auth-slice-password:freeze&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will copy the slice files into your slices folder for you to tweak. I’m also going to force the slice files to render inside my main application’s layout:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;#in config/init.rb
+Merb::Slices::config[:merb_auth_slice_password][:layout] = :application&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I’ll restart the slice to see what happened:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;Just awesome&quot; src=&quot;http://img.skitch.com/20081122-cxn9jf913799586p93rtm6wpgr.jpg&quot;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Awesome.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to get Quicksilver's radial menus to play nice with your mouse</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/How-to-get-Quicksilver-s-radial-menus-to-play-nice-with-your-mouse/"/>
+   <updated>2008-11-17T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/How-to-get-Quicksilver-s-radial-menus-to-play-nice-with-your-mouse</id>
+   <content type="html">&lt;p&gt;You may have seen &lt;a href=&quot;http://blacktree.com/?quicksilver&quot;&gt;Quicksilver&lt;/a&gt;’s &lt;a href=&quot;http://www.usingmac.com/2007/10/15/radial-quicksilver-menu&quot;&gt;Radial Constellation menus&lt;/a&gt;, which are freaking awesome. Behold:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.skitch.com/20081117-1teepr16we8n9q9j7cry3r55j1.jpg&quot; alt=&quot;Awesome radial menus&quot; title=&quot;&quot; style=&quot;border: 10px solid #EEE; margin: 0 10px; display: block;&quot;/&gt;&lt;/p&gt;
+
+&lt;p&gt;Wouldn’t it be great if you could get them to pop up when you click on items with a particular mouse button or modifier key? Hell yeah it would. And as it turns out, Quicksilver already contains all the science you need to do it. To get started:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open Quicksilver’s preference pane and tick ‘&lt;strong&gt;Enable advanced features&lt;/strong&gt;.’ Allow Quicksilver to shout at you for a moment. Agree when it asks to restart itself.&lt;/li&gt;
+&lt;li&gt;Re-open the preference pane and click ‘&lt;strong&gt;Plug-ins&lt;/strong&gt;’ in the toolbar. Search for three addons: &lt;strong&gt;Constallation Menus&lt;/strong&gt;, &lt;strong&gt;Mouse Triggers&lt;/strong&gt; and &lt;strong&gt;User Interface Access&lt;/strong&gt;. Install them.&lt;/li&gt;
+&lt;li&gt;Click the ‘&lt;strong&gt;Catalog&lt;/strong&gt;’ toolbar item and select ‘&lt;strong&gt;Quicksilver&lt;/strong&gt;’ from the source list on the left. Tick ‘&lt;strong&gt;Proxy Objects&lt;/strong&gt;’ on the right if it isn’t already ticked. Restart Quicksilver again.&lt;/li&gt;
+&lt;li&gt;Open the preference pane for the third and final time and select ‘&lt;strong&gt;Triggers&lt;/strong&gt;’. Click the &lt;strong&gt;+&lt;/strong&gt; sign at the bottom of the window and select ‘&lt;strong&gt;Mouse&lt;/strong&gt;’.&lt;/li&gt;
+&lt;li&gt;Double-click the item and make a selection like this: &lt;br/&gt;&lt;br/&gt;&lt;img src=&quot;http://img.skitch.com/20081117-mm9nsafnnb9ef74a8fnyim5prt.jpg&quot; alt=&quot;Current selection&quot; title=&quot;&quot; style=&quot;border: 10px solid #EEE; margin: 0 10px; display: block;&quot;/&gt;&lt;br/&gt;
+&lt;/li&gt;
+&lt;li&gt;Pick which mouse button and modifiers you want to trigger the menu: &lt;br/&gt;&lt;br/&gt;&lt;img src=&quot;http://img.skitch.com/20081117-rp6r4gqdfes3qncf98us7mifju.jpg&quot; alt=&quot;Trigger panel&quot; title=&quot;&quot; style=&quot;border: 10px solid #EEE; margin: 0 10px; display: block;&quot;/&gt;&lt;br/&gt;
+&lt;/li&gt;
+&lt;li&gt;Enjoy.&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>In which we enjoy catharsis by joining the Merb vs. Rails drama</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/In-which-we-enjoy-catharsis-by-joining-the-Merb-vs-Rails-drama/"/>
+   <updated>2008-11-16T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/In-which-we-enjoy-catharsis-by-joining-the-Merb-vs-Rails-drama</id>
+   <content type="html">&lt;p&gt;Summarising this post from &lt;a href=&quot;http://merbist.com/2008/11/15/rails-vs-merb-drama/&quot;&gt;Merbist&lt;/a&gt;, in which the current bun fight between Rails and Merb camps is documented in detail:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.rubyonrails.com/&quot;&gt;Rails&lt;/a&gt; is enormous and comes as a package. Although it is theoretically possible to run Rails without some of the bajillion modules it loads at boot, it involves freezing your Rails version, removing a bunch of includes, staying clear of any dependent methods and, oh yeah, never being able to easily upgrade to newer Rails versions again. Ever. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://merbivore.com/&quot;&gt;Merb&lt;/a&gt; is smaller, although younger (Rails used to be smallish too), but it has a modular design which allows you to actively decide the size of the included framework. Smaller projects can use only the core controller stack, while larger projects can introduce Merb&amp;#8217;s ORM, view and many helper modules on a selective basis as they are needed. Merb is also faster in most cases (YMMV) and in my own personal experience has a far lower rate of &lt;a href=&quot;http://www.osnews.com/story/19266/WTFs_m&quot;&gt;WTFs/minute&lt;/a&gt;  when reading through both core source and addon source, thanks to Merb&amp;#8217;s plugin API.&lt;/p&gt;
+
+&lt;p&gt;Merb has taken functional cues from Rails&amp;#8217; brilliant RESTful resource handling and multi-format controller actions, and Rails is taking some architectural cues from Merb&amp;#8217;s super-fast controller stack and non-blocking file uploads. &lt;/p&gt;
+
+&lt;p&gt;I have problems with Rails&amp;#8217; lack of modular containment and high-maintenance hackability, but I also see why there&amp;#8217;s room for an end-to-end framework in the marketplace. I have problems with &lt;a href=&quot;http://loudthinking.com/&quot;&gt;DHH&lt;/a&gt;&amp;#8217;s &lt;a href=&quot;http://blog.wekeroad.com/2007/10/10/imploding-rails-jesus-dhh-and-the-uncle-ben-principle/&quot;&gt;decision to solicit help from a community he had no intention of listening to&lt;/a&gt;, but I also appreciate that strength of ideology is what made Rails take off in the first place. &lt;/p&gt;
+
+&lt;p&gt;I just wish Rails didn&amp;#8217;t so finely straddle the line between being &amp;#8220;opinionated&amp;#8221; and being an &lt;a href=&quot;http://www.flickr.com/photos/doesrails/128015501/&quot;&gt;irresponsible douche&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;In the end, we&amp;#8217;re all trying to solve the same problems. So find the tools you like, help them grow, and have fun hacking. And for science&amp;#8217;s sake, don&amp;#8217;t be a douche.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Create with Context on How people really use the iPhone</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Create-with-Context-on-How-people-really-use-the-iPhone/"/>
+   <updated>2008-11-13T00:00:00+00:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Create-with-Context-on-How-people-really-use-the-iPhone</id>
+   <content type="html">&lt;p&gt;The guys and girls over at &lt;a href=&quot;http://www.createwithcontext.com/&quot;&gt;Create with Context&lt;/a&gt; have created a very interesting document detailing the results of their independent user testing of the iPhone, and in a stroke of sheer brilliance they&amp;#8217;ve &lt;a href=&quot;http://www.createwithcontext.com/how-people-really-use-the-iphone.html&quot;&gt;made it available to all of us&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Their look into usability of the in-built iPhone apps turns up some interesting points about Apple&amp;#8217;s iconography. Many users note confusion around the purpose of some icons, most notably between search and zoom. It seems that some users expect magnifying glass icons to either increase the current zoom level, or to reset the zoom level to a full-page view. This is unfortunate, because the magnifying glass is, on the desktop, the canonical icon for search - so I&amp;#8217;m curious to see if these results are specific to user interfaces that are so centered around zoom and pan, or if we&amp;#8217;ve been missing problems with desktop iconography all along. It&amp;#8217;s also possible that the relatively cramped conditions on the iPhone&amp;#8217;s screen give little opportunity to space controls out and give them distinct context.&lt;/p&gt;
+
+&lt;p&gt;Most useful for my fellow Cocoa Touch developers is the section on App Store experiences, which gives insight into app pricing, which App Store listings and the impact of positive/negative reviews on the download page.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s a &lt;a href=&quot;http://www.createwithcontext.com/how-people-really-use-the-iphone.html&quot;&gt;highly recommended download&lt;/a&gt; and I&amp;#8217;d like to thank Create with Context for making it available to all of us.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Barclays online banking uses sketchy external stats provider, is only as secure as a sketchy external stats provider.</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider/"/>
+   <updated>2008-08-28T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider</id>
+   <content type="html">&lt;p&gt;Basic software security, lesson #1: You are only as secure as the weakest point in your system.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s a valuable lesson. Earlier this year Barclays made a big show of security, even going so far as to &lt;a href=&quot;http://www.barclays.co.uk/pinsentry/&quot;&gt;mail two-factor authentication devices to their customers&lt;/a&gt; in an attempt to prevent online banking fraud. That&amp;#8217;s a big investment.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately for Barclays, it doesn&amp;#8217;t matter, and their money was wasted. Because if you want to compromise the computers of Barclays account holders, there&amp;#8217;s no need to circumvent the giant, thoroughly-audited security schemes that are almost certainly in place. Nope, you just need to compromise their analytics provider.&lt;/p&gt;
+
+&lt;img src=&quot;http://img.skitch.com/20080828-txecf7ttm1myj9qf2qbssx2kum.jpg&quot; alt=&quot;code fail&quot;/&gt;&lt;p&gt;That&amp;#8217;s right, every page load from your &amp;#8220;private&amp;#8221;, &amp;#8220;secure&amp;#8221; banking pages is also communicating directly with Webtrends&amp;#8217; servers. And worse, Webtrends get to run code within the page, putting you totally at their mercy. If an angry Webtrends employee wants to harvest your banking data, he needs only change that javascript without alerting Barclays first. If you google &amp;#8220;&lt;a href=&quot;http://www.google.co.uk/search?q=webtrendslive&quot;&gt;webtrendslive&lt;/a&gt;&amp;#8221;, by the way, you&amp;#8217;ll notice that malware reports actually outrank the actual product site. It&amp;#8217;s a nice touch.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Anyway. Looks fine, right? They&amp;#8217;re just including a local script from the /f directory. No. The script they&amp;#8217;re pulling from a local file is in fact writing a new script tag to the document, which will load a script from an external server. Take a look:&lt;/p&gt;
+
+&lt;pre class=&quot;javascript&quot;&gt;&lt;code&gt;// THIS IS ALL INNOCENT ENOUGH
+var gDomain=&quot;statse.webtrendslive.com&quot;;
+var gDcsId=&quot;REDACTED&quot;;
+var gFpc=&quot;WT_FPC&quot;;
+var gConvert=true;
+var gFpcDom=&quot;.barclays.co.uk&quot;;
+
+// WELL, IT'S ONLY BANKING INNIT. THE SECURITY MODEL ONLY
+// PREVENTS YOU FROM DOING THIS SO YOU DON'T LOSE YOUR
+// MYSPACE PASSWORD.
+
+if ((typeof(gConvert)!=&quot;undefined&quot;)&amp;amp;&amp;amp;gConvert&amp;amp;&amp;amp;(document.cookie.indexOf(gFpc+&quot;=&quot;)==-1)&amp;amp;&amp;amp;(document.cookie.indexOf(&quot;WTLOPTOUT=&quot;)==-1)){
+ document.write(&quot;&amp;lt;SCR&quot;+&quot;IPT TYPE='text/javascript' SRC='&quot;+&quot;http&quot;+(window.location.protocol.indexOf('https:')==0?'s':'')+&quot;://&quot;+gDomain+&quot;/&quot;+gDcsId+&quot;/wtid.js&quot;+&quot;'&amp;gt;&amp;lt;\/SCR&quot;+&quot;IPT&amp;gt;&quot;);
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Why does it have to do this, you ask? Because the browser security model &lt;strong&gt;specifically prevents you&lt;/strong&gt; from making off-site requests in this way to protect the user from, oh, script injection vulnerabilities and having their details pinched by dastardly or inept external script providers. But this is only banking, right? S&amp;#8217;probably fine to just ignore the reasons not to do it and go ahead with it. It&amp;#8217;s not like you can assess your stats by analyzing your own logs or anything.&lt;/p&gt;
+
+&lt;p&gt;Basic software security, lesson #1: You are only as secure as the weakest point in your system.&lt;/p&gt;
+
+&lt;p&gt;It&amp;#8217;s a valuable lesson.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Testing for desirable errors in Ruby</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Testing-for-desirable-errors-in-Ruby/"/>
+   <updated>2008-07-04T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Testing-for-desirable-errors-in-Ruby</id>
+   <content type="html">&lt;p&gt;Sometimes, you &lt;em&gt;want&lt;/em&gt; your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I&amp;#8217;ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='ruby'&gt;# In test_helper.rb:
+def assert_error_raised(errorklass=StandardError, &amp;amp;amp;block)
+     raised = false
+     begin
+       block.call 
+     rescue errorklass 
+       raised = true
+     end
+     # You will see this message if an error was not raised.
+     # If an error was raised which was not of the type you specified, then the test trace
+     # will be allowed to display the error as normal and the test will fail with an E.
+     assert raised, &amp;quot;Expected error #{errorklass.to_s} to be raised but error never encountered.&amp;quot;
+end
+
+# In your application code, let's say some_model.rb:
+def do_something_with(array)
+       unless array.is_a?(Array)
+              raise ArgumentError, &amp;quot;Argument of type #{array.class.to_s} given to SomeModel#do_something when argument must be of type Array&amp;quot;
+       end
+       continue_doing_something
+end
+
+# In your test suite:
+def test_error_generated_with_bad_argument_to_do_something_with
+       @some_model = SomeModel.new
+       # This test will pass
+       assert_error_raised(ArgumentError) do
+              @some_model.do_something_with &amp;quot;i'm not an array&amp;quot;
+       end
+       # This test will fail and dump the error via your test console's usual channel
+       assert_error_raised(RuntimeError) do
+              @some_model.do_something_with &amp;quot;neither am i&amp;quot;
+       end
+end&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Chirrup 0.81 released</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Chirrup-0-81-released/"/>
+   <updated>2008-07-03T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Chirrup-0-81-released</id>
+   <content type="html">&lt;p&gt;Hi there, sorry I haven&amp;#8217;t written in a while. It&amp;#8217;s this damned work business. Some actual content is promised soon.&lt;/p&gt;
+
+&lt;p&gt;Anyhow - A rather nasty text-escaping bug popped up in Chirrup, so I&amp;#8217;ve issued a patch in version 0.81 which is &lt;a href=&quot;http://chirrup.angryamoeba.co.uk&quot;&gt;available for download&lt;/a&gt; now.&lt;/p&gt;
+
+&lt;p&gt;The problem: Badly-formatted tweets containing certain special characters caused Chirrup&amp;#8217;s JSON to fail parsing and the Chirrup UI to not display.&lt;/p&gt;
+
+&lt;p&gt;The fix: Improved sanitisation routine for tweet data being sent over JSON.&lt;/p&gt;
+
+&lt;p&gt;Happy Tweeting.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to force Git to ignore files</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/How-to-force-Git-to-ignore-files/"/>
+   <updated>2008-05-24T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/How-to-force-Git-to-ignore-files</id>
+   <content type="html">Just documenting this one for later, really. If you&amp;#8217;re setting up a git repository and you need to ignore certain types of file - logs, or python bytecode (not that I&amp;#8217;m dealing with those two problems at this exact moment or anything), the procedure is quite simple:
+
+&lt;pre&gt;&lt;code&gt;
+# Get to the hidden .git directory within your project.
+cd /path/to/your/project
+cd .git/info
+# in .git/info is a file named &quot;exclude&quot;. Open it in whatever you like. Here we'll open it with Textmate.
+mate exclude
+&lt;/code&gt;&lt;/pre&gt;
+
+The file&amp;#8217;s contents are, by default, commented out. To add your own ignore rules, just add each rule on a new line. Here&amp;#8217;s a simple example from a Python project which prevents bytecode and Textmate project files from being committed:
+
+&lt;pre&gt;&lt;code&gt;
+*.pyc
+*.tmproj
+&lt;/code&gt;&lt;/pre&gt;
+
+In a Rails project, you&amp;#8217;d likely want a set of rules like the following &lt;em&gt;completely untested&lt;/em&gt; fragment:
+
+&lt;pre&gt;&lt;code&gt;
+log
+*.log
+*.pid
+tmp
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Chirrup launched for public use</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Chirrup-launched-for-public-use/"/>
+   <updated>2008-05-20T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Chirrup-launched-for-public-use</id>
+   <content type="html">&lt;p&gt;Well, that&amp;#8217;s another silly little side-project in the can. If you&amp;#8217;d like to have Twitter comments on your blog, wiki, website, or basically anything with a URL, head on over to &lt;a href=&quot;http://chirrup.angryamoeba.co.uk&quot;&gt;chirrup.angryamoeba.co.uk&lt;/a&gt; and download Chirrup to get started!&lt;/p&gt;
+
+&lt;p&gt;Thanks to the &lt;a href=&quot;http://www.videojuicer.com&quot;&gt;Videojuicer&lt;/a&gt; dev team for helping with testing - &lt;a href=&quot;http://skein.tumblr.com/&quot;&gt;Ted Han&lt;/a&gt;, &lt;a href=&quot;http://sd2.com/&quot;&gt;John Carlin&lt;/a&gt;, &lt;a href=&quot;http://aelius.net/&quot;&gt;Alex Nichol&lt;/a&gt; and &lt;a href=&quot;http://mochapowered.com/&quot;&gt;Adam Livesley&lt;/a&gt;. And thanks to Adam for turning Chirrup into a &lt;a href=&quot;http://chirrup.angryamoeba.co.uk/docs/wordpress.html&quot;&gt;wordpress plugin&lt;/a&gt; - this functionality is included in the main &lt;a href=&quot;http://chirrup.angryamoeba.co.uk/download.html&quot;&gt;download package &lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks for bearing with us over the testing period, and have fun with Chirrup!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Chirrup - Twitter comments for your blog!</title>
+   <link href="http://www.angryamoeba.co.uk/singlecell/Chirrup-Twitter-comments-for-your-blog/"/>
+   <updated>2008-05-13T00:00:00+01:00</updated>
+   <id>http://www.angryamoeba.co.uk/singlecell/Chirrup-Twitter-comments-for-your-blog</id>
+   <content type="html">&lt;p&gt;UPDATE: Chirrup is now available to the public. Visit &lt;a href=&quot;http://chirrup.angryamoeba.co.uk&quot;&gt;chirrup.angryamoeba.co.uk&lt;/a&gt; to get your copy.&lt;/p&gt;
+
+&lt;p&gt;You might&amp;#8217;ve noticed some new features here at Singlecell - we&amp;#8217;ve been working on a library called Chirrup, which allows you to include comments from Twitter in your pages.&lt;/p&gt;
+
+&lt;p&gt;The idea behind Chirrup is to provide a more natural relationship between dialogue happening on individual pages and dialogue happening in public on applications such as Twitter. People are discussing content in comment sections, and then duplicating the discussion on Twitter - so why not marry the two up?&lt;/p&gt;
+
+&lt;p&gt;When you post a comment to a page via Chirrup, your comment is sent as an @reply to the blog&amp;#8217;s owner, and contains both the URL and your comment. This means that your comments are completely legible to the rest of Twitter, and contain no unnecessary data.&lt;/p&gt;
+
+&lt;p&gt;Chirrup&amp;#8217;s server-side component then slurps up the blog owner&amp;#8217;s @replies and sorts through them for Chirrup responses. It supports compression and decompression of tinyurl&amp;#8217;s, so comments sent with all major Twitter clients can be recognised by Chirrup&amp;#8217;s parser.&lt;/p&gt;
+
+&lt;p&gt;Chirrup will enjoy a short testing period on this page while I snarf down huge piles of my own dog food, and will then be released under a &lt;a href=&quot;http://creativecommons.org&quot;&gt;Creative Commons&lt;/a&gt; license.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, if you find a bug in Chirrup&amp;#8217;s behaviour, I&amp;#8217;d be obliged if you&amp;#8217;d post it to the &lt;a href=&quot;http://www.bugtails.com/projects/156/&quot;&gt;Chirrup bugtracker&lt;/a&gt; on &lt;a href=&quot;http://tailshq.com&quot;&gt;Tails&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>

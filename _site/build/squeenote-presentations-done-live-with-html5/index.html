@@ -1,0 +1,82 @@
+<div id="focus" class="section forty-sixty">
+
+			<h1 class="left">
+				<a href="/singlecell/squeenote-presentations-done-live-with-html5/">Introducing Squeenote - Presentations done live with HTML5!</a>
+				<span class="date">24 Jun, 2010</span>
+			</h1>
+			
+			<div class="right box">
+				<p><img src='http://img.skitch.com/20100624-eswfi1h9dym3qq1rp7whacekad.jpg' /></p>
+<p>I recently gave a presentation to my colleagues at <a href='http://videojuicer.com'>Videojuicer</a> about HTML5 and what it means for our business and our technology roadmap. Being a mindless sheep, I did of course opt to create the presentation itself in HTML5 with the intention of having the audience follow along in their browsers, without the aid of a projector.</p>
+
+<p>Then, a thought occurred.</p>
+
+<p><em>If I&#8217;m putting a slide deck on screens that are owned by the audience, then the audience should get some control of their own.</em></p>
+
+<p>Using this principle as a guide, I hacked up a quick <a href='http://nodejs.org'>Node.js</a> and <a href='http://socket.io'>Socket.io</a> demo that would allow audience members to either sit back and follow the presentation as I moved through the slides, or to break off from the flow and browse the deck themselves, rejoining the rest of the audience whenever they choose.</p>
+
+<h2 id='designed_for_audiences_like_this'>Designed for audiences like this.</h2>
+<p><a href='http://www.flickr.com/photos/chesh2000/380186134/' title='Photo by Jay Goldman'><img src='http://img.skitch.com/20100624-t71h39wqub8g1cr9752tnwirbx.jpg' /></a></p>
+<p>The presentation was a success, and I was struck by the creative potential of allowing audience members their own runtime instance of a slide deck. What&#8217;s possible with this setup that isn&#8217;t possible with a regular Keynote presentation? Including hyperlinks for audiences to follow for further reading is basic. We can do more:</p>
+
+<ul>
+<li>Include interactive elements in slides. Navigable data visualisations, canvas objects, tech demos, whatever.</li>
+
+<li>Use selective disclosure to keep slides brief but allow individual audience members to drill down on items they find interesting.</li>
+
+<li>Allow audiences to simply save your presentation out of their browsers.</li>
+</ul>
+
+<h2 id='introducing_squeenote'>Introducing Squeenote</h2>
+<p><object id='videojuicer_seed_demo_presentation_153' height='199' classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' width='550'> <param name='movie' value='http://player.videojuicer.com/bootstrap.swf' /> <param name='allowfullscreen' value='true' /> <param name='allowscriptaccess' value='always' /> <param name='flashvars' value='seed_name=demo&presentation_id=153' /> <param name='name' value='videojuicer_seed_demo_presentation_153' /> <param name='wmode' value='transparent' /> <embed name='videojuicer_seed_demo_presentation_153' src='http://player.videojuicer.com/bootstrap.swf' allowfullscreen='true' type='application/x-shockwave-flash' allowscriptaccess='always' wmode='transparent' height='199' flashvars='seed_name=demo&presentation_id=153' width='550' /> </object></p>
+<p>I&#8217;ve since cleaned up this presentation engine and released it under the name <a href='http://github.com/danski/squeenote'>Squeenote</a>. Authoring presentations for Squeenote is ridiculously simple; a presentation is simply an HTML file containing an ordered list of slides. See the <a href='http://github.com/danski/Squeenote/blob/master/readme.mdown'>README</a> for more information. Here&#8217;s the initial feature list:</p>
+
+<ul>
+<li>Presenter follow/unfollow for audience members</li>
+
+<li>Password-protected presenter mode</li>
+
+<li>Support for HTML5-friendly browsers. Tested in Safari, Chrome, Firefox, Mobile Safari.</li>
+
+<li>Themeable. Since a presentation is just an HTML file, a theme is just CSS and/or JS.</li>
+
+<li>Includes a default theme using CSS3 Transitions, with basic iPad and iPhone support for audience members.</li>
+
+<li>Modular and hackable. All components, including the Squeenote UI, are replaceable and extendable.</li>
+
+<li>Designed for archival. A Squeenote presentation can be uploaded to a static web server without the Node.js component and it will run in &#8220;presenter offline&#8221; mode.</li>
+</ul>
+
+<h2 id='so_i_heard_you_like_presentations'>So I heard you like Presentations</h2>
+
+<p>Squeenote includes <a href='http://squeenote.angryamoeba.co.uk'>a short presentation about Squeenote, authored in Squeenote</a>.</p>
+<p><a href='http://squeenote.angryamoeba.co.uk'><img src='http://img.skitch.com/20100624-g99kep5rqysh17qea3swd4658b.jpg' /></a></p>
+<h2 id='clone_it_and_use_it'>Clone it and use it</h2>
+
+<p>Squeenote is available for free at my <a href='http://github.com/danski/squeenote'>Github profile</a>. It&#8217;s released under a <a href='http://creativecommons.org/licenses/by/2.0/uk/'>Creative Commons</a> license as it is intended to be altered in a highly-personalised fashion.</p>
+				Included file 'dan-bio.html' not found in _includes directory
+			</div>
+	
+</div>
+
+<div id="content" class="section forty-sixty">
+	
+
+	<div class="right box bright">
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'singlecell'; // required: replace example with your forum shortname
+
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+	</div>
+
+	
+</div>

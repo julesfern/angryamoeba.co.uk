@@ -1,0 +1,270 @@
+<!DOCTYPE html>	
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" itemscope itemtype="http://schema.org/Organization"> <!--<![endif]-->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		
+		<title>Angry amoeba</title>
+		
+		<meta name="ROBOTS" content="ALL" />
+		<meta name="Description" content="A blog. Things of Interest: technology, gaming, web standards, and the open web." />
+
+		<!-- Service discovery -->
+		<link rel="alternate" type="application/atom+xml" href="http://angryamoeba.co.uk/singlecell/atom.xml" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/img/icons/favicon.png" />
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="/css/normalize.css" type="text/css" />
+		<link rel="stylesheet" href="/css/ir_black.css" type="text/css" />
+		<link rel="stylesheet" href="/css/angryamoeba.css" type="text/css" />
+		
+		<!-- Interactivity -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<!--[if lt IE 9 ]>
+		  <script type="text/javascript" src="/js/html5.js"></script>  
+		<![endif]-->
+		<script type="text/javascript" src="/js/angryamoeba.enhance.js"></script>
+		
+		
+</head>
+	
+	<body class="index archives">		
+			<script type="text/javascript">foo = "bar";</script>
+			
+			
+
+<header>
+  <h1>
+    <a href="/">
+      <img src="/img/brand/amoeba-large-text.png" alt="Dan Glegg - Software created, Inventions made to order" />
+    </a>
+  </h1>
+  
+  
+</header>
+
+
+
+<section id="archives" class="archives">
+  <div>
+  <h1>Older posts</h1>
+  
+  <form action="/" method="get" class="archive-search">
+    <fieldset>
+      <input type="text" class="text" name="q" placeholder="Search archives" />
+    </fieldset>
+    <input type="submit" class="submit" value="Search" />
+  </form>
+</div>
+  
+  
+    
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="headline"> 
+      <a href="/Testing-for-desirable-errors-in-Ruby/" itemprop="url">Testing for desirable errors in Ruby</a>
+    </h2>
+    <time datetime="2008-07-04">
+      04 Jul 2008
+    </time>
+  </header>
+      
+  <div itemprop="articleBody">
+    
+      <p>Sometimes, you <em>want</em> your code to fail. You want to make sure that in the event of a failure, an exception is generated - the equivalent of a controlled explosion. Something you can design contingencies around. Until now I’ve been a little frustrated with testing these eventualities, so I decided to hack up a quick custom assertion for your Test::Unit suites (although it should translate pretty effortlessly to RSpec or any other test framework):</p><div>
+  <pre><code class="ruby"># In test_helper.rb:
+def assert_error_raised(errorklass=StandardError, &amp;amp;block)
+     raised = false
+     begin
+       block.call 
+     rescue errorklass 
+       raised = true
+     end
+     # You will see this message if an error was not raised.
+     # If an error was raised which was not of the type you specified, then the test trace
+     # will be allowed to display the error as normal and the test will fail with an E.
+     assert raised, "Expected error #{errorklass.to_s} to be raised but error never encountered."
+end
+
+# In your application code, let's say some_model.rb:
+def do_something_with(array)
+       unless array.is_a?(Array)
+              raise ArgumentError, "Argument of type #{array.class.to_s} given to SomeModel#do_something when argument must be of type Array"
+       end
+       continue_doing_something
+end
+
+# In your test suite:
+def test_error_generated_with_bad_argument_to_do_something_with
+       @some_model = SomeModel.new
+       # This test will pass
+       assert_error_raised(ArgumentError) do
+              @some_model.do_something_with "i'm not an array"
+       end
+       # This test will fail and dump the error via your test console's usual channel
+       assert_error_raised(RuntimeError) do
+              @some_model.do_something_with "neither am i"
+       end
+end</code></pre>
+</div>
+    
+  </div>
+  
+  <footer>
+    
+      
+        <a href="/Testing-for-desirable-errors-in-Ruby/" class="read-more">Continue reading</a>
+      
+    
+  </footer>
+</article> 
+    
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="headline"> 
+      <a href="/Chirrup-0-81-released/" itemprop="url">Chirrup 0.81 released</a>
+    </h2>
+    <time datetime="2008-07-03">
+      03 Jul 2008
+    </time>
+  </header>
+      
+  <div itemprop="articleBody">
+    
+      <p>Hi there, sorry I haven’t written in a while. It’s this damned work business. Some actual content is promised soon.</p><p>Anyhow - A rather nasty text-escaping bug popped up in Chirrup, so I’ve issued a patch in version 0.81 which is <a href="http://chirrup.angryamoeba.co.uk">available for download</a> now.</p>
+    
+  </div>
+  
+  <footer>
+    
+      
+        <a href="/Chirrup-0-81-released/" class="read-more">Continue reading</a>
+      
+    
+  </footer>
+</article> 
+    
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="headline"> 
+      <a href="/How-to-force-Git-to-ignore-files/" itemprop="url">How to force Git to ignore files</a>
+    </h2>
+    <time datetime="2008-05-24">
+      24 May 2008
+    </time>
+  </header>
+      
+  <div itemprop="articleBody">
+    
+      Just documenting this one for later, really. If you&#8217;re setting up a git repository and you need to ignore certain types of file - logs, or python bytecode (not that I&#8217;m dealing with those two problems at this exact moment or anything), the procedure is quite simple:
+
+<pre><code>
+# Get to the hidden .git directory within your project.
+cd /path/to/your/project
+cd .git/info
+# in .git/info is a file named "exclude". Open it in whatever you like. Here we'll open it with Textmate.
+mate exclude
+</code></pre>
+
+The file&#8217;s contents are, by default, commented out. To add your own ignore rules, just add each rule on a new line. Here&#8217;s...
+    
+  </div>
+  
+  <footer>
+    
+      
+        <a href="/How-to-force-Git-to-ignore-files/" class="read-more">Continue reading</a>
+      
+    
+  </footer>
+</article> 
+    
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="headline"> 
+      <a href="/Chirrup-launched-for-public-use/" itemprop="url">Chirrup launched for public use</a>
+    </h2>
+    <time datetime="2008-05-20">
+      20 May 2008
+    </time>
+  </header>
+      
+  <div itemprop="articleBody">
+    
+      <p>Well, that’s another silly little side-project in the can. If you’d like to have Twitter comments on your blog, wiki, website, or basically anything with a URL, head on over to <a href="http://chirrup.angryamoeba.co.uk">chirrup.angryamoeba.co.uk</a> and download Chirrup to get started!</p><p>Thanks to the <a href="http://www.videojuicer.com">Videojuicer</a> dev team for helping with testing - <a href="http://skein.tumblr.com/">Ted Han</a>, <a href="http://sd2.com/">John Carlin</a>, <a href="http://aelius.net/">Alex Nichol</a> and <a href="http://mochapowered.com/">Adam Livesley</a>. And thanks to Adam for turning Chirrup into a <a href="http://chirrup.angryamoeba.co.uk/docs/wordpress.html">wordpress plugin</a> - this functionality is included in the main <a href="http://chirrup.angryamoeba.co.uk/download.html">download package </a>.</p>
+    
+  </div>
+  
+  <footer>
+    
+      
+        <a href="/Chirrup-launched-for-public-use/" class="read-more">Continue reading</a>
+      
+    
+  </footer>
+</article> 
+    
+      <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="headline"> 
+      <a href="/Chirrup-Twitter-comments-for-your-blog/" itemprop="url">Chirrup - Twitter comments for your blog!</a>
+    </h2>
+    <time datetime="2008-05-13">
+      13 May 2008
+    </time>
+  </header>
+      
+  <div itemprop="articleBody">
+    
+      <p>UPDATE: Chirrup is now available to the public. Visit <a href="http://chirrup.angryamoeba.co.uk">chirrup.angryamoeba.co.uk</a> to get your copy.</p><p>You might’ve noticed some new features here at Singlecell - we’ve been working on a library called Chirrup, which allows you to include comments from Twitter in your pages.</p>
+    
+  </div>
+  
+  <footer>
+    
+      
+        <a href="/Chirrup-Twitter-comments-for-your-blog/" class="read-more">Continue reading</a>
+      
+    
+  </footer>
+</article> 
+    
+  
+  
+</section>
+<footer>
+  <div class="pagination">
+  
+    <a href="/page3" class="paginator prev">Newer</a>
+  
+  
+  <span class="paginator info">
+    4 of 4
+  </span>
+  
+  
+</div>
+</footer>
+			
+			
+			<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1036922-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	</body>
+	
+</html>

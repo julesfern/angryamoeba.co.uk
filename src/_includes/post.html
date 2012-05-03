@@ -1,0 +1,30 @@
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="headline"> 
+      <a href="{{post.url}}" itemprop="url">{{post.title}}</a>
+    </h2>
+    <time datetime="{{post.date | to_html5_datetime}}">
+      {{post.date | date_to_string }}
+    </time>
+  </header>
+      
+  <div itemprop="articleBody">
+    {% if summarize %}
+      {{post.content | summarize }}
+    {% else %}
+      {{post.content}}
+    {% endif %}
+  </div>
+  
+  <footer>
+    {% if page.layout == 'post' %}
+      <!-- On post page, do comments and profile -->
+    {% else %}
+      {% if summarize %}
+        <a href="{{post.url}}" class="read-more">Continue reading</a>
+      {% else %}
+        <a href="{{post.url}}#disqus_thread" class="discuss">Discuss</a>
+      {% endif %}
+    {% endif %}
+  </footer>
+</article> 

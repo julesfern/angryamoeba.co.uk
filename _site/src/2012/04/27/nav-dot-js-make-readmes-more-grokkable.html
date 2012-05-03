@@ -1,0 +1,40 @@
+<img src='https://img.skitch.com/20120427-rnce73fhm3qq25qww82mj98iff.png' alt='Screenshot of Nav.js in use' />
+<p>I&#8217;ve just pushed to <a href='http://github.com/danski/nav.js'>Github</a> a small tool that I&#8217;ve been using internally for making long documents more readable. Here&#8217;s the problem:</p>
+
+<ul>
+<li>Github expects a README to display on the front page</li>
+
+<li>Some projects have very long README files</li>
+
+<li>Long documents are a pain to navigate</li>
+</ul>
+
+<p>So <a href='http://github.com/danski/nav.js'>Nav.js</a> is a Javascript hack to give long documents a nice, readable overview which follows the user around the page and has some nice tricks like popping open sub-sections as the user scrolls into them.</p>
+
+<p>If you want to know what it looks like, <a href='http://danski.github.com/spah'>here&#8217;s a live demo</a> of Nav.js being used in another project I have in progress.</p>
+
+<p>Nav.js does the following to your docs:</p>
+
+<ul>
+<li>Creates an outline with hierarchy directly reflecting your use of H1..H6 - H2 is a sub-heading, H3 is a sub-sub heading, and so on.</li>
+
+<li>Attaches scroll listeners using <a href='http://flesler.blogspot.co.uk/2007/10/jqueryscrollto.html'>jQuery-scrollTo</a> and watches on-screen heading positions to determine which sections to pop open in the document overview.</li>
+
+<li>Binds to internal links and provides graceful internal navigation</li>
+
+<li>Formats code sections. Any paragraph ending with a colon and immediately followed by a code segment is treated as paired with that code segment, and gets special display privileges.</li>
+</ul>
+
+<p>Included is a mobile-first stylesheet that should work well for all screen widths.</p>
+
+<p>Using Nav.js is pretty simple:</p>
+
+<ol>
+<li>Check out the <a href='http://github.com/danski/nav.js'>repo</a>.</li>
+
+<li>Open template.html and populate the <code>article</code> element with markup - stuff rendered using a markdown processor works best.</li>
+
+<li>For best results, combine the template with <a href='http://github.com/mojombo/jekyll'>Jekyll</a> or <a href='http://github.com/tobias/liquid'>Liquid</a> and replace the contents of the <code>article</code> element with your content.</li>
+</ol>
+
+<p>I briefly considered making Nav.js into a Jekyll plugin, but I don&#8217;t want to limit people&#8217;s flexibility - so take the JS, take the basic CSS provided, and hack it to shreds.</p>

@@ -1,0 +1,181 @@
+var singlecell_posts = [
+	
+	{
+		"title": "Nav.js - make READMEs easier to grok",
+		"date": "Fri Apr 27 00:00:00 +0100 2012",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2012/04/27/nav-dot-js-make-readmes-more-grokkable.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Introducing Squeenote - Presentations done live with HTML5!",
+		"date": "Thu Jun 24 00:00:00 +0100 2010",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2010/06/24/squeenote-presentations-done-live-with-html5.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "What does HTML5 mean for viral video?",
+		"date": "Fri Jan 15 00:00:00 +0000 2010",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2010/01/15/html5-video-and-custom-players.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Developers and the Kübler-Ross model",
+		"date": "Wed Sep 30 00:00:00 +0100 2009",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2009/09/30/kubler-ross-developers.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Charging for the last inch",
+		"date": "Thu Jun 18 00:00:00 +0100 2009",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2009/06/18/Enabling-tethering-on-your-iPhone.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "The Internet Mapping Project",
+		"date": "Tue May 05 00:00:00 +0100 2009",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2009/05/05/The-Internet-Mapping-Project.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Design competitions are PR you don't need.",
+		"date": "Fri Mar 27 00:00:00 +0000 2009",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2009/03/27/Design-competitions-are-PR-you-dont-need.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Introducing the new Angry amoeba",
+		"date": "Sat Mar 21 00:00:00 +0000 2009",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2009/03/21/Announcing-the-new-Amoeba.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "The Hacker's Amendment",
+		"date": "Tue Feb 17 00:00:00 +0000 2009",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2009/02/17/The-Hacker-s-Amendment.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "The API antipattern, Twitter, and the Fail Whale's new clothes",
+		"date": "Fri Nov 28 00:00:00 +0000 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/11/28/The-API-antipattern-Twitter-and-the-Fail-Whale-s-new-clothes.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "An introduction to merb-auth and the wonderful secrets contained within",
+		"date": "Sat Nov 22 00:00:00 +0000 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/11/22/An-introduction-to-merb-auth-and-the-wonderful-secrets-contained-within.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "How to get Quicksilver's radial menus to play nice with your mouse",
+		"date": "Mon Nov 17 00:00:00 +0000 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/11/17/How-to-get-Quicksilver-s-radial-menus-to-play-nice-with-your-mouse.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "In which we enjoy catharsis by joining the Merb vs. Rails drama",
+		"date": "Sun Nov 16 00:00:00 +0000 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/11/16/In-which-we-enjoy-catharsis-by-joining-the-Merb-vs-Rails-drama.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Create with Context on How people really use the iPhone",
+		"date": "Thu Nov 13 00:00:00 +0000 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/11/13/Create-with-Context-on-How-people-really-use-the-iPhone.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Barclays online banking uses sketchy external stats provider, is only as secure as a sketchy external stats provider.",
+		"date": "Thu Aug 28 00:00:00 +0100 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/08/28/Barclays-online-banking-uses-sketchy-external-stats-provider-is-only-as-secure-as-a-sketchy-external-stats-provider.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Testing for desirable errors in Ruby",
+		"date": "Fri Jul 04 00:00:00 +0100 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/07/04/Testing-for-desirable-errors-in-Ruby.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Chirrup 0.81 released",
+		"date": "Thu Jul 03 00:00:00 +0100 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/07/03/Chirrup-0-81-released.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "How to force Git to ignore files",
+		"date": "Sat May 24 00:00:00 +0100 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/05/24/How-to-force-Git-to-ignore-files.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Chirrup launched for public use",
+		"date": "Tue May 20 00:00:00 +0100 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/05/20/Chirrup-launched-for-public-use.html"
+	}
+	
+		, 
+	
+	
+	{
+		"title": "Chirrup - Twitter comments for your blog!",
+		"date": "Tue May 13 00:00:00 +0100 2008",
+		"permalink": "http://www.angryamoeba.co.uk/singlecell/src/2008/05/13/Chirrup-Twitter-comments-for-your-blog.html"
+	}
+	
+	
+];

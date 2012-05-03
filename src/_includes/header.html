@@ -1,0 +1,11 @@
+<header>
+  <h1>
+    <a href="{{site.urls.index}}">
+      <img src="/img/brand/amoeba-large-text.png" alt="Dan Glegg - Software created, Inventions made to order" />
+    </a>
+  </h1>
+  
+  {% unless paginator.previous_page or page.navigation == 'post' %}
+    {% include projects.html %}
+  {% endunless %}
+</header>

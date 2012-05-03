@@ -1,0 +1,45 @@
+<!DOCTYPE html>	
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" itemscope itemtype="http://schema.org/Organization"> <!--<![endif]-->
+<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		
+		<title>{{page.title}}</title>
+		
+		<meta name="ROBOTS" content="ALL" />
+		<meta name="Description" content="A blog. Things of Interest: technology, gaming, web standards, and the open web." />
+
+		<!-- Service discovery -->
+		<link rel="alternate" type="application/atom+xml" href="http://angryamoeba.co.uk/singlecell/atom.xml" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="/img/icons/favicon.png" />
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="/css/normalize.css" type="text/css" />
+		<link rel="stylesheet" href="/css/ir_black.css" type="text/css" />
+		<link rel="stylesheet" href="/css/angryamoeba.css" type="text/css" />
+		
+		<!-- Interactivity -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<!--[if lt IE 9 ]>
+		  <script type="text/javascript" src="/js/html5.js"></script>  
+		<![endif]-->
+		<script type="text/javascript" src="/js/angryamoeba.enhance.js"></script>
+		
+		
+</head>
+	
+	<body class="{{page.navigation}}{% if paginator.previous_page %} archives{% endif %}">		
+			<script type="text/javascript">foo = "bar";</script>
+			
+			{{content}}
+			
+			
+			{% include analytics.html %}
+	</body>
+	
+</html>
