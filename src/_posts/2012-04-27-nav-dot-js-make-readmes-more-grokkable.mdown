@@ -11,7 +11,7 @@ title: "Nav.js - make READMEs easier to grok"
 
 <img src="https://img.skitch.com/20120427-rnce73fhm3qq25qww82mj98iff.png" alt="Screenshot of Nav.js in use" />
 
-I've just pushed to [Github][repo] a small tool that I've been using internally for making long documents more readable. Here's the problem I've been looking at:
+I've just pushed to [Github][repo] a small tool that I've been using internally for making long documents more readable. Here's the problem:
 
 - Github expects a README to display on the front page
 - Some projects have very long README files
