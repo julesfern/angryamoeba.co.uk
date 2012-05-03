@@ -28,7 +28,13 @@ Nav.js does the following to your docs:
 - Binds to internal links and provides graceful internal navigation
 - Formats code sections. Any paragraph ending with a colon and immediately followed by a code segment is treated as paired with that code segment, and gets special display privileges.
 
-Included is a mobile-first stylesheet that should work well for all screen widths.
+Nav.js also has a couple of tricks for code documentation specifically. Any paragraph ending with a colon (:) and immediately followed by a code block will be treated as directly referencing that block:
+
+<img src="https://img.skitch.com/20120503-tedxb4c5s59e7wfe794drc9mii.png" alt="Image of code pairing in Nav.js" />
+
+Included is a mobile-first stylesheet that should work well for all screen widths, including smart treatment of paired code segments:
+
+<img src="https://img.skitch.com/20120503-kwjbs9erwn6n46knggigtu9bm1.png" alt="narrow-screen Nav.js code layout" />
 
 Using Nav.js is pretty simple:
 
