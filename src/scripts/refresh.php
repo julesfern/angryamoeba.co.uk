@@ -10,6 +10,7 @@
 	ob_start(); 
 
 	chdir("..");
+	chdir("..");
 	$script = "git pull && bundle install && bundle exec jekyll";
 	
 	echo("executing ".$script." in working directory ".getcwd()."<br />");
