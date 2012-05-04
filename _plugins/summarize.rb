@@ -7,12 +7,12 @@ module Jekyll
       # Attempt to summarize based on number of top-level elements. If no paragraphs are found, go by word count.
 
       # Limits for the two parsing techniques
-      para_count = 2
+      block_count = 3
       word_count = 100
       # Tags that halt the summariser when encountered
       block_tags = %w(object embed video iframe)
       # Tags that do not count towards the summariser's paragraph count
-      ignore_tags = %w(img a)
+      ignore_tags = %w(a)
 
       if input.strip =~ /^<p>/
       	# Use paragraphs
@@ -23,7 +23,7 @@ module Jekyll
       	summary_elements = []
       	summary_count = 0
       	all.each do |elem|
-      		limit_reached = (summary_count >= para_count)
+      		limit_reached = (summary_count >= block_count)
       		blocked_tag = (block_tags.include? elem.name.downcase)
       		wrapped_blocked_tag = (elem.children.to_a.select {|c| block_tags.include?(c.name.downcase)}.any?)
       		break if limit_reached or blocked_tag or wrapped_blocked_tag

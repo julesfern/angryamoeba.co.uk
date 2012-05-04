@@ -1,0 +1,16 @@
+---
+title: What's with the project status in the header?
+layout: post
+---
+
+I'm trying something new. Call it an Automated Negative Reinforcement Procrastination Embarrassment Engine. The <abbr title="Automated Negative Reinforcement Procrastination Embarrassment Engine">ANRPEE</abbr> is a device situated at the very top of my personal site, serving a number of purposes.
+
+One, it gives me somewhere to update the status of any work in progress projects without spamming Twitter and without turning the blog feed itself into a commit log.
+
+Two, it sits there. Looking at me. Staring. Judging. Why haven't you updated me? Why haven't you officially released this thing that I am sat here, very publicly announcing to be a work in progress, when in fact you finished it weeks ago? Why haven't you shaved? Look at you, sat in your filthy man-cave. Update me, you disgusting hipster. Make me an accurate representation of the state of your projects.
+
+Three, it lets me document failures as well as successes. Projects such as Tzatziki, which was intended to be an API documentation tool that verified your documentation against a live API, and which turned out to have an absurdly hairy and unpleasant syntax. Turns out it really is easier to just write good tests _and_ write good documentation.
+
+I don't expect to update it every day, or even every week - the vast majority of my open source work is done in my own time, which can at times be very limited. But I do expect to update it whenever I make progress, and to ensure that it reflects reality.
+
+I'm going to limit the items listed to single projects, or major features of larger projects. I'll experiment a little with how to split out new features for previously-shipped projects, as well as how to separate and archive failures. And to ease the transition, I'm giving myself a relatively blank canvas to start with.
