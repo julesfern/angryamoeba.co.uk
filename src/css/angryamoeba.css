@@ -492,6 +492,9 @@ article footer a.discuss:before {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
 }
+article footer .intent {
+  float: right;
+}
 
 article.search-result {
   padding-bottom: 1em;

@@ -1,6 +1,7 @@
 ---
 title: Introducing Squeenote - Presentations done live with HTML5!
 layout: post
+repo: squeenote
 ---
 
 <p><img src="http://img.skitch.com/20100624-eswfi1h9dym3qq1rp7whacekad.jpg"></p>

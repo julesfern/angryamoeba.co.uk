@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Nav.js - make READMEs easier to grok"
+repo: nav.js
 ---
 
 [repo]: http://github.com/danski/nav.js

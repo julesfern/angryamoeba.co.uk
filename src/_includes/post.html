@@ -26,5 +26,10 @@
         <a href="{{post.url}}#disqus_thread" class="discuss">Discuss</a>
       {% endif %}
     {% endif %}
+    
+    {% if post.repo %}
+      <iframe class="intent" src="http://markdotto.github.com/github-buttons/github-btn.html?user={{site.github.username}}&repo={{post.repo}}&type=watch&size=large&&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="170px" height="30px"></iframe>
+    {% endif %}
   </footer>
 </article> 
