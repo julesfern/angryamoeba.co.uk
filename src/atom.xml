@@ -4,7 +4,7 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
-	<title>Singlecell, the Angry amoeba weblog</title>
+	<title>Dan Glegg - Angry amoeba</title>
 
 	<link href="http://www.angryamoeba.co.uk/singlecell/atom.xml" rel="self"/>
 	<link href="http://www.angryamoeba.co.uk/singlecell/"/>
