@@ -1,0 +1,17 @@
+---
+title: "Nav.js multi-document support"
+layout: post
+repo: nav.js
+---
+
+You asked for it, I needed it as well, so here it is. Nav.js now supports multiple documents as well as the classic single-document use case.
+
+<img src="https://img.skitch.com/20120515-b7fm2ycyrdtska5y7g8gsyn1ky.png" alt="Nav.js in multidoc mode" />
+
+A few things have changed. Firstly, there's now just a single <code>nav</code> element containing <code>h3</code> elements as categories, and <code>h4</code> elements as documents. By default, Nav.js will add the document overview immediately after the first <code>nav h4.current</code>. Secondly, initialisation is cleaner. <code>Nav.init</code> is called with a callback function. The callback function receives the generated document overview as an argument. You put it where you like.
+	
+	Nav.init(function(overview) {
+      $("nav .current").first().after(overview);
+    });
+
+As before, Nav.js doesn't make any statements or include any code for generating these files from your documentation. It is assumed that you'll hack Rake, Jekyll or some other tool to suit your needs.
