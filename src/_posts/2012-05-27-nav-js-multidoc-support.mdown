@@ -15,3 +15,5 @@ A few things have changed. Firstly, there's now just a single <code>nav</code> e
     });
 
 As before, Nav.js doesn't make any statements or include any code for generating these files from your documentation. It is assumed that you'll hack Rake, Jekyll or some other tool to suit your needs.
+
+Go find it on [Github](http://github.com/danski/nav.js).
