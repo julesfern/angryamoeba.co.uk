@@ -5,7 +5,7 @@
     </a>
   </h1>
   
-  {% unless paginator.previous_page or page.navigation == 'post' %}
+  {% unless paginator.previous_page or page.navigation == 'post' or page.navigation == 'about' %}
     {% include projects.html %}
   {% endunless %}
 </header>

@@ -1,4 +1,4 @@
-<article itemscope itemtype="http://schema.org/BlogPosting">
+<article itemscope itemtype="http://schema.org/BlogPosting"> 
   <header>
     <h2 itemprop="headline"> 
       <a href="{{post.url}}" itemprop="url">{{post.title}}</a>
@@ -15,7 +15,7 @@
       {{post.content}}
     {% endif %}
   </div>
-  
+
   <footer>
     {% if page.layout == 'post' %}
       <!-- On post page, do comments and profile -->
@@ -27,9 +27,12 @@
       {% endif %}
     {% endif %}
     
+    <a href="{{site.urls.about}}" class="about">About the author</a>
+
     {% if post.repo %}
       <iframe class="intent" src="http://markdotto.github.com/github-buttons/github-btn.html?user={{site.github.username}}&repo={{post.repo}}&type=watch&size=large&&count=true"
         allowtransparency="true" frameborder="0" scrolling="0" width="170px" height="30px"></iframe>
     {% endif %}
   </footer>
+
 </article> 

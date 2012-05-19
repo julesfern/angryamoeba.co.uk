@@ -11,7 +11,7 @@ post_digest_template_defaults:
 
 urls:
   index: "/"
-  about: "/about"
+  about: "/about.html"
   twitter: "http://twitter.com/angryamoeba"
   facebook: "http://facebook.com/angryamoeba"
 

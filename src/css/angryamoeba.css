@@ -41,7 +41,7 @@ body > * > * {
   margin: 0 auto;
   clear: both;
 }
-body script {
+body script, body style {
   display: none;
 }
 
@@ -68,7 +68,9 @@ section.comments #disqus_thread {
 
 /* @group Section timestamps */
 
-header time {
+header time,
+.departures time,
+span.label {
   display: inline-block;
   position: absolute;
   white-space: nowrap;
@@ -84,7 +86,9 @@ header time {
   -webkit-border-radius: 5px 0 0 5px;
   -moz-border-radius: 5px 0 0 5px;
 }
-header time:after {
+header time:after,
+.departures time:after,
+span.label:after {
   position: absolute;
   right: -20px;
   top: 0;
@@ -99,13 +103,15 @@ header time:after {
   line-height: 0px;
 }
 body > header time,
-.archives header time {
+.archives header time,
+.archives span.label {
   background-color: #FFF;
   color: #333;
   text-shadow: none;
 }
 body> header time:after,
-.archives header time:after {
+.archives header time:after,
+.archives span.label:after {
   border-left: 20px solid #FFF; /* bottom, add background color here */
 }
 
@@ -206,8 +212,13 @@ body> header time:after,
 /* @group Departures - page-specific styles */
 
 .index .departed,
-.post .departures {
+.post .departures,
+.about .departed {
   display: none;
+}
+
+.about .departures li {
+
 }
 
 /* @end */
@@ -345,7 +356,8 @@ body.archives > header:after {
 /* @group Archives and comments */
 
 section.archives,
-section.comments {
+section.comments,
+section.cv {
   min-height: 500px;
   padding-top: 40px;
   background: #291c16 url('/img/background/topsoil.gif') no-repeat center top;
@@ -465,6 +477,7 @@ article footer a {
   display: inline-block;
   position: relative;
   margin-left: 3.5em;
+  margin-right: 0.5em;
 }
 article footer a.read-more:before {
   content: " ";
@@ -492,6 +505,20 @@ article footer a.discuss:before {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
 }
+article footer a.about:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: -3.5em;
+  top: -0.8em;
+  width: 2.4em;
+  height: 2.4em;
+  background: #FFF url('/img/profile/dan-portrait-small.jpg') no-repeat center center;
+  border: 0.3em solid white;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
 article footer .intent {
   float: right;
 }
@@ -508,6 +535,83 @@ article.search-result footer {
 
 /* @end */
 
+/* @group Profile */
+
+.profile {
+  padding-bottom: 1em;  
+}
+.profile header img {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  top: 0.2em;
+  left: 0;
+}
+.profile h2 {
+  min-height: 1em;
+}
+.profile .links {
+  display: inline-block;
+}
+.profile ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.profile ol:before {
+  content: "Find me on ";
+}
+.profile li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.profile li:after {
+  content: ", ";
+}
+.profile li:nth-last-of-type(2):after {
+  content: "and ";
+}
+.profile li:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+.profile li:last-child:after {
+  content: ".";
+}
+.profile li.github {
+  padding-left: 19px;
+  background-image: url('/img/icons/github-small.png');
+}
+.profile li.twitter {
+  padding-left: 29px;
+  background-image: url('/img/icons/twitter-small.png');
+}
+.profile li.linkedin {
+  padding-left: 19px;
+  background-image: url('/img/icons/linkedin-small.png');
+}
+.profile li.steam {
+  padding-left: 33px;
+  background-image: url('/img/icons/steam-small.png');
+}
+.about #focus {
+  padding-bottom: 150px;
+}
+#focus .departures li {
+  border-color: #333;
+  background-color: rgba(0,0,0,0.8);
+}
+#focus .departures .departure-disclose {
+  color: #333;
+  opacity: 1;
+}
+
+
+/* @end */
+
 /* @group Archive post overrides */
 
 .archives article,
@@ -521,7 +625,13 @@ article.search-result footer {
 .comments article ul,
 .comments article ol,
 .comments article h1,
-.comments article h2 {
+.comments article h2,
+.cv article,
+.cv article p,
+.cv article ul,
+.cv article ol,
+.cv article h1,
+.cv article h2 {
   color: #FFF;
   text-shadow: none;
 }
@@ -530,6 +640,7 @@ article.search-result footer {
 .archives ol a,
 .archives footer a,
 .comments a,
+.cv a,
 body> footer a {
   color: #fffdad;
 }
