@@ -1,0 +1,33 @@
+---
+title: SpahQL - A query language for Javascript objects
+repo: spahql
+layout: post
+---
+
+Javascript doesn't make dealing with structured data easy at all. Even when you're working with data you control, you're having to put filthy, nasty null checks and do-while descent loops everywhere. When the data is <abbr title="read: beyond the system of guarantees provided by your own application">out of your control</abbr>, such as data pulled from some external JSON(P) API, the problem can become more severe.
+
+To scratch my own itch in this regard, I've created <a href="http://danski.github.com/spahql">SpahQL</a>, a query language and data manipulation library for dealing with Javascript objects.
+
+To use it, all you need do is ask SpahQL to create a _database_ wrapping your object:
+
+	var data = {"a": {"foo": "bar-a", "bar": "baz-a"}, "b": {"foo": "bar-b", "bar": "baz-b", "moo": "huzzah"}},
+		db = SpahQL.db(data);
+
+Now you have access to an xpath-like syntax for accessing data:
+
+	var foos = db.select("//foo");
+	return foos.values(); //-> ["bar-a", "bar-b"]
+
+And also making assertions about data:
+
+	db.assert("/a/foo == /b/foo"); //-> true
+	db.assert("/a/foo == //moo"); //-> false
+
+A jQuery-like syntax for modifying your data:
+
+	db.select("/*/*").replaceAll("BEHOLD");
+	return data; //-> {"a": {"foo": "BEHOLD", "bar": "BEHOLD"}, "b": {"foo": "BEHOLD", "bar": "BEHOLD", "moo": "BEHOLD"}}
+
+Below is a REPL which you can use to have a play. If you'd like to play more, <a href="http://danski.github.com/spahql">go read the manual</a>.
+
+<iframe width="650" height="650" src="http://danski.github.com/spahql/repl.html"></iframe>
