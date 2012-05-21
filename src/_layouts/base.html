@@ -4,7 +4,7 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en" itemscope itemtype="http://schema.org/Organization"> <!--<![endif]-->
-<head>
+	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		
 		<title>{{page.title}}</title>
@@ -29,17 +29,10 @@
 		  <script type="text/javascript" src="/js/html5.js"></script>  
 		<![endif]-->
 		<script type="text/javascript" src="/js/angryamoeba.enhance.js"></script>
+	</head>
 		
-		
-</head>
-	
 	<body class="{{page.navigation}}{% if paginator.previous_page %} archives{% endif %}">		
-			<script type="text/javascript">foo = "bar";</script>
-			
-			{{content}}
-			
-			
-			{% include analytics.html %}
+		{{content}}
+		{% include analytics.html %}
 	</body>
-	
 </html>

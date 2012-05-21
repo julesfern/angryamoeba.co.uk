@@ -30,4 +30,6 @@ A jQuery-like syntax for modifying your data:
 
 Below is a REPL which you can use to have a play. If you'd like to play more, <a href="http://danski.github.com/spahql">go read the manual</a>.
 
-<iframe width="650" height="650" src="http://danski.github.com/spahql/repl.html"></iframe>
+<iframe width="650" height="650" src="http://danski.github.com/spahql/repl.html">
+	<a href="http://danski.github.com/spahql/repl.html">SpahQL REPL</a>
+</iframe>
